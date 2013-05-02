@@ -1,7 +1,7 @@
 HTML5 Kids Game...?
 =========
 
-This project utilizes the HTML5 [getUserMedia() API] to manipulate the Canvas.
+This project utilizes the HTML5 [getUserMedia API] to manipulate the Canvas.
 
   - Currently the project is scoped to a single player game that will draw finger motion on a white board.
     - Version 0.2
@@ -74,4 +74,4 @@ MIT
   [Twitter Bootstrap]: http://twitter.github.com/bootstrap/
   [jQuery]: http://jquery.com  
   [Express]: http://expressjs.com/
-  [getUserMedia()]: http://www.html5rocks.com/en/tutorials/getusermedia/intro/
+  [getUserMedia API]: http://www.html5rocks.com/en/tutorials/getusermedia/intro/
