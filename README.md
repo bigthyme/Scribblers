@@ -23,7 +23,7 @@ Developers
 
 Current Version
 -
-0.0.9
+0.1: Video works with getUserMediaAPI()
 
 Inspiration 
 -
