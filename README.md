@@ -25,6 +25,11 @@ Current Version
 -
 0.0.9
 
+Inspiration 
+-
+1. https://github.com/tjerkw/js-cam-motion
+2. https://github.com/ReallyGood/js-motion-detection
+
 Tech
 -----------
 
