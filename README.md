@@ -24,12 +24,13 @@ Developers
 
 Current Version
 -
-0.1: Video works with getUserMediaAPI()
+0.1.1: Added snapshot functionality on top of getUserMedia API
 
 Inspiration 
 -
 1. https://github.com/tjerkw/js-cam-motion
 2. https://github.com/ReallyGood/js-motion-detection
+3. https://github.com/auduno/headtrackr/
 
 Tech
 -----------
