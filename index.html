@@ -5,7 +5,7 @@
   <title>Test Game</title>
 </head>
 <body>
-<video autoplay></video>
+<video id="basic-stream" class="videostream" autoplay=""></video>
 </body>
 <script>
   // Detect browser compatibility
@@ -19,16 +19,22 @@
     window.URL = window.URL || window.webkitURL;
     navigator.getUserMedia  = navigator.getUserMedia ||navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
 
+    //provide fallbacks
+    var fallback = function(e){
+      console.log('falling back...')
+    }
 
     //specify what context the stream will come from
     var video = document.querySelector('video');
     //pass in what options you want
     navigator.getUserMedia({video: true, audio: true}, function(stream){
-      console.log('streams of data: ' , localMediaStream);
-      video.src = window.URL.createObjectUrl(localMediaStream);
+        console.log('success!');
+        console.log('streams of data: ' , stream);
+        video.src = window.URL.createObjectURL(stream);
     });
   } else {
-    alert('please use a better browser!');
+    alert('please use a better browser for the full experience!');
+    fallback();
   }
 </script>
 </html>
