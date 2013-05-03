@@ -31,6 +31,7 @@ Inspiration
 1. https://github.com/tjerkw/js-cam-motion
 2. https://github.com/ReallyGood/js-motion-detection
 3. https://github.com/auduno/headtrackr/
+    - http://dev.opera.com/articles/view/head-tracking-with-webrtc/
 
 Tech
 -----------
