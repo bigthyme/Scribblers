@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Test Game</title>
+</head>
+<body>
+<video autoplay></video>
+</body>
+<script>
+  // Detect browser compatibility
+  var hasGetUserMedia = function(){
+    return !!(navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia);
+  }
+
+  if(hasGetUserMedia()){
+    alert('good to go!');
+    navigator.getUserMedia({video: true, audio: true});
+    console.log(localMediaStream);
+  } else {
+    alert('please use a better browser!');
+  }
+
+</script>
+</html>
