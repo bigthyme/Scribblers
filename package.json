@@ -1,0 +1,11 @@
+{
+  "name": "finger-canvas",
+  "version": "0.1",
+  "dependencies": {
+    "connect": "2.7.7.x"
+  },
+  "engines": {
+    "node": "0.10.x",
+    "npm": "1.2.x"
+  }
+}
