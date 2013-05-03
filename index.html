@@ -15,11 +15,20 @@
 
   if(hasGetUserMedia()){
     alert('good to go!');
-    navigator.getUserMedia({video: true, audio: true});
-    console.log(localMediaStream);
+    //specify a url to grab data from
+    window.URL = window.URL || window.webkitURL;
+    navigator.getUserMedia  = navigator.getUserMedia ||navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
+
+
+    //specify what context the stream will come from
+    var video = document.querySelector('video');
+    //pass in what options you want
+    navigator.getUserMedia({video: true, audio: true}, function(stream){
+      console.log('streams of data: ' , localMediaStream);
+      video.src = window.URL.createObjectUrl(localMediaStream);
+    });
   } else {
     alert('please use a better browser!');
   }
-
 </script>
 </html>
