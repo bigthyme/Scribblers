@@ -1,0 +1,27 @@
+<!-- modularize html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Finger Canvas</title>
+  <!-- Added lib folder -->
+  <script src="lib/jquery.v2.min.js"></script>
+
+</head>
+  <body>
+    <div class="button-toolbar">
+      <input id="snapshot-btn" type="button" value="Capture Me"></button>
+      <input id="record-btn" type="button" value="Record Me"></button>
+    </div>
+
+    <!-- HTML canvas elements -->
+    <video id="main-video" autoplay=""></video>
+    <canvas id="main-canvas"></canvas>
+    <div id="highlight"></div>
+  </body>
+
+  <!-- new scripts -->
+  <script src="src/main.js"></script>
+  <script src="src/snapshot.js"></script>
+  <script src="src/record.js"></script>
+</html>
