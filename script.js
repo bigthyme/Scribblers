@@ -29,8 +29,12 @@ if(hasGetUserMedia()){
   }
 
   //specify what context the stream will come from
-  var video = document.querySelector('video');
-  var canvas = document.querySelector('canvas');
+  var video = document.querySelector('video'),
+    canvas = document.querySelector('canvas'),
+    hl = document.querySelector('#hightlight'),
+    pixels;
+
+  console.log('this is the hl ' + hl);
   canvas.width = captureWidth;
   canvas.height = captureHeight;
 
