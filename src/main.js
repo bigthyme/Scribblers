@@ -6,6 +6,7 @@ var v = document.querySelector('#main-video'),
     //canvas x cord size
     x = c.getContext('2d'),
     hl = document.querySelector('#highlight'),
+    localMediaStream = null;
     //dimensions
     mainVideoHeight = 480,
     mainVideoWidth = 640;
@@ -23,9 +24,24 @@ var hasGetUserMedia = function(){
 
 //If the user does have one of the follow navigators
 if(hasGetUserMedia()){
-  //set window url to the user's specified browser
+  //Set window url to the user's specified browser
   window.URL = window.URL || window.webkitURL;
   navigator.getUserMedia  = navigator.getUserMedia ||navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
+
+  //List of all button functionalities
+  $('#record-btn').on('click', function(){
+    //look at record.js for funcitonality
+    recordVideo();
+  });
+
+  $('#snapshot-btn').on('click', function(){
+    //look at snapshot.js for functionality
+    snapShot();
+  });
+
+} else {
+  //no modern browser detected...fallback?
+  alert('please use a better browser');
 }
 
 
