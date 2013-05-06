@@ -1,5 +1,7 @@
 body {
   margin: 1px 0px 1px 1px;
+  background-color: #f4f4f4 !important;
+  color: #404040 !important;
 }
 
 .button-toolbar {
