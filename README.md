@@ -7,9 +7,9 @@ This project utilizes the HTML5 [getUserMedia API] to manipulate the Canvas.
   - Currently the project is scoped to a single player game that will draw finger motion on a white board.
     - Version 0.2
   - There will potentially be a lobbying system that will delegate multi-player games in the next version.
-    - Version 0.4     
+    - Version 0.4
   - The game might get more complex [i.e. follow the leader or draw a specific image]
-    - Version 0.6     
+    - Version 0.6
 
 Developers
 -
@@ -26,12 +26,17 @@ Current Version
 -
 0.1.1: Added snapshot functionality on top of getUserMedia API
 
-Inspiration 
+Inspiration
 -
+getUserMedia API demos:
 1. https://github.com/tjerkw/js-cam-motion
 2. https://github.com/ReallyGood/js-motion-detection
 3. https://github.com/auduno/headtrackr/
     - http://dev.opera.com/articles/view/head-tracking-with-webrtc/
+4. http://40win.com/blog/2012/11/14/web-gestures-with-getusermedia-part1/
+
+algorithm demos:
+1. http://mkweb.bcgsc.ca/color_summarizer/?
 
 Tech
 -----------
@@ -42,7 +47,7 @@ This game uses a number of open source projects to work properly:
 * [Twitter Bootstrap] - great UI boilerplate for modern web apps
 * [node.js] - evented I/O for the backend
 * [Express] - fast node.js network app framework [@tjholowaychuk]
-* [jQuery] - duh 
+* [jQuery] - duh
 
 Git Workflow
 --------------
@@ -80,6 +85,6 @@ MIT
   [ace editor]: http://ace.ajax.org
   [node.js]: http://nodejs.org
   [Twitter Bootstrap]: http://twitter.github.com/bootstrap/
-  [jQuery]: http://jquery.com  
+  [jQuery]: http://jquery.com
   [Express]: http://expressjs.com/
   [getUserMedia API]: http://www.html5rocks.com/en/tutorials/getusermedia/intro/
