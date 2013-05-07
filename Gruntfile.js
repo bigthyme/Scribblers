@@ -30,5 +30,5 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   // Default task(s).
   grunt.registerTask('default', ['uglify', 'jshint']);
-
+  grunt.registerTask('precommit', ['jshint']);
 };
