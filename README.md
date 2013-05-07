@@ -25,7 +25,7 @@ Developers
 [philipjrosen]
 Current Version
 -
-0.1.3: Added buttons for functionality
+0.1.4: Added 5px radius to the neighborhood operation for track.js
 
 Inspiration
 -
