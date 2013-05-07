@@ -6,7 +6,8 @@ var v = document.querySelector('#main-video'),
     //canvas x cord size
     x = c.getContext('2d'),
     hl = document.querySelector('#highlight'),
-    localMediaStream = null;
+    localMediaStream = null,
+    localStream,
     //dimensions
     mainVideoHeight = 480,
     mainVideoWidth = 640;
@@ -45,3 +46,8 @@ if(hasGetUserMedia()){
 }
 
 
+//stop recording (for dev purposes)
+$('#stop-record-btn').on('click', function(){
+  alert('stopping..');
+  localStream.stop();
+});
