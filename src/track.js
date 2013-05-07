@@ -1,4 +1,8 @@
 //track.js: tracking colors
+
+/*global mainVideoWidth:false, mainVideoHeight:false, x:false,
+         v:false, hl:false */
+
 var draw = function() {
   var w = mainVideoWidth,
       h = mainVideoHeight;
@@ -24,8 +28,7 @@ var draw = function() {
     var left = Math.floor(i%w);
     var top = Math.floor(i/w);
 
-    if(g > 140 && r < 140 && b < 140){
-      //IT'S GREEN! 
+    if(g > 140 && r < 140 && b < 140){  //IT'S GREEN!
       pixels.data[i * 4 + 3] = 0; //it's green, make pixel invisible
       map[left][top] = 1;     //give it a map value of 1
 
@@ -77,8 +80,8 @@ var draw = function() {
       }
     }
   }
-  hl.style.left = ""+Math.floor(document.width*(targetx/v.width))+"px";
-  hl.style.top = ""+Math.floor(document.height*(targety/v.height))+"px";
+  hl.style.left = ''+Math.floor(document.width*(targetx/v.width))+'px';
+  hl.style.top = ''+Math.floor(document.height*(targety/v.height))+'px';
   x.putImageData(pixels, 0, 0);
 
 
