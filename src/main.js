@@ -42,7 +42,7 @@ if(hasGetUserMedia()){
   });
 
   $('#track-btn').on('click', function(){
-    //look at snapshot.js for functionality
+    //look at track.js for functionality
     draw();
   });
 } else {
