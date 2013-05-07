@@ -1,15 +1,32 @@
+<!-- modularize html -->
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>Test Game</title>
-    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script> -->
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <title>Finger Canvas</title>
+  <!-- Add stylesheets here -->
+  <link rel="stylesheet" href="css/app.css">
+  <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
+  <!-- Add libs here -->
+  <script src="lib/jquery.v2.min.js"></script>
+  <script src="lib/bootstrap.min.js"></script>
+</head>
   <body>
-    <video id="basic-stream" class="videostream" autoplay=""></video>
-    <img src="" id="snapshot">
-    <div id="highlight"></div>
-    <canvas style="display:none;"></canvas>
+    <div class="button-toolbar">
+      <button class="btn btn-warning" id="record-btn" type="button">Record Me</button>
+      <button class="btn btn-info" id="snapshot-btn" type="button">Capture Me</button>
+    </div>
+
+    <!-- HTML canvas elements -->
+    <div class="main-container">
+      <video id="main-video" autoplay=""></video>
+      <canvas id="main-canvas"></canvas>
+      <div id="highlight"></div>
+    </div>
   </body>
-  <script src="script.js"></script>
+
+  <!-- new scripts -->
+  <script src="src/main.js"></script>
+  <script src="src/snapshot.js"></script>
+  <script src="src/record.js"></script>
 </html>

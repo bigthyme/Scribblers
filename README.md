@@ -21,10 +21,11 @@ Developers
 [gigmania]
 ####Anthony Singhavong
 [bigthyme]
-
+####Philip Rosen
+[philipjrosen]
 Current Version
 -
-0.1.1: Added snapshot functionality on top of getUserMedia API
+0.1.2: Added buttons for functionality
 
 Inspiration
 -
