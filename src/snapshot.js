@@ -1,4 +1,7 @@
-//snapshot.js: the functionality behind the record button//
+//snapshot.js: the functionality behind the record button
+
+/*global x:false, c:false, v:false, mainVideoWidth:false, mainVideoHeight:false, canvas:false */
+
 
 var snapShot = function(){
   //if video has a src
@@ -10,4 +13,4 @@ var snapShot = function(){
   } else {
     alert('please start the video first!');
   }
-}
+};
