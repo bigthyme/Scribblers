@@ -1,6 +1,6 @@
 {
   "name": "finger-canvas",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "dependencies": {
     "connect": "2.7.x"
   },
