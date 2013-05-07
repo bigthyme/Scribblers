@@ -1,5 +1,6 @@
 {
   "node": true,
+  "jquery": true,
   "browser": true,
   "devel": true,
   "nonstandard": true,
@@ -22,8 +23,9 @@
   "regexp": true,
   "strict": false,
   "undef": true,
-  "unused": true,
+  "unused": false,
   "trailing": true,
   "smarttabs": true,
-  "immed": true
+  "immed": true,
+  "globals": true
 }
