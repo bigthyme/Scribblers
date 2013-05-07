@@ -40,6 +40,10 @@ if(hasGetUserMedia()){
     snapShot();
   });
 
+  $('#track-btn').on('click', function(){
+    //look at snapshot.js for functionality
+    draw();
+  });
 } else {
   //no modern browser detected...fallback?
   alert('please use a better browser');
