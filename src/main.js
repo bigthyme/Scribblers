@@ -48,6 +48,6 @@ if(hasGetUserMedia()){
 
 //stop recording (for dev purposes)
 $('#stop-record-btn').on('click', function(){
-  alert('stopping..');
+  console.log('stopping..');
   localStream.stop();
 });
