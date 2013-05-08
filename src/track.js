@@ -104,7 +104,7 @@ var draw = function() {
       }
     }
   }
-  hl.style.left = '' + targetx + 'px';
+  hl.style.left = '' + v.width - targetx + 'px';
   hl.style.top = '' + (($('.button-toolbar').height() * 2) + targety) + 'px';
   x.putImageData(pixels, 0, 0);
 
