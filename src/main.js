@@ -1,6 +1,6 @@
 // Main.js: Implementation of getUserMedia API
 
-/*global recordVideo:false, snapShot:false, draw:false */
+/*global recordVideo:false, snapShot:false, draw:false, maskArray:false, createMaskArray:false, erase:false  */
 
 //Select html element id's
 var v = document.querySelector('#main-video'),

@@ -1,7 +1,7 @@
 //track.js: tracking colors
 
 /*global mainVideoWidth:false, mainVideoHeight:false, rgb2hsl: false, x:false,
-         v:false, hl:false */
+         v:false, hl:false, maskArray:false */
 
 var createMaskArray = function() {
   var rowArr;
