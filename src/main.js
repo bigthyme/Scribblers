@@ -47,6 +47,14 @@ if(hasGetUserMedia()){
     $('#main-canvas').css('visibility', 'visible');
     draw();
   });
+
+  $('#erase-btn').on('click', function(){
+    //look at track.js for functionality
+    $('#main-video').css('display', 'none');
+    $('#main-canvas').css('visibility', 'visible');
+    maskArray = createMaskArray();
+    erase();
+  });
 } else {
   //no modern browser detected...fallback?
   alert('please use a better browser');
