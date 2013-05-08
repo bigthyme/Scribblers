@@ -1,6 +1,6 @@
 // Main.js: Implementation of getUserMedia API
 
-/*global recordVideo:false, snapShot:false, draw:false, maskArray:false, createMaskArray:false, erase:false  */
+/*global recordVideo:false, snapShot:false, draw:false, maskArray:false, createMaskArray:false, paint: false, paintArray:false, createPaintArray:false, erase:false  */
 
 //Select html element id's
 var v = document.querySelector('#main-video'),
@@ -49,12 +49,27 @@ if(hasGetUserMedia()){
   });
 
   $('#erase-btn').on('click', function(){
+    console.log(location);
+    // location.reload();
     //look at track.js for functionality
     $('#main-video').css('display', 'none');
     $('#main-canvas').css('visibility', 'visible');
     maskArray = createMaskArray();
     erase();
   });
+
+  $('#paint-btn').on('click', function(){
+    // location.reload();
+    console.log(location);
+    //look at track.js for functionality
+
+    $('#main-canvas').css('background-image', 'url("../lib/orange.jpeg")');
+    $('#main-video').css('display', 'none');
+    $('#main-canvas').css('visibility', 'visible');
+    paintArray = createPaintArray();
+    paint();
+  });
+
 } else {
   //no modern browser detected...fallback?
   alert('please use a better browser');
