@@ -32,4 +32,10 @@ body {
   height:50px;
   width:50px;
   border-radius: 25px;
+  margin: 0px;
+  padding: 0px;
+}
+
+#main-canvas {
+  background-image: url("../lib/waldo.jpg");
 }
