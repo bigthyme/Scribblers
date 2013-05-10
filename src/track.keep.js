@@ -26,7 +26,7 @@ var draw = function() {
   }
 
   var pi, index, r, g, b, hsl, ha, s, l;
-  for(pi = 0; pi < pixCount; pi+=2){
+  for(pi = 0; pi < pixCount; pi++){
     index = pi*4;
     r = pixels.data[index];
     g = pixels.data[index+1];
@@ -48,7 +48,6 @@ var draw = function() {
     } else {
         map[left][top] = 0;
     }
-
   }
 
   //sum the score for each pixel
@@ -56,7 +55,7 @@ var draw = function() {
   for(j = 10; j < h-10; j++){
     for(i = 10; i < w-10; i++){
       scores[i][j] = map[i][j];
-      for(ci = 10; ci > 0; ci-=2) {
+      for(ci = 10; ci > 0; ci--) {
         scores[i][j] += map[i-ci][j] + map[i+ci][j] +
           map[i][j-ci] + map[i][j+ci];
       }
@@ -79,7 +78,7 @@ var draw = function() {
     }
   }
   // hl.style.left = '' + (v.width - targetx) + 'px'; ////////////////////////////////
-  hl.style.left = '' + targetx + 'px';  ////////////////////////////////
+  h1.style.left = '' + targetx + 'px';  ////////////////////////////////
   hl.style.top = '' + (($('.button-toolbar').height() * 2) + targety) + 'px';
   x.putImageData(pixels, 0, 0);
 
