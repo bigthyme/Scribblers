@@ -25,7 +25,7 @@ Developers
 [philipjrosen]
 Current Version
 -
-0.1.4: Added 5px radius to the neighborhood operation for track.js
+0.1.5: Added erase and draw method 
 
 Inspiration
 -
