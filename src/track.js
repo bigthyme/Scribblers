@@ -2,17 +2,18 @@
 
 /*global mainVideoWidth:false, mainVideoHeight:false, rgb2hsl: false, x:false,
          v:false, hl:false */
+
 var w = mainVideoWidth, h = mainVideoHeight;
 
 var pixels, pixCount;
 
 var draw = function() {
 
-  x.save();                       ////////////////////////////////
-  x.translate(mainVideoWidth, 0); ////////////////////////////////
-  x.scale(-1,1);                  ////////////////////////////////
+  x.save();
+  x.translate(mainVideoWidth, 0);
+  x.scale(-1,1);
   x.drawImage(v, 0, 0, w, h);
-  x.restore();                    ////////////////////////////////
+  x.restore();
 
   pixels = x.getImageData(0, 0, w, h);
   pixCount = pixels.data.length / 4;
@@ -51,7 +52,7 @@ var draw = function() {
 
   }
 
-  //sum the score for each pixel
+  // Sum the score for each pixel
   var j, i, ci;
   for(j = 10; j < h-10; j++){
     for(i = 10; i < w-10; i++){
@@ -61,10 +62,10 @@ var draw = function() {
           map[i][j-ci] + map[i][j+ci];
       }
     }
-  };
+  }
 
-  //Find the pixel closest to the top left that has the highest score. The
-  //  pixel with the highest score is where the highlight box will appear.
+  // Find the pixel closest to the top left that has the highest score. The
+  // pixel with the highest score is where the highlight box will appear.
   var targetx = 0,
       targety = 0,
       targetscore = 0,
@@ -78,12 +79,10 @@ var draw = function() {
       }
     }
   }
-  // hl.style.left = '' + (v.width - targetx) + 'px'; ////////////////////////////////
-  hl.style.left = '' + targetx + 'px';  ////////////////////////////////
+
+  hl.style.left = '' + targetx + 'px';
   hl.style.top = '' + (($('.button-toolbar').height() * 2) + targety) + 'px';
   x.putImageData(pixels, 0, 0);
 
-  setTimeout(draw,50);          ////////////////////////////////
-  //requestAnimationFrame(draw);     ////////////////////////////////
+  setTimeout(draw,50);
 };
-
