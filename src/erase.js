@@ -69,9 +69,8 @@ var erase = function() {
   for(j = 10; j < h-10; j++){
     for(i = 10; i < w-10; i++){
       scores[i][j] = map[i][j];
-      for(ci = 10; ci > 0; ci-=2) {
-        scores[i][j] += map[i-ci][j] + map[i+ci][j] +
-          map[i][j-ci] + map[i][j+ci];
+      for(ci = 10; ci > 0; ci--) {
+        scores[i][j] += map[i-ci][j] + map[i+ci][j] + map[i][j-ci] + map[i][j+ci];
       }
     }
   }
@@ -81,8 +80,9 @@ var erase = function() {
   var targetx = 0;
   var targety = 0;
   var targetscore = 0;
-  for(var i = 10; i < w-10; i++){
-    for(var j = 10; j < h-10; j++){
+  var i, j;
+  for(i = 10; i < w-10; i++){
+    for(j = 10; j < h-10; j++){
       if(scores[i][j] > targetscore){
         targetx = i,
         targety = j;
@@ -91,7 +91,7 @@ var erase = function() {
     }
   }
 
-  hl.style.left = '' + v.width - targetx + 'px';
+  hl.style.left = '' + targetx + 'px';
   hl.style.top = '' + (($('.button-toolbar').height() * 2) + targety) + 'px';
   x.putImageData(pixels, 0, 0);
 

@@ -67,7 +67,7 @@ var paint = function() {
   for(j = 10; j < h-10; j++){
     for(i = 10; i < w-10; i++){
       scores[i][j] = map[i][j];
-      for(ci = 10; ci > 0; ci-=2) {
+      for(ci = 10; ci > 0; ci--) {
         scores[i][j] += map[i-ci][j] + map[i+ci][j] +
           map[i][j-ci] + map[i][j+ci];
       }
@@ -89,7 +89,7 @@ var paint = function() {
       }
     }
   }
-  hl.style.left = '' + v.width - targetx + 'px';
+  hl.style.left = '' + targetx + 'px';
   hl.style.top = '' + (($('.button-toolbar').height() * 2) + targety) + 'px';
   x.putImageData(pixels, 0, 0);
 
