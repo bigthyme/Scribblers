@@ -135,13 +135,10 @@ var paint = function() {
       
   }
 
-  // Took out scoring function
   scoreSum(scores, map);
   
-  //Took out the high score finder
   findClosestHighScore(scores);
   
-  //  pixel with the highest score is where the highlight box will appear.
   highlightPlacer();
   
 
