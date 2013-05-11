@@ -10,7 +10,7 @@ var createPaintArray = function() {
   for (ri = 0; ri < mainVideoHeight; ri++) {
     rowArr = [];
     for (ci = 0; ci < mainVideoWidth; ci++) {
-      rowArr.push(255);
+      rowArr.push(false);
     }
     arr.push(rowArr);
   }
