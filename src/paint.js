@@ -90,35 +90,35 @@ var paint = function() {
       
       switch(colorChoice) {
 
-        case "red":
+        case 'red':
         paintArray[ri][ci]=[255,0,0,255];
         map[left][top] = 1; break;
         
-        case "orange":
+        case 'orange':
         paintArray[ri][ci]=[255,165,0,255];
         map[left][top] = 1; break;
         
-        case "yellow":
+        case 'yellow':
         paintArray[ri][ci]=[255,255,0,255];
         map[left][top] = 1; break;
    
-        case "green":
+        case 'green':
         paintArray[ri][ci]=[0,255,0,255];
         map[left][top] = 1; break; 
 
-        case "blue":
+        case 'blue':
         paintArray[ri][ci]=[0,0,255,255];
         map[left][top] = 1; break; 
 
-        case "purple":
+        case 'purple':
         paintArray[ri][ci]=[128,0,128,255];
         map[left][top] = 1; break;   
 
-        case "black":
+        case 'black':
         paintArray[ri][ci]=[0,0,0,255];
         map[left][top] = 1; break;  
 
-        case "white":
+        case 'white':
         paintArray[ri][ci]=[255,255,255,255];
         map[left][top] = 1; break;      
       }

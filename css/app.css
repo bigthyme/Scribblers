@@ -38,15 +38,15 @@ body {
 
 #main-canvas {
   visibility: hidden;
-  /*transform: scaleX(-1);
+  transform: scaleX(-1);
   -webkit-transform: scaleX(-1);
-  -moz-transform:scaleX(-1);*/
+  -moz-transform:scaleX(-1);
 }
 
 #main-video {
-  /*transform: scaleX(-1);
+  transform: scaleX(-1);
   -webkit-transform: scaleX(-1);
-  -moz-transform:scaleX(-1);*/
+  -moz-transform:scaleX(-1);
 }
 
 .red {
