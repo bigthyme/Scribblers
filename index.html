@@ -34,7 +34,7 @@
 <!--                 <li><a href="#batting_cages">Batting Cages</a></li>
                 <li><a href="#team">Team</a></li> -->
                 <li><a href="#About"> a Curiously Fun Things production</a></li>
-                </li> 
+                </li>
               </ul>
             </div><!--/.nav-collapse -->
           </div><!-- /.navbar-inner -->
@@ -43,7 +43,9 @@
     </div><!-- /.navbar-wrapper -->
 
     <div class="container media">
-
+      <div class="row">
+        <textarea id="textarea" class="pull-right span3" rows="2"></textarea>
+      </div>
       <div class="row">
         <div class="span4">
           <span id="startbutton"class="startbutton"><p> Start </p> </span>
@@ -52,6 +54,8 @@
           <span id="trackbutton" class="trackbutton"> <p> Track </p> </span>
           <span id="erasebutton" class="erasebutton"> <p> Erase </p> </span>
           <span id="paintbutton" class="paintbutton"> <p> Paint </p> </span>
+          <span id="speechbutton" class="speechbutton"> <p> Talk </p> </span>
+        </div>
         </div>
         <div class="span8">
           <video id="main-video" class="main-video" autoplay=""></video>
@@ -79,5 +83,6 @@
   <script src="src/erase.js"></script>
   <script src="src/paint.js"></script>
   <script src="src/rgb2hsl.js"></script>
+  <script src="src/speech.js"></script>
 </html>
 

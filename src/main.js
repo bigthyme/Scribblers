@@ -70,6 +70,10 @@ if(hasGetUserMedia()){
     paint();
   });
 
+  $('#speechbutton').on('click', function(){
+    console.log('recording...');
+    toggleStartStop();
+  });
 } else {
   //no modern browser detected...fallback?
   alert('please use a better browser');
