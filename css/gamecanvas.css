@@ -35,12 +35,15 @@
 
  /* CANVAS */
 
- /*
+
  .media .span8 .main-canvas {
     padding: 1em;
-    border: 1px solid red;
+    margin-top: 1.5em;
+    background: whitesmoke;
+    margin: 4em;
+    box-shadow: -1px 3px 15px;
     z-index: 500;
-  }*/
+  }
 
   .media {
     margin-top: 8em;

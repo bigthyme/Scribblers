@@ -35,12 +35,12 @@
     </div><!-- /.navbar-wrapper -->
 
     <div class="container media">
-
       <div class="row">
         <div class="span4">
           <p class="game-brand"> Game Name </p> <!-- THIS FONT WILL CHANGE FOR EACH GAME -->
         </div>
         <div class="span8">
+          <a href='#' id='example' rel='popover' data-placement='left' data-content='Its so simple to create a tooltop for my website!' data-original-title='Twitter Bootstrap Popover'>HEY</a>
           <p class="game-info"> This game is great and this is how you play </p>
         </div>
       </div> <!-- ROW -->
@@ -52,7 +52,7 @@
            <span id="trackbutton" class="button blue-purple right"> <p> Track </p> </span>
         </div>
         <div class="span8">
-          <video id="main-video" class="main-video" autoplay=""></video>
+          <video id="main-video" class="main-video"   autoplay=""> </video>
           <canvas id="main-canvas" class="main-canvas"></canvas>
           <div id="highlight"></div>
         </div>
@@ -63,11 +63,9 @@
       </div> <!-- ROW -->
 
       <!-- HTML canvas elements -->
-
       <footer class="footer">
         <p class="pull-right"> <span class="corp"> &copy; 2013 Curiously Fun Things, Inc. </span> <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
       </footer>
-
     </div><!-- /.body_container -->
   </body>
   <!-- new scripts -->
@@ -78,6 +76,15 @@
   <script src="src/erase.js"></script>
   <script src="src/paint.js"></script>
   <script src="src/rgb2hsl.js"></script>
-  <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+  <script>
+    $(function(){
+      $('canvas').hide();
+      $('#example').popover('show');
+      $('#trackbutton').on('click', function(){
+        $('canvas').show();
+      })
+    });
+  </script>
 </html>
 
