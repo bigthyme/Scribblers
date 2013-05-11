@@ -4,38 +4,29 @@
 <head>
   <meta charset="UTF-8">
   <title>Finger Canvas</title>
-  
+
   <!--Fonts-->
   <link href='http://fonts.googleapis.com/css?family=Reenie+Beanie' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Electrolize' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Cherry+Cream+Soda' rel='stylesheet' type='text/css'>
-<!--   <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet"> -->
 
   <!-- Add stylesheets here -->
   <link href="css/bootstrap.css" rel="stylesheet">
   <link href="css/bootstrap-responsive.css" rel="stylesheet">
-  <link href="css/appcanvas.css" rel="stylesheet">
-  
+  <link href="css/gamecanvas.css" rel="stylesheet">
+
   <!-- Add libs here -->
   <script src="lib/jquery.v2.min.js"></script>
 </head>
-
   <body>
 
     <div class="navbar-wrapper">
       <div class="container">
         <div class="navbar navbar-inverse">
           <div class="navbar-inner">
-            <!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
-            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
             <a class="brand" href="#" style="font-f">Platform Brand</a>
             <div class="nav-collapse collapse">
               <ul class="nav">
-<!--           <li><a href="">something somthing</a></li> -->
               </ul>
             </div><!--/.nav-collapse -->
           </div><!-- /.navbar-inner -->
@@ -47,7 +38,7 @@
 
       <div class="row">
         <div class="span4">
-          <p class="game-brand"> Game Name </p> <!-- THIS FONT WILL CHANGE FOR EACH GAME --> 
+          <p class="game-brand"> Game Name </p> <!-- THIS FONT WILL CHANGE FOR EACH GAME -->
         </div>
         <div class="span8">
           <p class="game-info"> This game is great and this is how you play </p>
@@ -55,10 +46,10 @@
       </div> <!-- ROW -->
       <div class="row">
         <div class="span2">
-           <span id="paintbutton" class="paintbutton"> <p> Paint </p> </span>
-           <span id="erasebutton" class="erasebutton"> <p> Erase </p> </span>
-           <span id="snapshot" class="snap_shot"><p> Snap Shot </p> </span>
-           <span id="trackbutton" class="trackbutton"> <p> Track </p> </span>
+           <span id="paintbutton" class="button right purple top"> <p> Paint </p> </span>
+           <span id="erasebutton" class="button right yellow"> <p> Erase </p> </span>
+           <span id="snapshot" class="button right yellow-brown"><p> Snap Shot </p> </span>
+           <span id="trackbutton" class="button blue-purple right"> <p> Track </p> </span>
         </div>
         <div class="span8">
           <video id="main-video" class="main-video" autoplay=""></video>
@@ -66,14 +57,12 @@
           <div id="highlight"></div>
         </div>
         <div class="span2">
-          <span id="startbutton" class="startbutton"><p> Start </p> </span>
-          <span id="stopbutton" class="stopbutton"> <p> Stop </p> </span>
+          <span id="startbutton" class="button green top-margin left"><p> Start </p> </span>
+          <span id="stopbutton" class="button red left"> <p> Stop </p> </span>
         </div>
       </div> <!-- ROW -->
 
       <!-- HTML canvas elements -->
-
-      <hr class="featurette-divider">
 
       <footer class="footer">
         <p class="pull-right"> <span class="corp"> &copy; 2013 Curiously Fun Things, Inc. </span> <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
