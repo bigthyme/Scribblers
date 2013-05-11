@@ -37,19 +37,16 @@ body {
 }
 
 #main-canvas {
-  background-image: url("../lib/waldo.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
   visibility: hidden;
-  transform: scaleX(-1);
+  /*transform: scaleX(-1);
   -webkit-transform: scaleX(-1);
-  -moz-transform:scaleX(-1);
+  -moz-transform:scaleX(-1);*/
 }
 
 #main-video {
-  transform: scaleX(-1);
+  /*transform: scaleX(-1);
   -webkit-transform: scaleX(-1);
-  -moz-transform:scaleX(-1);
+  -moz-transform:scaleX(-1);*/
 }
 
 .red {

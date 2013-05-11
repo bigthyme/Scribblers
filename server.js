@@ -1,3 +1,5 @@
+var profiler = require('profiler');
+profiler.resume();
 var connect = require('connect');
 
 var PORT = process.env.PORT || 8080
@@ -6,4 +8,5 @@ connect.createServer(
 ).listen(PORT);
 
 console.log('Server is starting on ' + PORT);
+profiler.pause();
 
