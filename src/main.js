@@ -118,6 +118,7 @@ if(hasGetUserMedia()){
     if(paintArray === undefined) {
       alert('Nothing to erase!');
     } else {
+      erasing = true;
       eraser();
     };
   })
