@@ -54,7 +54,7 @@ var eraser = function() {
   highlightPlacer(x, pixels);
 
   //put conditional to below: when does eraser mode stop?
-  if(erasing && !painting) {
+  if(erasing && (!painting)) {
     setTimeout(eraser,50);
   }
 };

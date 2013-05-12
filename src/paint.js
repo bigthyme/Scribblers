@@ -76,7 +76,7 @@ var paint = function() {
   //highlightPlacer(x, pixels);
 
   // Keep re-rendering unless the current mode is eraser mode
-  //if(!erasing && painting) {
+  if(!erasing && painting) {
     setTimeout(paint,50);
-  //}
+  }
 };

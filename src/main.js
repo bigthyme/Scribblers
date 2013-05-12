@@ -14,7 +14,7 @@ var v = document.querySelector('#main-video'),
     h = 480,
     w = 640,
 
-    //erasing,
+    erasing,
     painting,
     colorChoice,
     paintArray;
@@ -107,19 +107,19 @@ if(hasGetUserMedia()){
   });
 
   // REVEAL
-  // $('#erasebutton').on('click', function(){
-  //   $('#main-video').css('display', 'none');
-  //   $('#main-canvas').css('visibility', 'visible');
-  //   maskArray = createMaskArray();
-  //   erase();
-  // });
+  $('#erasebutton').on('click', function(){
+    $('#main-video').css('display', 'none');
+    $('#main-canvas').css('visibility', 'visible');
+    maskArray = createMaskArray();
+    erase();
+  });
 
   $('#eraserbutton').on('click', function(){
     if(paintArray === undefined) {
       alert('Nothing to erase!');
     } else {
-      erasing = true;
       painting = false;
+      erasing = true;
       eraser();
     };
   })
@@ -132,7 +132,7 @@ if(hasGetUserMedia()){
       paintArray = createPaintArray();
     };
     painting = true;
-    //erasing = false;
+    erasing = false;
     paint();
   });
 
