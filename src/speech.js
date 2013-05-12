@@ -1,6 +1,4 @@
 // Implementing Speech to Text
-console.log('activate speech to text power...');
-
 if (!('webkitSpeechRecognition' in window)) {
   alert('Oh no your browser is too old for this!');
 } else {
@@ -36,7 +34,7 @@ if (!('webkitSpeechRecognition' in window)) {
 
   var reset = function() {
     recognizing = false;
-    $('#speechbutton p').text('Speak').parent().removeClass('red').addClass('blue-purple');
+    $('#speechbutton p').text('Speak').parent().removeClass('orange').addClass('blue-purple');
   }
 
   var toggleStartStop = function() {
@@ -48,7 +46,7 @@ if (!('webkitSpeechRecognition' in window)) {
       recognition.start();
       recognizing = true;
       console.log('in the else', recognition);
-      $('#speechbutton p').text('Stop').parent().removeClass('blue-purple').addClass('red');
+      $('#speechbutton p').text('Done').parent().removeClass('blue-purple').addClass('orange');
     }
   }
 

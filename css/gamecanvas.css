@@ -36,7 +36,36 @@
     top: 1em;
     left: 1.8em;
     box-shadow: -1px 0px 8px;
-    background: -webkit-gradient(linear, left top, left bottom, from(rgba(214, 157, 130, 0.8)),to(rgba(139, 98, 79, 0.8)));
+   /* background: -webkit-gradient(linear, left top, left bottom, from(rgba(214, 157, 130, 0.8)),to(rgba(139, 98, 79, 0.8)));*/
+  }
+
+  .media .span8 .color-palette {
+    height: inherit;
+    margin-left: 0px;
+  }
+
+  .media .span8 .color-palette li{
+    float: left;
+    list-style-type: none;
+    width: 6.32em;
+    border-right: 1px solid black;
+    padding: 0.786em;
+    color: white;
+    text-indent: 1.3em;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .media .span8 .color-palette .red {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 0, 0, 0.8)),to(rgba(172, 0, 0, 0.8)));
+  }
+
+  .media .span8 .color-palette .orange {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 112, 0, 0.8)),to(rgba(172, 48, 0, 0.8)));
+  }
+
+  .media .span8 .color-palette .yellow {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 235, 0, 0.8)),to(rgba(172, 117, 0, 0.8)));
   }
 
   .media .span8 .main-video {
@@ -104,6 +133,10 @@
 
   .media .span2 .red p {
     background-color: rgba(255, 0, 0, 0.4);
+  }
+
+  .media .span2 .orange p {
+    background-color: rgba(255, 71, 0, 0.4);
   }
 
   .media .span2 .green p {
