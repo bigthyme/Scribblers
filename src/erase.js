@@ -9,7 +9,6 @@ var createMaskArray = function() {
 
 var erase = function() {
 
-  // x.drawImage(v, 0, 0, w, h);
   x.save();
   x.translate(w, 0);
   x.scale(-1,1);

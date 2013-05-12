@@ -14,7 +14,8 @@ var v = document.querySelector('#main-video'),
     h = 480,
     w = 640,
 
-    erasing = false,
+    erasing,
+    painting,
     colorChoice,
     paintArray;
 
@@ -105,9 +106,8 @@ if(hasGetUserMedia()){
     draw();
   });
 
+  // REVEAL
   $('#erasebutton').on('click', function(){
-    erasing = true;
-    //look at track.js for functionality
     $('#main-video').css('display', 'none');
     $('#main-canvas').css('visibility', 'visible');
     maskArray = createMaskArray();
@@ -118,6 +118,8 @@ if(hasGetUserMedia()){
     if(paintArray === undefined) {
       alert('Nothing to erase!');
     } else {
+      painting = false;
+      erasing = true;
       eraser();
     };
   })
@@ -151,6 +153,8 @@ if(hasGetUserMedia()){
     if(paintArray === undefined) {
       paintArray = createPaintArray();
     };
+    painting = true;
+    erasing = false;
     paint();
   });
 

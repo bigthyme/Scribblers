@@ -48,7 +48,6 @@ var draw = function() {
   }
   // Sum the score for each pixel
   var neighborsCount = 10;
-  // chad: plz change 10 -> neighborsCount
 
   scoreSum(scores, map);
   findClosestHighScore(scores);

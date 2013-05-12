@@ -4,7 +4,6 @@
 
 var eraser = function() {
 
-  // x.drawImage(v, 0, 0, w, h);
   x.save();
   x.translate(w, 0);
   x.scale(-1,1);
@@ -55,7 +54,7 @@ var eraser = function() {
   highlightPlacer(x, pixels);
 
   //put conditional to below: when does eraser mode stop?
-  //while() {
+  if(erasing && (!painting)) {
     setTimeout(eraser,50);
-  //}
+  }
 };
