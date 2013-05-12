@@ -2,7 +2,7 @@
 console.log('activate speech to text power...');
 
 if (!('webkitSpeechRecognition' in window)) {
-  alert('Please Upgrade your browser!');
+  alert('Oh no your browser is too old for this!');
 } else {
   var recognizing;
 

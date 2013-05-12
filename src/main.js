@@ -135,6 +135,7 @@ if(hasGetUserMedia()){
   // });
 
   $('li').on('click',function(){
+    $('canvas').show();
     colorChoice = $(this).attr('class');
     $('#main-video').css('display', 'none');
     $('#main-canvas').css('visibility', 'visible');

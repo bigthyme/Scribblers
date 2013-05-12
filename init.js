@@ -39,8 +39,4 @@ $(function(){
       });
     }
   });
-
-  $('#trackbutton').on('click', function(){
-    $('canvas').show();
-  });
 });
