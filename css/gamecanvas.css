@@ -15,15 +15,28 @@
   }
 
   .media .span8 .game-info {
-    font-size: 1.5em;
+    font-size: 1.4em;
     height: 2em;
     padding-top: 1em;
-    background-color: rgba(160, 160, 160, 0.6);
+    font-weight: 300;
+    background-color: rgba(202, 202, 202, 0.6);;
     text-shadow: 2px 1px 1px rgb(145, 145, 145);
     border-radius: 0.4em;
     padding-left: 1.5em;
     font-family: 'Cherry Cream Soda', cursive;
     color: white;
+  }
+
+  .media .span8 #textarea {
+    border: 1px solid #6c615c;
+    height: 3em;
+    margin-bottom: -3em;
+    border-top: 0.5em;
+    position: relative;
+    top: 1em;
+    left: 1.8em;
+    box-shadow: -1px 0px 8px;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(214, 157, 130, 0.8)),to(rgba(139, 98, 79, 0.8)));
   }
 
   .media .span8 .main-video {
@@ -78,7 +91,7 @@
   }
 
   .media .span2 .top-margin p {
-    margin-top: 2em !important;
+    margin-top: 2.1em !important;
   }
 
   .media .span2 .move-left p {

@@ -25,7 +25,8 @@ if (!('webkitSpeechRecognition' in window)) {
     console.log('testing event ', event.results);
      for (var i = event.resultIndex; i < event.results.length; ++i) {
       if (event.results[i].isFinal) {
-        textarea.innerHTML += ' ' + event.results[i][0].transcript;
+        textarea.innerHTML = ' ' + event.results[i][0].transcript
+        // textarea.innerHTML += ' ' + event.results[i][0].transcript;
         checkOutput();
       } else {
         alert('what happened?');
