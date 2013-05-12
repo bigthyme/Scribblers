@@ -9,10 +9,11 @@ var v = document.querySelector('#main-video'),
     x = c.getContext('2d'),
     hl = document.querySelector('#highlight'),
     localStream,
-    // mainVideoWidth = 640,
-    // mainVideoHeight = 480,
-    w = 640, 
+
+    //dimensions
     h = 480,
+    w = 640,
+
     erasing = false,
     colorChoice,
     paintArray;
@@ -147,6 +148,7 @@ if(hasGetUserMedia()){
     console.log('recording...');
     toggleStartStop();
   });
+<<<<<<< HEAD
 
   //Stop recording (for dev purposes)
   $('#stopbutton').on('click', function(){
@@ -154,6 +156,8 @@ if(hasGetUserMedia()){
     localStream.stop();
   });
  
+=======
+>>>>>>> 16faf9155fab470e2bdd4f72b20ad5cb70068602
 } else {
   //no modern browser detected...fallback?
   alert('please use a better browser');

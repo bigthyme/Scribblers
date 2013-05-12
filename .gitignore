@@ -1,3 +1,4 @@
+.jshintrc
 build
 .DS_Store
 lib-cov

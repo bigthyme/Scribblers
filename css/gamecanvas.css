@@ -1,0 +1,223 @@
+  body {
+    background-color: #E0F9FF !important;
+    color: #404040;
+  }
+
+  .media .span4 .game-brand {
+    text-align: center;
+    font-size: 3em;
+    height: 1em;
+    padding-top: 0.5em;
+    font-family: 'Electrolize', sans-serif;
+    border-radius: 0.2em;
+    color: #727F82;
+    text-shadow: 3px 3px #ffffff;
+  }
+
+  .media .span8 .game-info {
+    font-size: 1.35em;
+    height: 2em;
+    padding-top: 1em;
+    background-color: rgba(128, 128, 128, 0.6);
+    border-radius: 0.4em;
+    padding-left: 15px;
+    color: white;
+  }
+
+  .media .span8 .main-video {
+    padding: 1em;
+    border: 1px solid white;
+    margin: 4em;
+    margin-top: 1.5em;
+    box-shadow: -1px 3px 15px;
+    background: whitesmoke;
+  }
+
+ /* CANVAS */
+
+
+ .media .span8 .main-canvas {
+    padding: 1em;
+    margin-top: 1.5em;
+    background: whitesmoke;
+    margin: 4em;
+    box-shadow: -1px 3px 15px;
+    z-index: 500;
+  }
+
+  .media {
+    margin-top: 8em;
+  }
+
+  .media .span2 .button p {
+    color: rgba(0, 0, 0, 0.6);
+    font-weight: bold;
+    border-radius: 0.4em;
+    height: 1.5em;
+    text-align: center;
+    border: 0.1em solid rgba(255, 255, 255, 0.8);
+    font-size: 2em;
+    box-shadow: -3px 3px 35px;
+    font-family: 'Cherry Cream Soda', cursive;
+    padding-top: 0.9em;
+    cursor: pointer;
+  }
+
+  .media .span2 .button p:hover {
+    /*border: 3px solid rgba(0, 0, 0, 0.4);*/
+    color: white;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 1px black;
+  }
+
+  .media .span2 .button p:active {
+    border: 3px solid rgba(0, 0, 0, 0.4);
+    color: white;
+    text-shadow: 1px 1px 1px black;
+  }
+
+  .media .span2 .left p {
+    margin: 0px 35px 30px 5px;
+  }
+
+  .media .span2 .right p {
+    margin: 0px 5px 30px 35px;
+  }
+
+  .media .span2 .red p {
+    background-color: rgba(255, 0, 0, 0.4);
+  }
+
+  .media .span2 .green p {
+    background-color: rgba(0, 128, 0, 0.4);
+  }
+
+  .media .span2 .yellow p {
+    background-color: rgba(255, 255, 0, 0.4);
+  }
+
+  .media .span2 .blue-purple p {
+    background-color: rgba(0, 0, 255, 0.4);
+  }
+
+  .media .span2 .yellow-brown p {
+    background-color: rgba(255, 165, 0, 0.4);
+  }
+
+  .media .span2 .top-margin p {
+    margin-top: 0.6em;
+  }
+
+  .media .span2 .purple p {
+    background-color: rgba(128, 0, 128, 0.4);
+  }
+
+  .footer {
+    border: 2px solid rgba(0, 0, 0, 0.4);
+    margin-top: -0.5em;
+    margin-right: 1em;
+    margin-left: 1em;
+  }
+
+  .footer p {
+    margin-top: 1em;
+  }
+
+  .footer .corp {
+    font-family: 'Cherry Cream Soda', cursive;
+  }
+
+  /* Overwrite Bootstrap */
+
+  @media (max-width: 979px) {
+
+    .container.navbar-wrapper {
+      margin-bottom: 0;
+      width: auto;
+    }
+    .navbar-inner {
+      border-radius: 0;
+      margin: -20px 0;
+    }
+
+    .featurette {
+      height: auto;
+      padding: 0;
+    }
+    .featurette-image.pull-left,
+    .featurette-image.pull-right {
+      display: block;
+      float: none;
+      max-width: 35%;
+      margin: 0 auto 20px;
+    }
+  }
+
+
+  @media (max-width: 767px) {
+
+    .navbar-inner {
+      margin: -20px;
+    }
+
+    .marketing .span4 + .span4 {
+      margin-top: 40px;
+    }
+
+    .featurette-heading {
+      font-size: 30px;
+    }
+    .featurette .lead {
+      font-size: 18px;
+      line-height: 1.5;
+    }
+
+  }
+
+  /* Special class on .container surrounding .navbar, used for positioning it into place. */
+  .navbar-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    margin-top: 20px;
+    margin-bottom: -90px; /* Negative margin to pull up carousel. 90px is roughly margins and height of navbar. */
+  }
+  .navbar-wrapper .navbar {
+    border-radius: 1em;
+  }
+
+  /* Remove border and change up box shadow for more contrast */
+  .navbar .navbar-inner {
+    border-radius: 1em;
+    background-color: #F0F0FF;
+    border: 0.15em solid white;
+    -webkit-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+       -moz-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+            box-shadow: 0 2px 10px rgba(0,0,0,.25);
+  }
+
+  /* Downsize the brand/project name a bit */
+  .navbar .brand {
+    padding: 14px 20px 16px; /* Increase vertical padding to match navbar links */
+    font-size: 3em;
+    font-weight: bold;
+    text-shadow: 0 -1px 0 rgba(0,0,0,.5);
+    font-family: 'Reenie Beanie', cursive;
+/*      font-family: 'Grand Hotel';*/
+    padding-top: 20px
+  }
+
+  /* Navbar links: increase padding for taller navbar */
+  .navbar .nav > li > a {
+    padding: 20px 20px;
+    font-family: 'Metrophobic', sans-serif;
+    font-size: 1.25em;
+  }
+
+  /* Offset the responsive button for proper vertical alignment */
+  .navbar .btn-navbar {
+    margin-top: 10px;
+  }
+
