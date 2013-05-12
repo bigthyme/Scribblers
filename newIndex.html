@@ -69,6 +69,7 @@
     </div><!-- /.body_container -->
   </body>
   <!-- new scripts -->
+  <script src="init.js"></script>
   <script src="src/main.js"></script>
   <script src="src/snapshot.js"></script>
   <script src="src/record.js"></script>
@@ -79,54 +80,5 @@
   <script src="src/rgb2hsl.js"></script>
   <script src="src/speech.js"></script>
   <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
-  <script>
-  //Here for dev purposes, will move to another file
-    $(function(){
-      $('canvas').hide();
-      //TODO: loop through and give titles
-      $('.button').on('mouseenter', function(e){
-        var self = $(this),
-            text = self.text().replace(/\s+/g, ''),
-            dynamicContent = '';
-
-        var uniqueText = {
-          'Paint' : 'Painting paints stuff',
-          'Erase' : 'Erase erases stuff',
-          'SnapShot': 'Do you want to snapshot?',
-          'Track': 'Do you want to track?',
-          'Start': 'Do you want to start?',
-          'Stop': 'Do you want to stop?'
-        }
-
-        if(self.hasClass('move-left')){
-          if(text in uniqueText){
-            dynamicContent = uniqueText[text];
-          }
-          self.popover({
-            trigger: 'hover',
-            title: text,
-            content: dynamicContent,
-          });
-        } else if (self.hasClass('move-right')){
-          if(text in uniqueText){
-            dynamicContent = uniqueText[text];
-          }
-          self.popover({
-            trigger: 'hover',
-            placement: 'left',
-            title: text,
-            content: dynamicContent,
-          });
-        }
-      });
-
-      $('#trackbutton').on('click', function(){
-        // if($('#example').popover('show')){
-        //   $('#example').popover('hide');
-        // }
-        $('canvas').show();
-      });
-    });
-  </script>
 </html>
 
