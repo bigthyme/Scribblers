@@ -7,7 +7,7 @@ var pixels, pixCount;
 var draw = function() {
 
   x.save();
-  x.translate(mainVideoWidth, 0);
+  x.translate(w, 0);
   x.scale(-1,1);
   x.drawImage(v, 0, 0, w, h);
   x.restore();
@@ -17,12 +17,6 @@ var draw = function() {
 
   var emptyArray = pixelDataArray(0);
   var map = emptyArray, scores = emptyArray;
-  // var map = new Array(w);
-  // var scores = new Array(w);
-  // for(var i = 0; i < w; i++){
-  //   map[i] = new Array(h);
-  //   scores[i] = new Array(h);
-  // }
 
   var index, r, g, b, hsl, ha, s, l;
 
@@ -56,32 +50,9 @@ var draw = function() {
   var neighborsCount = 10;
   // chad: plz change 10 -> neighborsCount
 
-  for(var ri = neighborsCount; ri < (h - neighborsCount); ri++){
-    for(var ci = neighborsCount; ci < (w - neighborsCount); ci++){
-      scores[ri][ci] = map[ri][ci];
-      for(var pi = neighborsCount - 1; pi > 0; pi--) {      
-        // scores[ri][ci] += map[ri - pi][ci] + map[ri + pi][ci];
-        // scores[ri][ci] += map[ri][ci - pi] + map[ri][ci + pi];
-      }
-    }
-  }
-
-  //Find the pixel closest to the top left that has the highest score. The
-  //  pixel with the highest score is where the highlight box will appear.
-  var targetx = 0, targety = 0, targetscore = 0;
-  for(var ri = 10; ri < (h - 10); ri++){
-    for(var ci = 10; ci < (w - 10); ci++){
-      if(scores[ri][ci] > targetscore){
-        targety = ri;
-        targetx = ci;
-        targetscore = scores[ri][ci];
-      }
-    }
-  }
-
-  hl.style.left = '' + (v.width - targetx) + 'px';
-  hl.style.top = '' + (($('.button-toolbar').height() * 2) + targety) + 'px';
-  x.putImageData(pixels, 0, 0);
+  scoreSum(scores, map);
+  findClosestHighScore(scores);
+  highlightPlacer(x, pixels);
 
   setTimeout(draw, 50);
 };

@@ -3,25 +3,19 @@
 /*global mainVideoWidth:false, mainVideoHeight:false */
 
 var eraser = function() {
- // var w = mainVideoWidth,
- //     h = mainVideoHeight;
 
+  // x.drawImage(v, 0, 0, w, h);
+  x.save();
+  x.translate(w, 0);
+  x.scale(-1,1);
   x.drawImage(v, 0, 0, w, h);
-
+  x.restore();
+  
   var pixels = x.getImageData(0, 0, w, h),
       pixCount = pixels.data.length / 4;
 
   var emptyArray = pixelDataArray(undefined);
   var map = emptyArray, scores = emptyArray;
-  // var map = new Array(w);
-  // var scores = new Array(w);
-  // var i;
-  // for(i = 0; i < w; i++){
-  //   map[i] = new Array(h);
-  //   scores[i] = new Array(h);
-  // }
-
-  var ri, ci, pi;
 
   for(var pi = 0; pi < pixCount; pi++){
     index = pi*4;
@@ -32,9 +26,6 @@ var eraser = function() {
     ha = hsl[0];
     s = hsl[1];
     l = hsl[2];
-    // ri = Math.floor(i / w);
-    // ci = i % w;
-    // change: left -> ci, top -> ri
     
     var ri = Math.floor(pi/w),
         ci = pi % w;
@@ -59,36 +50,9 @@ var eraser = function() {
     }
   }
 
-  // Sum the score for each pixel
-  var j, i, ci, neighborsCount = 10;
-  // chad: plz change 10 -> neighborsCount
-  for(j = 10; j < h-10; j++){
-    for(i = 10; i < w-10; i++){
-      scores[i][j] = map[i][j];
-      for(ci = 10; ci > 0; ci--) {
-        scores[i][j] += map[i-ci][j] + map[i+ci][j] + map[i][j-ci] + map[i][j+ci];
-      }
-    }
-  }
-
-  //Find the pixel closest to the top left that has the highest score. The
-  //  pixel with the highest score is where the highlight box will appear.
-  var targetx = 0, targety = 0, targetscore = 0;
-  var i, j;
-  for(i = 10; i < w - 10; i++){
-    for(j = 10; j < h - 10; j++){
-      if(scores[i][j] > targetscore){
-        targetx = i;
-        targety = j;
-        targetscore = scores[i][j];
-      }
-    }
-  }
-  // Same fcn block repeated in paint.js, refactor???
-
-  hl.style.left = '' + targetx + 'px';
-  hl.style.top = '' + (($('.button-toolbar').height() * 2) + targety) + 'px';
-  x.putImageData(pixels, 0, 0);
+  scoreSum(scores, map);
+  findClosestHighScore(scores);
+  highlightPlacer(x, pixels);
 
   //put conditional to below: when does eraser mode stop?
   //while() {
