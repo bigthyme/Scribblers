@@ -37,7 +37,7 @@ var scoreSum = function(scores, map) {
     for(var ci = neighborsCount; ci < (w - neighborsCount); ci++){
       scores[ri][ci] = map[ri][ci];
       // scores[ci][ri] = map[ci][ri];
-      for(var pi = neighborsCount - 1; pi > 0; pi--) {      
+      for(var pi = neighborsCount - 1; pi > 0; pi--) {
         scores[ri][ci] += map[ri - pi][ci] + map[ri + pi][ci];
         scores[ri][ci] += map[ri][ci - pi] + map[ri][ci + pi];
         // scores[ci][ri] += map[ci - pi][ri] + map[ci + pi][ri];
@@ -68,7 +68,7 @@ var findClosestHighScore = function(scores) {
 var highlightPlacer = function(x, pixels) {
   hl.style.left = '' + targetx + 'px';
   hl.style.top = '' + (($('.button-toolbar').height() * 2) + targety) + 'px';
-  x.putImageData(pixels, 0, 0);  
+  x.putImageData(pixels, 0, 0);
 }
 
 //Set dimensions for elmements
@@ -148,16 +148,12 @@ if(hasGetUserMedia()){
     console.log('recording...');
     toggleStartStop();
   });
-<<<<<<< HEAD
 
   //Stop recording (for dev purposes)
   $('#stopbutton').on('click', function(){
     console.log('stopping..');
     localStream.stop();
   });
- 
-=======
->>>>>>> 16faf9155fab470e2bdd4f72b20ad5cb70068602
 } else {
   //no modern browser detected...fallback?
   alert('please use a better browser');

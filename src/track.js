@@ -2,10 +2,6 @@
 
 /*global mainVideoWidth:false, mainVideoHeight:false, rgb2hsl: false, x:false,
          v:false, hl:false */
-<<<<<<< HEAD
-=======
-
->>>>>>> 16faf9155fab470e2bdd4f72b20ad5cb70068602
 var pixels, pixCount;
 
 var draw = function() {
@@ -33,14 +29,14 @@ var draw = function() {
     ha = hsl[0];
     s = hsl[1];
     l = hsl[2];
-    
+
     var ri = Math.floor(pi/w),
         ci = pi % w;
-        
+
     if (ha >= 70 && ha <= 180 &&
         s >= 25 && s <= 90 &&
         l >= 20 && l <= 95) {
-        
+
         // Change the opacity to 0
         pixels.data[pi * 4 + 3] = 0;
         //map[ci][ri] = 1;
