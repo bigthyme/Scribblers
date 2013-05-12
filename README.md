@@ -25,7 +25,7 @@ Developers
 [philipjrosen]
 Current Version
 -
-0.1.5: Added erase and draw method 
+0.1.9: Added voice activation, removed unused buttons, and merged UI
 
 Inspiration
 -
