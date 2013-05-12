@@ -15,12 +15,14 @@
   }
 
   .media .span8 .game-info {
-    font-size: 1.35em;
+    font-size: 1.5em;
     height: 2em;
     padding-top: 1em;
-    background-color: rgba(128, 128, 128, 0.6);
+    background-color: rgba(160, 160, 160, 0.6);
+    text-shadow: 2px 1px 1px rgb(145, 145, 145);
     border-radius: 0.4em;
-    padding-left: 15px;
+    padding-left: 1.5em;
+    font-family: 'Cherry Cream Soda', cursive;
     color: white;
   }
 
@@ -73,7 +75,6 @@
   .media .span2 .button p:active {
     border: 3px solid rgba(0, 0, 0, 0.4);
     color: white;
-    text-shadow: 1px 1px 1px black;
   }
 
   .media .span2 .top-margin p {

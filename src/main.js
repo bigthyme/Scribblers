@@ -145,7 +145,8 @@ if(hasGetUserMedia()){
     setTimeout(function(){
       textArray = $('#textarea').text().split(' ');
       colorChoice = textArray[textArray.length - 1];
-    }, 3000);
+      console.log(colorChoice);
+    }, 1000);
 
     console.log('your color: ', colorChoice);
     $('#main-video').css('display', 'none');
