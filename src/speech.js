@@ -35,7 +35,7 @@ if (!('webkitSpeechRecognition' in window)) {
 
   var reset = function() {
     recognizing = false;
-    $('#speechbutton p').text('Click to Speak').css('background-color', 'rgba(0, 0, 255, 0.6)');
+    $('#speechbutton p').text('Speak').parent().removeClass('red').addClass('blue-purple');
   }
 
   var toggleStartStop = function() {
@@ -47,7 +47,7 @@ if (!('webkitSpeechRecognition' in window)) {
       recognition.start();
       recognizing = true;
       console.log('in the else', recognition);
-      $('#speechbutton p').text('Click to Stop').css('background-color', 'rgba(255, 0, 0, 0.6)');
+      $('#speechbutton p').text('Stop').parent().removeClass('blue-purple').addClass('red');
     }
   }
 
