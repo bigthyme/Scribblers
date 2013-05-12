@@ -17,9 +17,9 @@
 
   <!-- Add libs here -->
   <script src="lib/jquery.v2.min.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
 </head>
   <body>
-
     <div class="navbar-wrapper">
       <div class="container">
         <div class="navbar navbar-inverse">
@@ -40,7 +40,7 @@
           <p class="game-brand"> Game Name </p> <!-- THIS FONT WILL CHANGE FOR EACH GAME -->
         </div>
         <div class="span8">
-          <p class="game-info"> This game is great and this is how you play </p>
+          <p class="game-info" id="textarea"> Your Current Paint Color: </p>
         </div>
       </div> <!-- ROW -->
       <div class="row">
@@ -58,22 +58,6 @@
         <div class="span2">
           <span id="startbutton" class="example button green top-margin move-left"><p> Start </p> </span>
           <span id="stopbutton" class="button red move-left"> <p> Stop </p> </span>
-          <div class="btn-group">
-            <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-            Action
-            <span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu">
-              <li class="red">RED</li>
-              <li class="orange">ORANGE</li>
-              <li class="yellow">YELLOW</li>
-              <li class="green">GREEN</li>
-              <li class="blue">BLUE</li>
-              <li class="purple">PURPLE</li>
-              <li class="black">BLACK</li>
-              <li class="white">WHITE</li>
-            </ul>
-          </div>
         </div>
       </div> <!-- ROW -->
 
@@ -92,6 +76,5 @@
   <script src="src/paint.js"></script>
   <script src="src/rgb2hsl.js"></script>
   <script src="src/speech.js"></script>
-  <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
 </html>
 

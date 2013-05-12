@@ -66,7 +66,7 @@ if (!('webkitSpeechRecognition' in window)) {
     console.log(words);
     var latestWord = words.pop();
     if(latestWord === 'red' || latestWord === 'blue' || latestWord === 'green'){
-      alert(latestWord);
+      return latestWord;
     } else {
       alert('Oops, please choose a color');
     }

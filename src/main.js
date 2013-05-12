@@ -134,20 +134,24 @@ if(hasGetUserMedia()){
   //   paint();
   // });
 
-  $('li').on('click',function(){
+  $('#speechbutton').on('click',function(){
     $('canvas').show();
-    colorChoice = $(this).attr('class');
+    console.log('recording...');
+    toggleStartStop();
+
+    //TODO: Add helper function
+    setTimeout(function(){
+      textArray = $('#textarea').text().split(' ');
+      colorChoice = textArray[textArray.length - 1];
+    }, 3000);
+
+    console.log('your color: ', colorChoice);
     $('#main-video').css('display', 'none');
     $('#main-canvas').css('visibility', 'visible');
     if(paintArray === undefined) {
       paintArray = createPaintArray();
     };
     paint();
-  });
-
-  $('#speechbutton').on('click', function(){
-    console.log('recording...');
-    toggleStartStop();
   });
 
   //Stop recording (for dev purposes)
@@ -159,11 +163,4 @@ if(hasGetUserMedia()){
   //no modern browser detected...fallback?
   alert('please use a better browser');
 }
-
-// Moved below into if block
-// //stop recording (for dev purposes)
-// $('#stopbutton').on('click', function(){
-//   console.log('stopping..');
-//   localStream.stop();
-// });
 
