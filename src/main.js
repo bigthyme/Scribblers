@@ -10,19 +10,19 @@ var v = document.querySelector('#main-video'),
     hl = document.querySelector('#highlight'),
     localStream,
     // remove the following 2 lines eventually
-    mainVideoWidth = 640,
-    mainVideoHeight = 480,
-    w = mainVideoWidth, 
-    h = mainVideoHeight,
+    // mainVideoWidth = 640,
+    // mainVideoHeight = 480,
+    w = 640, 
+    h = 480,
     erasing = false,
     colorChoice,
     paintArray;
 
 var pixelDataArray = function(elem) {
-  var ri, ci, rowArr, arr = [];
-  for(ri = 0; ri < mainVideoHeight; ri++) {
+  var rowArr, arr = [];
+  for(var ri = 0; ri < h; ri++) {
     rowArr = [];
-    for(ci = 0; ci < mainVideoWidth; ci++) {
+    for(var ci = 0; ci < w; ci++) {
       rowArr.push(elem);
     }
     arr.push(rowArr);
@@ -31,9 +31,9 @@ var pixelDataArray = function(elem) {
 };
 
 //Set dimensions for elmements
-$('#main-video').attr('width', mainVideoWidth +'px').attr('height', mainVideoHeight + 'px');
+$('#main-video').attr('width', w +'px').attr('height', h + 'px');
 
-$('#main-canvas').attr('width', mainVideoWidth +'px').attr('height', mainVideoHeight + 'px');
+$('#main-canvas').attr('width', w +'px').attr('height', h + 'px');
 
 //Detect browser compatibility
 var hasGetUserMedia = function(){
@@ -66,7 +66,6 @@ if(hasGetUserMedia()){
 
   $('#erasebutton').on('click', function(){
     erasing = true;
-    // location.reload();
     //look at track.js for functionality
     $('#main-video').css('display', 'none');
     $('#main-canvas').css('visibility', 'visible');
@@ -103,15 +102,27 @@ if(hasGetUserMedia()){
     };
     paint();
   });
+
+  $('#speechbutton').on('click', function(){
+    console.log('recording...');
+    toggleStartStop();
+  });
+
+  //Stop recording (for dev purposes)
+  $('#stopbutton').on('click', function(){
+    console.log('stopping..');
+    localStream.stop();
+  });
  
 } else {
   //no modern browser detected...fallback?
   alert('please use a better browser');
 }
 
-//stop recording (for dev purposes)
-$('#stopbutton').on('click', function(){
-  console.log('stopping..');
-  localStream.stop();
-});
+// Moved below into if block
+// //stop recording (for dev purposes)
+// $('#stopbutton').on('click', function(){
+//   console.log('stopping..');
+//   localStream.stop();
+// });
 

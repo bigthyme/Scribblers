@@ -23,21 +23,21 @@ var eraser = function() {
 
   var ri, ci, pi;
 
-  for(i = 0; i < pixCount; i++){
-    var index = i*4;
-    var r = pixels.data[index],
-        g = pixels.data[index+1],
-        b = pixels.data[index+2];
-    var hsl = rgb2hsl(r, g, b),
-        ha = hsl[0],
-        s = hsl[1],
-        l = hsl[2];
+  for(var pi = 0; pi < pixCount; pi++){
+    index = pi*4;
+    r = pixels.data[index];
+    g = pixels.data[index+1];
+    b = pixels.data[index+2];
+    hsl = rgb2hsl(r, g, b);
+    ha = hsl[0];
+    s = hsl[1];
+    l = hsl[2];
     // ri = Math.floor(i / w);
     // ci = i % w;
     // change: left -> ci, top -> ri
     
-    var ci = i % w,
-        ri = Math.floor(i/w);
+    var ri = Math.floor(pi/w),
+        ci = pi % w;
         
     if (ha >= 70 && ha <= 180 &&
         s >= 25 && s <= 90 &&
@@ -45,17 +45,17 @@ var eraser = function() {
 
       // Remove color data from the cells that are touched 
       paintArray[ri][ci] = false;
-      map[ci][ri] = 1;
+      map[ri][ci] = 1;
 
     } else {
-      map[ci][ri] = 0;
+      map[ri][ci] = 0;
     }
 
     // If color data exist, paint the pixel with corresponding color 
     if(paintArray[ri][ci]){
-      pixels.data[i * 4] = paintArray[ri][ci][0];
-      pixels.data[i * 4 + 1] = paintArray[ri][ci][1];
-      pixels.data[i * 4 + 2] = paintArray[ri][ci][2];
+      pixels.data[pi * 4] = paintArray[ri][ci][0];
+      pixels.data[pi * 4 + 1] = paintArray[ri][ci][1];
+      pixels.data[pi * 4 + 2] = paintArray[ri][ci][2];
     }
   }
 
