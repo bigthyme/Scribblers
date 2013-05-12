@@ -14,7 +14,8 @@ var v = document.querySelector('#main-video'),
     h = 480,
     w = 640,
 
-    erasing = false,
+    //erasing,
+    painting,
     colorChoice,
     paintArray;
 
@@ -105,35 +106,23 @@ if(hasGetUserMedia()){
     draw();
   });
 
-  $('#erasebutton').on('click', function(){
-    erasing = true;
-    //look at track.js for functionality
-    $('#main-video').css('display', 'none');
-    $('#main-canvas').css('visibility', 'visible');
-    maskArray = createMaskArray();
-    erase();
-  });
+  // REVEAL
+  // $('#erasebutton').on('click', function(){
+  //   $('#main-video').css('display', 'none');
+  //   $('#main-canvas').css('visibility', 'visible');
+  //   maskArray = createMaskArray();
+  //   erase();
+  // });
 
   $('#eraserbutton').on('click', function(){
     if(paintArray === undefined) {
       alert('Nothing to erase!');
     } else {
       erasing = true;
+      painting = false;
       eraser();
     };
   })
-
-  // $('#paintbutton').on('click', function(){
-  //   // location.reload();
-  //   console.log(location);
-  //   //look at track.js for functionality
-
-  //   $('#main-canvas').css('background-image', 'url("../lib/orange.jpeg")');
-  //   $('#main-video').css('display', 'none');
-  //   $('#main-canvas').css('visibility', 'visible');
-  //   paintArray = createPaintArray();
-  //   paint();
-  // });
 
   $('li').on('click',function(){
     colorChoice = $(this).attr('class');
@@ -142,6 +131,8 @@ if(hasGetUserMedia()){
     if(paintArray === undefined) {
       paintArray = createPaintArray();
     };
+    painting = true;
+    //erasing = false;
     paint();
   });
 

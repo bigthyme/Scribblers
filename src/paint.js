@@ -7,62 +7,6 @@ var createPaintArray = function() {
   return pixelDataArray(false);
 };
 
-// var paint = function() {
-//   // x.drawImage(v, 0, 0, w, h);
-//   x.save();
-//   x.translate(w, 0);
-//   x.scale(-1,1);
-
-//   var rowArr;
-//   var arr = [];
-//   var ri, ci;
-//   for (ri = 0; ri < h; ri++) {
-//     rowArr = [];
-//     for (ci = 0; ci < w; ci++) {
-//       rowArr.push(false);
-//     }
-//     arr.push(rowArr);
-//   }
-//   return arr;
-// };
-
-// Sum the score for each pixel
-// var scoreSum = function(scores, map){
-//   var j, i, ci;
-//   for(j = 10; j < h-10; j++){
-//     for(i = 10; i < w-10; i++){
-//       scores[i][j] = map[i][j];
-//       for(ci = 10; ci > 0; ci--) {
-//         scores[i][j] += map[i-ci][j] + map[i+ci][j] +
-//           map[i][j-ci] + map[i][j+ci];
-//       }
-//     }
-//   } 
-// };
-
-//Find the pixel closest to the top left that has the highest score.
-// var findClosestHighScore = function(scores){
-//   targetx = 0;
-//   targety = 0;
-//   targetscore = 0;
-//   var i, j;
-//   for(i = 10; i < w-10; i++){
-//     for(j = 10; j < h-10; j++){
-//       if(scores[i][j] > targetscore){
-//         targetx = i,
-//         targety = j;
-//         targetscore = scores[i][j];
-//       }
-//     }
-//   }
-// };
-
-// var highlightPlacer = function(){
-//     hl.style.left = '' + targetx + 'px';
-//     hl.style.top = '' + (($('.button-toolbar').height() * 2) + targety) + 'px';
-//     x.putImageData(pixels, 0, 0);
-// };
-
 var paint = function() {
 
   x.drawImage(v, 0, 0, w, h);
@@ -127,10 +71,12 @@ var paint = function() {
 
   scoreSum(scores, map);
   findClosestHighScore(scores);
-  highlightPlacer(x, pixels);
+  
+  x.putImageData(pixels, 0, 0);  
+  //highlightPlacer(x, pixels);
 
   // Keep re-rendering unless the current mode is eraser mode
-  if(!erasing) {
+  //if(!erasing && painting) {
     setTimeout(paint,50);
-  }
+  //}
 };
