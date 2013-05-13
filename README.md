@@ -23,9 +23,10 @@ Developers
 [bigthyme]
 ####Philip Rosen
 [philipjrosen]
+
 Current Version
 -
-0.1.9: Added voice activation, removed unused buttons, and merged UI
+0.2.5: Added default paint color to black and improved paint to not score each pixel
 
 Inspiration
 -
