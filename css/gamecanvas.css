@@ -1,5 +1,6 @@
   body {
-    background-color: #E0F9FF !important;
+    /*background-color: #E0F9FF !important;*/
+    background: url('../img/white_feathers.png');
     color: #404040;
   }
 
@@ -46,13 +47,13 @@
     height: 1.5em;
     line-height: 1.2em;
     padding-top: 0.3em;
-    background-color: rgba(0, 0, 0, 0.6);
     text-shadow: 2px 1px 1px rgb(0, 0, 0);
-    border-radius: 0.4em;
+    border-radius: 0.3em;
     font-family: 'Didact Gothic', sans-serif;
     color: white;
-    border: 4px dotted rgb(179, 179, 179);
     text-align: center;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(214, 157, 130, 0.8)),to(rgba(139, 98, 79, 0.8)));
+    border: 1px solid #6c615c;
   }
 
   .media .color-palette {
