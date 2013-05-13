@@ -165,7 +165,8 @@ if(hasGetUserMedia()){
       textArray = $('#textarea').text().split(' ');
       colorChoice = textArray[textArray.length - 1];
       console.log('your color: ', colorChoice);
-    }, 2000);
+      $('#textarea').css('color', colorChoice).css('border', '4px dotted ' + colorChoice);
+    }, 1000);
 
     $('#main-video').css('display', 'none');
     $('#main-canvas').css('visibility', 'visible');

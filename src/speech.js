@@ -62,10 +62,10 @@ if (!('webkitSpeechRecognition' in window)) {
   var lastWord = function(string) {
     words = string.split(' ');
     var latestWord = words.pop();
-    if(latestWord === 'red' || latestWord === 'blue' || latestWord === 'green' || latestWord === 'orange' || latestWord === 'yellow' || latestWord = 'purple'){
+    if(latestWord === 'red' || latestWord === 'blue' || latestWord === 'green' || latestWord === 'orange' || latestWord === 'yellow' || latestWord === 'purple'){
       return latestWord;
     } else {
-      alert('Oops, you said ' + latestWord + ' please say a color instead');
+      alert('Oops, you said ' + latestWord + ' please say a color instead.');
     }
   };
 }
