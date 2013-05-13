@@ -184,12 +184,14 @@ if(hasGetUserMedia()){
 
   $('#savebutton').on('click', function(){
     console.log('stopping..');
-    localStream.stop();
+    //localStream.stop();
     $('.color-palette').fadeOut(400);
     $('#main-video').css('display', 'none');
     $('#main-canvas').show();
-    snapShot();
-    //add save image modal here
+    saveImage();
+    // $('#main-canvas').css("transform", "scaleX(-1)");
+    // $('#main-canvas').css("-webkit-transform", "scaleX(-1)");
+    // $('#main-canvas').css("-moz-transform", "scaleX(-1)");
   });
 } else {
   //no modern browser detected...fallback?
