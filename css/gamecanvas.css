@@ -40,7 +40,7 @@
     border-radius: 0.4em;
     font-family: 'Didact Gothic', sans-serif;
     color: white;
-    border: 4px dotted gray;
+    border: 4px dotted rgb(179, 179, 179);
     text-align: center;
   }
 

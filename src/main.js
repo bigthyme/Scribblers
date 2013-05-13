@@ -131,7 +131,7 @@ if(hasGetUserMedia()){
     if($('video').attr('src')){
       if(!colorChoice){
         colorChoice = 'black';
-        $('#textarea').text('You are painting with ' + colorChoice).css('color', colorChoice).css('border', '4px dotted ' + colorChoice);
+        $('#textarea').text('You are painting with ' + colorChoice).css('color', 'white').css('border', '4px dotted rgb(179, 179, 179)');
       } else if(colorChoice === 'black') {
         $('#textarea').text('Would you like to try more colors').css('color', 'pink').css('border', '4px dotted pink');
       }
@@ -178,8 +178,18 @@ if(hasGetUserMedia()){
 
   $('li').on('click', function(){
     colorChoice = $(this).attr('class');
-    $('#textarea').text('You are painting with ' + colorChoice).css('color', colorChoice).css('border', '4px dotted ' + colorChoice);
-    console.log(colorChoice);
+    if(colorChoice === 'green'){
+      $('#textarea').text('You are painting with ' + colorChoice).css('color', 'limegreen').css('border', '4px dotted ' + 'limegreen');
+        console.log(colorChoice);
+    } else if(colorChoice === 'purple'){
+      $('#textarea').text('You are painting with ' + colorChoice).css('color', 'blueviolet').css('border', '4px dotted ' + 'blueviolet');
+        console.log(colorChoice);
+    } else if(colorChoice === 'blue'){
+      $('#textarea').text('You are painting with ' + colorChoice).css('color', 'skyblue').css('border', '4px dotted ' + 'skyblue');
+        console.log(colorChoice);
+    } else {
+      $('#textarea').text('You are painting with ' + colorChoice).css('color', colorChoice).css('border', '4px dotted ' + colorChoice);
+    }
   });
 
   //Stop recording (for dev purposes)
