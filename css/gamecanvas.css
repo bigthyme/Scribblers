@@ -31,8 +31,9 @@
   }
 
   .media .span8 .game-info {
-    font-size: 1.4em;
+    font-size: 1.6em;
     height: 2em;
+    line-height: 1.2em;
     padding-top: 1em;
     font-weight: 300;
     background-color: rgba(202, 202, 202, 0.6);
