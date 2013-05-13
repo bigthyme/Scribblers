@@ -1,6 +1,6 @@
   body {
     /*background-color: #E0F9FF !important;*/
-    background: url('../img/white_feathers.png');
+    background: url('../img/textured_paper.png');
     color: #404040;
   }
 
@@ -10,7 +10,7 @@
     text-align: center;
     font-weight: bold;
     color: rgba(255, 255, 255, 0.3);
-    text-shadow: -3px -2px rgba(0, 0, 0, 0.36);
+    text-shadow: -3px -2px rgba(0, 0, 0, 0.37);
     margin-bottom: -0.9em;
     margin-top: 0.6em;
   }
