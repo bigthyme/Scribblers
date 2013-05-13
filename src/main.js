@@ -94,7 +94,7 @@ if(hasGetUserMedia()){
     recordVideo();
 
     //change text for directions
-    $('popover').text('Choose your next action!').css('color', 'green');
+    $('#textarea').text('Press the allow button up top to get started!').css('color', 'orange').css('border', '4px dotted orange');
   });
 
   $('#snapshot').on('click', function(){
@@ -132,7 +132,7 @@ if(hasGetUserMedia()){
       if(!colorChoice){
         colorChoice = 'black';
       } else if(colorChoice === 'black') {
-        $('#textarea').text('Would you like to try more colors').css('color', 'pink');
+        $('#textarea').text('Would you like to try more colors').css('color', 'pink').css('border', '4px dotted pink');
       }
       $('.color-palette').fadeIn(400);
       $('#main-video').css('display', 'none');
@@ -144,7 +144,7 @@ if(hasGetUserMedia()){
       erasing = false;
       paint();
     } else {
-      $('#textarea').text('Please click start to begin painting').css('color', 'red');
+      $('#textarea').text('Please click start to begin painting').css('color', 'red').css('border', '4px dotted red');
     }
   });
 
@@ -172,7 +172,7 @@ if(hasGetUserMedia()){
 
   $('li').on('click', function(){
     colorChoice = $(this).attr('class');
-    $('#textarea').text('You picked ' + colorChoice).css('color', colorChoice);
+    $('#textarea').text('You picked ' + colorChoice).css('color', colorChoice).css('border', '4px dotted ' + colorChoice);
     console.log(colorChoice);
   });
 
