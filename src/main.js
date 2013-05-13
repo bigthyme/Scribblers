@@ -131,6 +131,7 @@ if(hasGetUserMedia()){
     if($('video').attr('src')){
       if(!colorChoice){
         colorChoice = 'black';
+        $('#textarea').text('You are painting with ' + colorChoice).css('color', colorChoice).css('border', '4px dotted ' + colorChoice);
       } else if(colorChoice === 'black') {
         $('#textarea').text('Would you like to try more colors').css('color', 'pink').css('border', '4px dotted pink');
       }
