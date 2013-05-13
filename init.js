@@ -12,10 +12,11 @@ $(function(){
       'Paint' : 'Painting paints stuff',
       'Eraser' : 'Erase erases stuff',
       'Speak': 'say a color!',
+      'Save': 'Do you want to save this beautiful picture?',
       'SnapShot': 'Do you want to snapshot?',
       'Track': 'Do you want to track?',
-      'Start': 'Do you want to start?',
-      'Stop': 'Do you want to stop?'
+      'Start': 'do you want to start playing?',
+      'Stop': 'Do you want to stop playing?'
     }
 
     if(self.hasClass('move-left')){

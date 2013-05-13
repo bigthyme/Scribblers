@@ -100,29 +100,6 @@ if(hasGetUserMedia()){
     $('#textarea').text('Press the allow button up top to get started!').css('color', 'orange').css('border', '4px dotted orange');
   });
 
-  $('#snapshot').on('click', function(){
-    //look at snapshot.js for functionality
-    localStream.stop();
-    $('#main-video').css('display', 'none');
-    $('#main-canvas').show();
-    snapShot();
-  });
-
-  $('#trackbutton').on('click', function(){
-    //look at track.js for functionality
-    $('#main-video').css('display', 'none');
-    $('#main-canvas').css('display', 'inline-block');
-    draw();
-  });
-
-  // REVEAL
-  $('#erasebutton').on('click', function(){
-    $('#main-video').css('display', 'none');
-    $('#main-canvas').css('visibility', 'visible');
-    maskArray = createMaskArray();
-    erase();
-  });
-
   $('#eraserbutton').on('click', function(){
     if(paintArray === undefined) {
       alert('Nothing to erase!');
@@ -200,3 +177,27 @@ if(hasGetUserMedia()){
   alert('please use a better browser');
 }
 
+// OLD BUTTONS
+
+// $('#snapshot').on('click', function(){
+//   //look at snapshot.js for functionality
+//   localStream.stop();
+//   $('#main-video').css('display', 'none');
+//   $('#main-canvas').show();
+//   snapShot();
+// });
+
+// $('#trackbutton').on('click', function(){
+//   //look at track.js for functionality
+//   $('#main-video').css('display', 'none');
+//   $('#main-canvas').css('display', 'inline-block');
+//   draw();
+// });
+
+// // REVEAL
+// $('#erasebutton').on('click', function(){
+//   $('#main-video').css('display', 'none');
+//   $('#main-canvas').css('visibility', 'visible');
+//   maskArray = createMaskArray();
+//   erase();
+// });
