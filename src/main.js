@@ -134,10 +134,14 @@ if(hasGetUserMedia()){
     toggleStartStop();
 
     //TODO: Add helper function
-    setTimeout(function(){
-      textArray = $('#textarea').text().split(' ');
-      colorChoice = textArray[textArray.length - 1];
-    }, 1000);
+    if(!colorChoice){
+      colorChoice = 'black'
+    } else {
+      setTimeout(function(){
+        textArray = $('#textarea').text().split(' ');
+        colorChoice = textArray[textArray.length - 1];
+      }, 1000);
+    }
 
     console.log('your color: ', colorChoice);
     $('#main-video').css('display', 'none');

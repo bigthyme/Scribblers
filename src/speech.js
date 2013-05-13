@@ -23,9 +23,9 @@ if (!('webkitSpeechRecognition' in window)) {
     console.log('testing event ', event.results);
      for (var i = event.resultIndex; i < event.results.length; ++i) {
       if (event.results[i].isFinal) {
-        textarea.innerHTML = ' ' + event.results[i][0].transcript
+        var output = event.results[i][0].transcript;
         // textarea.innerHTML += ' ' + event.results[i][0].transcript;
-        checkOutput();
+        return checkOutput(output);
       } else {
         alert('what happened?');
       }
@@ -51,8 +51,7 @@ if (!('webkitSpeechRecognition' in window)) {
   }
 
   //Output helpers
-  var checkOutput = function(){
-    var output = document.getElementById('textarea').innerHTML;
+  var checkOutput = function(output){
     if(output.length > 0){
       lastWord(output);
     } else {
