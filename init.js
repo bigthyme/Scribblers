@@ -1,7 +1,6 @@
 //Document ready stuff...
 
 $(function(){
-  // $('canvas').css('display', 'none') && $('.color-palette').css('display', 'none')
   //TODO: loop through and give titles
   $('.button').on('mouseenter', function(e){
     var self = $(this),

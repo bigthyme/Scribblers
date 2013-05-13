@@ -102,7 +102,7 @@ if(hasGetUserMedia()){
 
   $('#eraserbutton').on('click', function(){
     if(paintArray === undefined) {
-      alert('Nothing to erase!');
+      $('#textarea').text('Please click start to begin painting').css('color', 'red').css('border', '4px dotted red');
     } else {
       painting = false;
       erasing = true;
@@ -133,26 +133,30 @@ if(hasGetUserMedia()){
   });
 
   $('#speechbutton').on('click',function(){
-    $('canvas').show();
-    console.log('recording...');
-    toggleStartStop();
+    if($('video').attr('src')){
+      $('canvas').show();
+      console.log('recording...');
+      toggleStartStop();
 
-    //TODO: Add helper function
-    setTimeout(function(){
-      textArray = $('#textarea').text().split(' ');
-      colorChoice = textArray[textArray.length - 1];
-      console.log('your color: ', colorChoice);
-      $('#textarea').css('color', colorChoice).css('border', '4px dotted ' + colorChoice);
-    }, 1000);
+      //TODO: Add helper function
+      setTimeout(function(){
+        textArray = $('#textarea').text().split(' ');
+        colorChoice = textArray[textArray.length - 1];
+        console.log('your color: ', colorChoice);
+        $('#textarea').css('color', colorChoice).css('border', '4px dotted ' + colorChoice);
+      }, 1000);
 
-    $('#main-video').css('display', 'none');
-    $('#main-canvas').css('visibility', 'visible');
-    if(paintArray === undefined) {
-      paintArray = createPaintArray();
-    };
-    painting = true;
-    erasing = false;
-    paint();
+      $('#main-video').css('display', 'none');
+      // $('#main-canvas').css('visibility', 'visible');
+      if(paintArray === undefined) {
+        paintArray = createPaintArray();
+      };
+      painting = true;
+      erasing = false;
+      paint();
+    } else {
+      $('#textarea').text('Please click start to begin painting').css('color', 'red').css('border', '4px dotted red');
+    }
   });
 
   $('li').on('click', function(){
