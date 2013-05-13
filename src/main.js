@@ -96,8 +96,6 @@ if(hasGetUserMedia()){
   $('#startbutton').on('click', function(){
     //look at record.js for funcitonality
     recordVideo();
-  });
-  
     //change text for directions
     $('#textarea').text('Press the allow button up top to get started!').css('color', 'orange').css('border', '4px dotted orange');
   });
