@@ -19,7 +19,7 @@
     display: none;
   }
 
-  .media .span4 .game-brand {
+  .media .game-brand {
     text-align: center;
     font-size: 3em;
     height: 1em;
@@ -30,7 +30,7 @@
     text-shadow: 3px 3px #ffffff;
   }
 
-  .media .span8 .game-info {
+  .media .game-info {
     font-size: 1.6em;
     height: 2em;
     line-height: 1.2em;
@@ -45,7 +45,7 @@
     border: 4px dotted gray;
   }
 
-  .media .span8 .color-palette {
+  .media .color-palette {
     display: none;
     margin-left: 0px;
     border: 1px solid #6c615c;
@@ -58,7 +58,7 @@
     box-shadow: -1px 0px 8px;
   }
 
-  .media .span8 .color-palette li{
+  .media .color-palette li{
     float: left;
     font-family: 'Cherry Cream Soda', cursive;
     list-style-type: none;
@@ -73,38 +73,38 @@
     cursor: pointer;
   }
 
-  .media .span8 .color-palette li:hover{
+  .media .color-palette li:hover{
     box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.15);
     color: rgba(0,0,0,0.9);
     text-shadow: 2px 1px 1px rgba(255,255,255,0.5);
   }
 
-  .media .span8 .color-palette .red {
+  .media .color-palette .red {
     background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 0, 0, 0.8)),to(rgba(172, 0, 0, 0.8)));
   }
 
-  .media .span8 .color-palette .orange {
+  .media .color-palette .orange {
     background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 112, 0, 0.8)),to(rgba(172, 48, 0, 0.8)));
   }
 
-  .media .span8 .color-palette .yellow {
+  .media .color-palette .yellow {
     background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 235, 0, 0.8)),to(rgba(172, 117, 0, 0.8)));
   }
 
-  .media .span8 .color-palette .green {
+  .media .color-palette .green {
     background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 255, 20, 0.8)),to(rgba(55, 172, 0, 0.8)));
   }
 
-  .media .span8 .color-palette .blue {
+  .media .color-palette .blue {
     background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 133, 255, 0.8)),to(rgba(0, 55, 172, 0.8)));
   }
 
-  .media .span8 .color-palette .purple {
+  .media .color-palette .purple {
     background: -webkit-gradient(linear, left top, left bottom, from(rgba(102, 0, 255, 0.8)),to(rgba(28, 0, 172, 0.8)));
     border-right: 0px !important;
   }
 
-  .media .span8 .main-video {
+  .media .main-video {
     padding: 1em;
     border: 1px solid white;
     margin: 4em;
@@ -116,7 +116,7 @@
  /* CANVAS */
 
 
- .media .span8 .main-canvas {
+ .media .main-canvas {
     display: none;
     padding: 1em;
     background: whitesmoke;
@@ -129,7 +129,7 @@
     margin-top: 8em;
   }
 
-  .media .span2 .button p {
+  .media .button p {
     color: rgba(0, 0, 0, 0.6);
     font-weight: bold;
     border-radius: 0.4em;
@@ -143,43 +143,43 @@
     cursor: pointer;
   }
 
-  .media .span2 .button p:hover {
+  .media .button p:hover {
     /*border: 3px solid rgba(0, 0, 0, 0.4);*/
     color: white;
     letter-spacing: 1px;
     text-shadow: 1px 1px 1px black;
   }
 
-  .media .span2 .button p:active {
+  .media .button p:active {
     border: 3px solid rgba(0, 0, 0, 0.4);
     color: white;
   }
 
-  .media .span2 .top-margin p {
+  .media .top-margin p {
     margin-top: 2.1em !important;
   }
 
-  .media .span2 .move-left p {
+  .media .move-left p {
     margin: 0px 35px 30px 5px;
   }
 
-  .media .span2 .move-right p {
+  .media .move-right p {
     margin: 0px 5px 30px 35px;
   }
 
-  .media .span2 .red p {
+  .media .red p {
     background-color: rgba(255, 0, 0, 0.4);
   }
 
-  .media .span2 .orange p {
+  .media .orange p {
     background-color: rgba(255, 71, 0, 0.4);
   }
 
-  .media .span2 .green p {
+  .media .green p {
     background-color: rgba(0, 128, 0, 0.4);
   }
 
-  .media .span2 .yellow p {
+  .media .yellow p {
     background-color: rgba(255, 255, 0, 0.4);
   }
 
