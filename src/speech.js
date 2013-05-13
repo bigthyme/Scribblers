@@ -23,7 +23,7 @@ if (!('webkitSpeechRecognition' in window)) {
     console.log('testing event ', event.results);
      for (var i = event.resultIndex; i < event.results.length; ++i) {
       if (event.results[i].isFinal) {
-        textarea.innerHTML += ' ' + event.results[i][0].transcript;
+        textarea.innerHTML = 'You said the color ' + event.results[i][0].transcript;
         checkOutput();
       } else {
         alert('what happened?');
@@ -62,10 +62,10 @@ if (!('webkitSpeechRecognition' in window)) {
   var lastWord = function(string) {
     words = string.split(' ');
     var latestWord = words.pop();
-    if(latestWord === 'red' || latestWord === 'blue' || latestWord === 'green'){
+    if(latestWord === 'red' || latestWord === 'blue' || latestWord === 'green' || latestWord === 'orange' || latestWord === 'yellow' || latestWord = 'purple'){
       return latestWord;
     } else {
-      alert('Oops, please choose a color');
+      alert('Oops, you said ' + latestWord + ' please say a color instead');
     }
   };
 }

@@ -19,6 +19,7 @@
     height: 2em;
     padding-top: 1em;
     font-weight: 300;
+    letter-spacing: 1px;
     background-color: rgba(202, 202, 202, 0.6);;
     text-shadow: 2px 1px 1px rgb(145, 145, 145);
     border-radius: 0.4em;
@@ -26,17 +27,6 @@
     font-family: 'Cherry Cream Soda', cursive;
     color: white;
   }
-
-/*  .media .span8 #textarea {
-    border: 1px solid #6c615c;
-    height: 3em;
-    margin-bottom: -3em;
-    border-top: 0.5em;
-    position: relative;
-    top: 1em;
-    left: 1.8em;
-    box-shadow: -1px 0px 8px;
-  }*/
 
   .media .span8 .color-palette {
     display: none;

@@ -125,7 +125,20 @@ if(hasGetUserMedia()){
   })
 
   $('#paintbutton').on('click', function(){
-    $('.color-palette').fadeIn(300).delay(200);
+    if(!colorChoice){
+      colorChoice = 'black';
+    } else if(colorChoice === 'black') {
+      $('#textarea').text('Would you like to try more colors').css('color', 'pink');
+    }
+    $('.color-palette').fadeIn(400);
+    $('#main-video').css('display', 'none');
+    $('#main-canvas').css('display', 'inline-block');
+    if(paintArray === undefined) {
+      paintArray = createPaintArray();
+    };
+    painting = true;
+    erasing = false;
+    paint();
   });
 
   $('#speechbutton').on('click',function(){
@@ -134,16 +147,12 @@ if(hasGetUserMedia()){
     toggleStartStop();
 
     //TODO: Add helper function
-    if(!colorChoice){
-      setTimeout(function(){
-        textArray = $('#textarea').text().split(' ');
-        colorChoice = textArray[textArray.length - 1];
-      }, 1000);
-    } else {
-      colorChoice = 'black';
-    }
+    setTimeout(function(){
+      textArray = $('#textarea').text().split(' ');
+      colorChoice = textArray[textArray.length - 1];
+      console.log('your color: ', colorChoice);
+    }, 2000);
 
-    console.log('your color: ', colorChoice);
     $('#main-video').css('display', 'none');
     $('#main-canvas').css('visibility', 'visible');
     if(paintArray === undefined) {
@@ -155,20 +164,15 @@ if(hasGetUserMedia()){
   });
 
   $('li').on('click', function(){
-    // if(paintArray === undefined) {
-    //   paintArray = createPaintArray();
-    // };
     colorChoice = $(this).attr('class');
+    $('#textarea').text('You picked ' + colorChoice).css('color', colorChoice);
     console.log(colorChoice);
-    // painting = true;
-    // erasing = false;
-    // paint();
   });
 
   //Stop recording (for dev purposes)
   $('#stopbutton').on('click', function(){
     console.log('stopping..');
-    $('.color-palette').fadeOut('fast');
+    $('.color-palette').fadeOut(400);
     localStream.stop();
   });
 } else {
