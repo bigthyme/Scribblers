@@ -125,7 +125,7 @@ if(hasGetUserMedia()){
   })
 
   $('#paintbutton').on('click', function(){
-    $('#textarea').show();
+    $('#textarea').fadeIn(300).delay(200);
   });
 
   $('#speechbutton').on('click',function(){
@@ -155,6 +155,7 @@ if(hasGetUserMedia()){
       paintArray = createPaintArray();
     };
     colorChoice = $(this).attr('class');
+    console.log(colorChoice);
     painting = true;
     erasing = false;
     paint();
@@ -163,6 +164,7 @@ if(hasGetUserMedia()){
   //Stop recording (for dev purposes)
   $('#stopbutton').on('click', function(){
     console.log('stopping..');
+    $('#textarea').hide();
     localStream.stop();
   });
 } else {
