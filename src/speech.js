@@ -1,6 +1,4 @@
 // Implementing Speech to Text
-console.log('activate speech to text power...');
-
 if (!('webkitSpeechRecognition' in window)) {
   alert('Oh no your browser is too old for this!');
 } else {
@@ -25,7 +23,7 @@ if (!('webkitSpeechRecognition' in window)) {
     console.log('testing event ', event.results);
      for (var i = event.resultIndex; i < event.results.length; ++i) {
       if (event.results[i].isFinal) {
-        textarea.innerHTML += ' ' + event.results[i][0].transcript;
+        textarea.innerHTML = 'You are painting with ' + event.results[i][0].transcript;
         checkOutput();
       } else {
         alert('what happened?');
@@ -35,7 +33,7 @@ if (!('webkitSpeechRecognition' in window)) {
 
   var reset = function() {
     recognizing = false;
-    $('#speechbutton p').text('Speak').parent().removeClass('red').addClass('blue-purple');
+    $('#speechbutton p').text('Speak').parent().removeClass('orange').addClass('blue-purple');
   }
 
   var toggleStartStop = function() {
@@ -47,7 +45,7 @@ if (!('webkitSpeechRecognition' in window)) {
       recognition.start();
       recognizing = true;
       console.log('in the else', recognition);
-      $('#speechbutton p').text('Stop').parent().removeClass('blue-purple').addClass('red');
+      $('#speechbutton p').text('Done').parent().removeClass('blue-purple').addClass('orange');
     }
   }
 
@@ -63,12 +61,11 @@ if (!('webkitSpeechRecognition' in window)) {
 
   var lastWord = function(string) {
     words = string.split(' ');
-    console.log(words);
     var latestWord = words.pop();
-    if(latestWord === 'red' || latestWord === 'blue' || latestWord === 'green'){
+    if(latestWord === 'red' || latestWord === 'blue' || latestWord === 'green' || latestWord === 'orange' || latestWord === 'yellow' || latestWord === 'purple'){
       return latestWord;
     } else {
-      alert('Oops, please choose a color');
+      alert('Oops, you said ' + latestWord + ' please say a color instead.');
     }
   };
 }

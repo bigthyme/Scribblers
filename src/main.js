@@ -4,7 +4,8 @@
 
 //Select html element id's
 var v = document.querySelector('#main-video'),
-    c = document .querySelector('#main-canvas'),
+    c = document.querySelector('#main-canvas'),
+    image = document.querySelector('#main-image'),
     //canvas x cord size
     x = c.getContext('2d'),
     hl = document.querySelector('#highlight'),
@@ -78,6 +79,8 @@ $('#main-video').attr('width', w +'px').attr('height', h + 'px');
 
 $('#main-canvas').attr('width', w +'px').attr('height', h + 'px');
 
+$('#main-image').attr('width', w +'px').attr('height', h + 'px');
+
 //Detect browser compatibility
 var hasGetUserMedia = function(){
   return !!(navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia);
@@ -94,25 +97,9 @@ if(hasGetUserMedia()){
     //look at record.js for funcitonality
     recordVideo();
   });
-
-  $('#snapshot').on('click', function(){
-    //look at snapshot.js for functionality
-    snapShot();
-  });
-
-  // $('#trackbutton').on('click', function(){
-  //   //look at track.js for functionality
-  //   $('#main-video').css('display', 'none');
-  //   $('#main-canvas').css('visibility', 'visible');
-  //   draw();
-  // });
-
-  // REVEAL
-  $('#erasebutton').on('click', function(){
-    $('#main-video').css('display', 'none');
-    $('#main-canvas').css('visibility', 'visible');
-    maskArray = createMaskArray();
-    erase();
+  
+    //change text for directions
+    $('#textarea').text('Press the allow button up top to get started!').css('color', 'orange').css('border', '4px dotted orange');
   });
 
   $('#eraserbutton').on('click', function(){
@@ -140,17 +127,27 @@ if(hasGetUserMedia()){
     background();
   });
 
-  // $('#paintbutton').on('click', function(){
-  //   // location.reload();
-  //   console.log(location);
-  //   //look at track.js for functionality
-
-  //   $('#main-canvas').css('background-image', 'url("../lib/orange.jpeg")');
-  //   $('#main-video').css('display', 'none');
-  //   $('#main-canvas').css('visibility', 'visible');
-  //   paintArray = createPaintArray();
-  //   paint();
-  // });
+  $('#paintbutton').on('click', function(){
+    if($('video').attr('src')){
+      if(!colorChoice){
+        colorChoice = 'black';
+        $('#textarea').text('You are painting with ' + colorChoice).css('color', colorChoice).css('border', '4px dotted ' + colorChoice);
+      } else if(colorChoice === 'black') {
+        $('#textarea').text('Would you like to try more colors').css('color', 'pink').css('border', '4px dotted pink');
+      }
+      $('.color-palette').fadeIn(400);
+      $('#main-video').css('display', 'none');
+      $('#main-canvas').css('display', 'inline-block');
+      if(paintArray === undefined) {
+        paintArray = createPaintArray();
+      };
+      painting = true;
+      erasing = false;
+      paint();
+    } else {
+      $('#textarea').text('Please click start to begin painting').css('color', 'red').css('border', '4px dotted red');
+    }
+  });
 
   $('#speechbutton').on('click',function(){
     $('canvas').show();
@@ -161,9 +158,10 @@ if(hasGetUserMedia()){
     setTimeout(function(){
       textArray = $('#textarea').text().split(' ');
       colorChoice = textArray[textArray.length - 1];
-    }, 3000);
+      console.log('your color: ', colorChoice);
+      $('#textarea').css('color', colorChoice).css('border', '4px dotted ' + colorChoice);
+    }, 1000);
 
-    console.log('your color: ', colorChoice);
     $('#main-video').css('display', 'none');
     $('#main-canvas').css('visibility', 'visible');
     if(paintArray === undefined) {
@@ -174,13 +172,49 @@ if(hasGetUserMedia()){
     paint();
   });
 
+  $('li').on('click', function(){
+    colorChoice = $(this).attr('class');
+    $('#textarea').text('You are painting with ' + colorChoice).css('color', colorChoice).css('border', '4px dotted ' + colorChoice);
+    console.log(colorChoice);
+  });
+
   //Stop recording (for dev purposes)
-  $('#stopbutton').on('click', function(){
+
+  $('#savebutton').on('click', function(){
     console.log('stopping..');
     localStream.stop();
+    $('.color-palette').fadeOut(400);
+    $('#main-video').css('display', 'none');
+    $('#main-canvas').css('visibility', 'visible');
+    saveImage();
+    //add save image modal here
   });
 } else {
   //no modern browser detected...fallback?
   alert('please use a better browser');
 }
 
+// OLD BUTTONS
+
+// $('#snapshot').on('click', function(){
+//   //look at snapshot.js for functionality
+//   localStream.stop();
+//   $('#main-video').css('display', 'none');
+//   $('#main-canvas').show();
+//   snapShot();
+// });
+
+// $('#trackbutton').on('click', function(){
+//   //look at track.js for functionality
+//   $('#main-video').css('display', 'none');
+//   $('#main-canvas').css('display', 'inline-block');
+//   draw();
+// });
+
+// // REVEAL
+// $('#erasebutton').on('click', function(){
+//   $('#main-video').css('display', 'none');
+//   $('#main-canvas').css('visibility', 'visible');
+//   maskArray = createMaskArray();
+//   erase();
+// });

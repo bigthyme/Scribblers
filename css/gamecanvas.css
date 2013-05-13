@@ -3,6 +3,22 @@
     color: #404040;
   }
 
+  #main-video {
+    transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    -moz-transform:scaleX(-1);
+  }
+
+  #main-canvas {
+    transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    -moz-transform:scaleX(-1);
+  }
+
+  #main-image {
+    display: none;
+  }
+
   .media .span4 .game-brand {
     text-align: center;
     font-size: 3em;
@@ -15,13 +31,76 @@
   }
 
   .media .span8 .game-info {
-    font-size: 1.35em;
+    font-size: 1.4em;
     height: 2em;
     padding-top: 1em;
-    background-color: rgba(128, 128, 128, 0.6);
+    font-weight: 300;
+    background-color: rgba(202, 202, 202, 0.6);
+    text-shadow: 2px 1px 1px rgb(145, 145, 145);
     border-radius: 0.4em;
-    padding-left: 15px;
+    padding-left: 1.5em;
+    font-family: 'Cherry Cream Soda', cursive;
     color: white;
+    border: 4px dotted gray;
+  }
+
+  .media .span8 .color-palette {
+    display: none;
+    margin-left: 0px;
+    border: 1px solid #6c615c;
+    height: 3em;
+    margin-bottom: -3em;
+    border-top: 0.5em;
+    position: relative;
+    top: 3.9em;
+    left: 1.83em;
+    box-shadow: -1px 0px 8px;
+  }
+
+  .media .span8 .color-palette li{
+    float: left;
+    font-family: 'Cherry Cream Soda', cursive;
+    list-style-type: none;
+    width: 5.805em;
+    border-right: 1px solid rgba(0,0,0,0.6);
+    padding: 0.777em;
+    color: white;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 500;
+    text-shadow: 2px -1px -1px rgba(0,0,0,0.5);
+    cursor: pointer;
+  }
+
+  .media .span8 .color-palette li:hover{
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.15);
+    color: rgba(0,0,0,0.9);
+    text-shadow: 2px 1px 1px rgba(255,255,255,0.5);
+  }
+
+  .media .span8 .color-palette .red {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 0, 0, 0.8)),to(rgba(172, 0, 0, 0.8)));
+  }
+
+  .media .span8 .color-palette .orange {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 112, 0, 0.8)),to(rgba(172, 48, 0, 0.8)));
+  }
+
+  .media .span8 .color-palette .yellow {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 235, 0, 0.8)),to(rgba(172, 117, 0, 0.8)));
+  }
+
+  .media .span8 .color-palette .green {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 255, 20, 0.8)),to(rgba(55, 172, 0, 0.8)));
+  }
+
+  .media .span8 .color-palette .blue {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 133, 255, 0.8)),to(rgba(0, 55, 172, 0.8)));
+  }
+
+  .media .span8 .color-palette .purple {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(102, 0, 255, 0.8)),to(rgba(28, 0, 172, 0.8)));
+    border-right: 0px !important;
   }
 
   .media .span8 .main-video {
@@ -37,8 +116,8 @@
 
 
  .media .span8 .main-canvas {
+    display: none;
     padding: 1em;
-    /*margin-top: 1.5em;*/
     background: whitesmoke;
     margin: 4em;
     box-shadow: -1px 3px 15px;
@@ -73,11 +152,10 @@
   .media .span2 .button p:active {
     border: 3px solid rgba(0, 0, 0, 0.4);
     color: white;
-    text-shadow: 1px 1px 1px black;
   }
 
   .media .span2 .top-margin p {
-    margin-top: 2em !important;
+    margin-top: 2.1em !important;
   }
 
   .media .span2 .move-left p {
@@ -90,6 +168,10 @@
 
   .media .span2 .red p {
     background-color: rgba(255, 0, 0, 0.4);
+  }
+
+  .media .span2 .orange p {
+    background-color: rgba(255, 71, 0, 0.4);
   }
 
   .media .span2 .green p {

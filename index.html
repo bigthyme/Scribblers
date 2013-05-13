@@ -40,25 +40,37 @@
           <p class="game-brand"> Game Name </p> <!-- THIS FONT WILL CHANGE FOR EACH GAME -->
         </div>
         <div class="span8">
-          <p class="game-info" id="textarea"> Your Current Paint Color: </p>
+          <div class="game-info" id="textarea"> Welcome to Paint, we hope you enjoy it!</div>
+          <!-- <div id="textarea"></div> -->
         </div>
       </div> <!-- ROW -->
       <div class="row">
         <div class="span2">
            <span id="paintbutton" class="button move-right purple top-margin"> <p> Paint </p> </span>
            <span id="eraserbutton" class="button move-right yellow"> <p> Eraser </p> </span>
-           <span id="snapshot" class="button move-right yellow-brown"><p> Snap Shot </p> </span>
            <span id="speechbutton" class="button move-right blue-purple"> <p>Speak</p> </span>
            <span id="background-button" class="button move-right blue-purple"> <p>Background</p> </span>
         </div>
         <div class="span8">
-          <video id="main-video" class="main-video" autoplay=""> </video>
+          <div class="span7">
+            <ul class="color-palette">
+              <li class="red">Red</li>
+              <li class="orange">Orange</li>
+              <li class="yellow">Yellow</li>
+              <li class="green">Green</li>
+              <li class="blue">Blue</li>
+              <li class="purple">Purple</li>
+            </ul>
+          </div>
+          <video id="main-video" class="main-video"   autoplay=""> </video>
           <canvas id="main-canvas" class="main-canvas"></canvas>
+          <!--imaage tag with no src for saving canvas as image-->
+          <img id='main-image'/>
           <div id="highlight"></div>
         </div>
         <div class="span2">
           <span id="startbutton" class="example button green top-margin move-left"><p> Start </p> </span>
-          <span id="stopbutton" class="button red move-left"> <p> Stop </p> </span>
+          <span id="savebutton" class="button red move-left"> <p> Save </p> </span>
         </div>
       </div> <!-- ROW -->
 
@@ -71,12 +83,12 @@
   <!-- new scripts -->
   <script src="init.js"></script>
   <script src="src/main.js"></script>
-  <script src="src/snapshot.js"></script>
   <script src="src/record.js"></script>
   <script src="src/eraser.js"></script>
   <script src="src/paint.js"></script>
   <script src="src/rgb2hsl.js"></script>
   <script src="src/speech.js"></script>
   <script src="src/background.js"></script>
+  <script src="src/saveimage.js"></script>
 </html>
 
