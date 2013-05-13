@@ -17,7 +17,8 @@ var v = document.querySelector('#main-video'),
     erasing,
     painting,
     colorChoice,
-    paintArray;
+    paintArray,
+    bgPaintArray;
 
 var pixelDataArray = function(elem) {
   var rowArr, arr = [];
@@ -99,12 +100,12 @@ if(hasGetUserMedia()){
     snapShot();
   });
 
-  $('#trackbutton').on('click', function(){
-    //look at track.js for functionality
-    $('#main-video').css('display', 'none');
-    $('#main-canvas').css('visibility', 'visible');
-    draw();
-  });
+  // $('#trackbutton').on('click', function(){
+  //   //look at track.js for functionality
+  //   $('#main-video').css('display', 'none');
+  //   $('#main-canvas').css('visibility', 'visible');
+  //   draw();
+  // });
 
   // REVEAL
   $('#erasebutton').on('click', function(){
@@ -121,8 +122,23 @@ if(hasGetUserMedia()){
       painting = false;
       erasing = true;
       eraser();
-    };
-  })
+    }
+  });
+
+  $('#background-button').on('click', function(){
+    console.log('bg')
+    $('#main-canvas').css('visibility', 'visible');
+    $('#main-canvas').css('display', 'inline-block');
+    $('#main-video').css('display', 'none');
+    $('#main-canvas').css('background-image', 'url("../img/hedgehog.png")');
+    $('#main-canvas').css('background-size', 'cover');
+    if(bgPaintArray === undefined) {
+      bgPaintArray = createBgPaintArray();
+    }
+    painting = true;
+    erasing = false;
+    background();
+  });
 
   // $('#paintbutton').on('click', function(){
   //   // location.reload();
