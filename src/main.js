@@ -97,6 +97,8 @@ if(hasGetUserMedia()){
     //look at record.js for funcitonality
     recordVideo();
     //change text for directions
+   $('#start-button p').text('Restart');
+
     $('#textarea').text('Press the allow button up top to get started!').css('color', 'orange').css('border', '4px dotted orange');
   });
 
