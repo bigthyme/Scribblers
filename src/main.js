@@ -179,7 +179,7 @@ if(hasGetUserMedia()){
 
   $('li').on('click', function(){
     colorChoice = $(this).attr('class');
-    $('#textarea').text('You picked ' + colorChoice).css('color', colorChoice).css('border', '4px dotted ' + colorChoice);
+    $('#textarea').text('You are painting with ' + colorChoice).css('color', colorChoice).css('border', '4px dotted ' + colorChoice);
     console.log(colorChoice);
   });
 
@@ -187,10 +187,12 @@ if(hasGetUserMedia()){
 
   $('#savebutton').on('click', function(){
     console.log('stopping..');
+    localStream.stop();
     $('.color-palette').fadeOut(400);
     $('#main-video').css('display', 'none');
     $('#main-canvas').css('visibility', 'visible');
     saveImage();
+    //add save image modal here
   });
 } else {
   //no modern browser detected...fallback?
