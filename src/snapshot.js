@@ -4,9 +4,12 @@
 var snapShot = function(){
   //if video has a src
   if($('video').attr('src')){
-    //x is the context that specifies the main canvas element (set in main.js)
     x.drawImage(v, 0, 0, w, h);
-    paint();
+    dataURL = c.toDataURL();
+    image.src = dataURL;
+    $('#main-canvas').hide();
+    $('#main-image').show();
+    $('#savebutton a').attr("href",dataURL);   
   } else {
     alert('please start the video first!');
   }

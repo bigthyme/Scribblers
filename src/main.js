@@ -187,8 +187,8 @@ if(hasGetUserMedia()){
     localStream.stop();
     $('.color-palette').fadeOut(400);
     $('#main-video').css('display', 'none');
-    $('#main-canvas').css('visibility', 'visible');
-    saveImage();
+    $('#main-canvas').show();
+    snapShot();
     //add save image modal here
   });
 } else {

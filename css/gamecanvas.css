@@ -17,8 +17,15 @@
 
   #main-image {
     display: none;
+    transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    -moz-transform:scaleX(-1);
   }
 
+  #savebutton a {
+    text-decoration: none;
+    color: inherit;
+  }
   .media .span4 .game-brand {
     text-align: center;
     font-size: 3em;
