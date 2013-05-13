@@ -124,17 +124,9 @@ if(hasGetUserMedia()){
     };
   })
 
-  // $('#paintbutton').on('click', function(){
-  //   // location.reload();
-  //   console.log(location);
-  //   //look at track.js for functionality
-
-  //   $('#main-canvas').css('background-image', 'url("../lib/orange.jpeg")');
-  //   $('#main-video').css('display', 'none');
-  //   $('#main-canvas').css('visibility', 'visible');
-  //   paintArray = createPaintArray();
-  //   paint();
-  // });
+  $('#paintbutton').on('click', function(){
+    $('#textarea').show();
+  });
 
   $('#speechbutton').on('click',function(){
     $('canvas').show();
@@ -145,7 +137,6 @@ if(hasGetUserMedia()){
     setTimeout(function(){
       textArray = $('#textarea').text().split(' ');
       colorChoice = textArray[textArray.length - 1];
-      console.log(colorChoice);
     }, 1000);
 
     console.log('your color: ', colorChoice);
@@ -154,6 +145,16 @@ if(hasGetUserMedia()){
     if(paintArray === undefined) {
       paintArray = createPaintArray();
     };
+    painting = true;
+    erasing = false;
+    paint();
+  });
+
+  $('li').on('click', function(){
+    if(paintArray === undefined) {
+      paintArray = createPaintArray();
+    };
+    colorChoice = $(this).attr('class');
     painting = true;
     erasing = false;
     paint();

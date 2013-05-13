@@ -1,7 +1,7 @@
 //Document ready stuff...
 
 $(function(){
-  $('canvas').hide();
+  $('canvas').hide() && $('#textarea').hide();
   //TODO: loop through and give titles
   $('.button').on('mouseenter', function(e){
     var self = $(this),
