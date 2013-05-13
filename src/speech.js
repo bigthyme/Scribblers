@@ -23,9 +23,8 @@ if (!('webkitSpeechRecognition' in window)) {
     console.log('testing event ', event.results);
      for (var i = event.resultIndex; i < event.results.length; ++i) {
       if (event.results[i].isFinal) {
-        var output = event.results[i][0].transcript;
-        // textarea.innerHTML += ' ' + event.results[i][0].transcript;
-        return checkOutput(output);
+        textarea.innerHTML += ' ' + event.results[i][0].transcript;
+        checkOutput();
       } else {
         alert('what happened?');
       }
@@ -51,7 +50,8 @@ if (!('webkitSpeechRecognition' in window)) {
   }
 
   //Output helpers
-  var checkOutput = function(output){
+  var checkOutput = function(){
+    var output = document.getElementById('textarea').innerHTML;
     if(output.length > 0){
       lastWord(output);
     } else {
@@ -61,7 +61,6 @@ if (!('webkitSpeechRecognition' in window)) {
 
   var lastWord = function(string) {
     words = string.split(' ');
-    console.log(words);
     var latestWord = words.pop();
     if(latestWord === 'red' || latestWord === 'blue' || latestWord === 'green'){
       return latestWord;

@@ -125,7 +125,7 @@ if(hasGetUserMedia()){
   })
 
   $('#paintbutton').on('click', function(){
-    $('#textarea').fadeIn(300).delay(200);
+    $('.color-palette').fadeIn(300).delay(200);
   });
 
   $('#speechbutton').on('click',function(){
@@ -135,12 +135,12 @@ if(hasGetUserMedia()){
 
     //TODO: Add helper function
     if(!colorChoice){
-      colorChoice = 'black'
-    } else {
       setTimeout(function(){
         textArray = $('#textarea').text().split(' ');
         colorChoice = textArray[textArray.length - 1];
       }, 1000);
+    } else {
+      colorChoice = 'black';
     }
 
     console.log('your color: ', colorChoice);
@@ -155,20 +155,20 @@ if(hasGetUserMedia()){
   });
 
   $('li').on('click', function(){
-    if(paintArray === undefined) {
-      paintArray = createPaintArray();
-    };
+    // if(paintArray === undefined) {
+    //   paintArray = createPaintArray();
+    // };
     colorChoice = $(this).attr('class');
     console.log(colorChoice);
-    painting = true;
-    erasing = false;
-    paint();
+    // painting = true;
+    // erasing = false;
+    // paint();
   });
 
   //Stop recording (for dev purposes)
   $('#stopbutton').on('click', function(){
     console.log('stopping..');
-    $('#textarea').fadeOut('fast');
+    $('.color-palette').fadeOut('fast');
     localStream.stop();
   });
 } else {
