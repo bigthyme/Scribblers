@@ -164,7 +164,7 @@ if(hasGetUserMedia()){
   //Stop recording (for dev purposes)
   $('#stopbutton').on('click', function(){
     console.log('stopping..');
-    $('#textarea').hide();
+    $('#textarea').fadeOut('fast');
     localStream.stop();
   });
 } else {
