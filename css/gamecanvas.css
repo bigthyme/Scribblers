@@ -52,10 +52,17 @@
     font-family: 'Didact Gothic', sans-serif;
     color: white;
     text-align: center;
+  }
+
+  .media .orange-pencil {
     background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 112, 0, 0.8)),to(rgba(172, 48, 0, 0.8)));
     border-bottom: solid 0.2em rgba(136, 70, 18, 0.8);
   }
 
+  .media .brown-pencil {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(87, 44, 10, 0.8)),to(rgba(90, 32, 9, 0.8)));
+    border-bottom: solid 0.2em rgba(99, 55, 21, 0.8);
+  }
   .media .pencil-container {
     border: 1px solid black;
     height: 4.1em;
