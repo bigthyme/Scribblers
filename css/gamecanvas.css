@@ -120,8 +120,17 @@
     position: relative;
     bottom: 3.1em;
     right: 6em;
-    border-bottom-right-radius: 6px;
+    border-bottom-right-radius: 0.4em;
+    border-top-right-radius: 0.4em;
     z-index: -1;
+    box-shadow: 0px 2px 1px rgba(185,110,110,1), 0px -1px 1px rgba(185,110,110,1);
+    border-bottom: none;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+    background: rgb(205,130,130);
+    background: -moz-linear-gradient(left, rgba(205,130,130,1) 0%, rgba(245,170,170,1) 40%, rgba(225,150,150,1) 75%, rgba(185,110,110,1) 100%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(205,130,130,1)), color-stop(40%,rgba(245,170,170,1)), color-stop(75%,rgba(225,150,150,1)), color-stop(100%,rgba(185,110,110,1)));
+    background: -webkit-linear-gradient(left, rgba(205,130,130,1) 0%,rgba(245,170,170,1) 40%,rgba(225,150,150,1) 75%,rgba(185,110,110,1) 100%);
   }
 
   .media .color-palette {
