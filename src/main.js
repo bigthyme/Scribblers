@@ -23,6 +23,8 @@ var v = document.querySelector('#main-video'),
     bgPaintArray,
     elementAttr,
     pencilClass,
+    currentText,
+    wordArray,
     mode;
 
 var pixelDataArray = function(elem) {
@@ -150,10 +152,13 @@ if(hasGetUserMedia()){
       //Custom bind function
       $('#textarea').bind('newWord', function(e){
         console.log(e);
-        var string = $(this).text();
-        var wordArray = string.split(' ');
+        currentText = $(this).text();
+        wordArray = currentText.split(' ');
+        elementAttr = $('#textarea').attr('class').split(' ');
+        pencilClass = elementAttr[elementAttr.length-1];
         colorChoice = wordArray[wordArray.length-1];
-        $('#textarea').text('You are painting with ' + colorChoice).css('color', colorChoice).css('border', '4px dotted ' + colorChoice);
+        $('#textarea').text('You are painting with ' + colorChoice).removeClass(pencilClass).addClass(colorChoice + '-pencil');
+        $('.pencil-tip').css('border-bottom', '12px solid ' + colorChoice);
         $('#main-video').css('display', 'none');
         if(paintArray === undefined) {
           paintArray = createPaintArray();
