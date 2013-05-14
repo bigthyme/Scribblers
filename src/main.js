@@ -99,12 +99,12 @@ if(hasGetUserMedia()){
     //change text for directions
    $('#start-button p').text('Restart');
 
-    $('#textarea').text('Press the allow button up top to get started!').css('color', 'orange').css('border', '4px dotted orange');
+    $('#textarea').text('Press the allow button up top to get started!').addClass('orange-pencil');
   });
 
   $('#eraser-button').on('click', function(){
     if(paintArray === undefined) {
-      $('#textarea').text('Please click start to begin painting').css('color', 'red').css('border', '4px dotted red');
+      $('#textarea').text('Please click start to begin painting');
     } else {
       painting = false;
       erasing = true;
