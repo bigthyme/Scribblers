@@ -39,7 +39,7 @@ if (!('webkitSpeechRecognition' in window)) {
   var toggleStartStop = function() {
     if (recognizing) {
       console.log('stop recording...');
-      recognition.stop();
+      // recognition.stop();
       reset();
     } else {
       recognition.start();

@@ -126,6 +126,9 @@ if(hasGetUserMedia()){
   });
 
   $('#paint-button').on('click', function(){
+    //clear alwaysRecord interval
+    clearInterval();
+
     if($('video').attr('src')){
       if(!colorChoice){
         colorChoice = 'black';
@@ -154,15 +157,15 @@ if(hasGetUserMedia()){
       toggleStartStop();
 
       //TODO: Add helper function
-      setTimeout(function(){
+      setInterval(function(){
         textArray = $('#textarea').text().split(' ');
         colorChoice = textArray[textArray.length - 1];
         console.log('your color: ', colorChoice);
         $('#textarea').css('color', colorChoice).css('border', '4px dotted ' + colorChoice);
-      }, 1000);
+      }, 2000);
 
       $('#main-video').css('display', 'none');
-      // $('#main-canvas').css('visibility', 'visible');
+      // $('#main-canvas').css('visibility', 'visible');s
       if(paintArray === undefined) {
         paintArray = createPaintArray();
       };
