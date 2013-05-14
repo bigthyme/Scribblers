@@ -49,6 +49,7 @@
 
   .media .game-info {
     font-size: 1.9em;
+    letter-spacing: 1px;
     font-family: 'Cherry Cream Soda', cursive;
     height: 1.69em;
     line-height: 1.5em;
@@ -132,7 +133,7 @@
   }
 
   .media .pencil-eraser {
-    height: inherit;
+    height: 3.97em;
     border: 1px solid gray;
     width: 3.9em;
     position: relative;

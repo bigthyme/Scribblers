@@ -21,6 +21,8 @@ var v = document.querySelector('#main-video'),
     colorValue,
     paintArray,
     bgPaintArray,
+    elementAttr,
+    pencilClass,
     mode;
 
 var pixelDataArray = function(elem) {
@@ -87,7 +89,7 @@ if(hasGetUserMedia()){
     //change text for directions
    $('#start-button p').text('Restart');
 
-    $('#textarea').text('Press the allow button up top to get started!');
+    $('#textarea').text('Press the allow button up top to start!');
   });
 
   $('#eraser-button').on('click', function(){
@@ -117,7 +119,6 @@ if(hasGetUserMedia()){
     if($('video').attr('src')){
       if(!colorChoice){
         colorChoice = 'black';
-        // colorValue = [0,0,0,255];
         $('#textarea').text('You are painting with ' + colorChoice).removeClass('brown-pencil').addClass(colorChoice + '-pencil');
       } else if(colorChoice === 'black') {
         $('#textarea').text('Would you like to try more colors');
@@ -176,18 +177,10 @@ if(hasGetUserMedia()){
 
   $('li').on('click', function(){
     colorChoice = $(this).attr('class');
+    elementAttr = $('#textarea').attr('class').split(' ');
+    pencilClass = elementAttr[elementAttr.length-1];
     colorChooser();
-    if(colorChoice === 'green'){
-      $('#textarea').text('You are painting with ' + colorChoice).css('color', 'limegreen').css('border', '4px dotted ' + 'limegreen');
-        console.log(colorChoice);
-    } else if(colorChoice === 'purple'){
-      $('#textarea').text('You are painting with ' + colorChoice).css('color', 'blueviolet').css('border', '4px dotted ' + 'blueviolet');
-        console.log(colorChoice);
-    } else if(colorChoice === 'blue'){
-      $('#textarea').text('You are painting with ' + colorChoice).css('color', 'skyblue').css('border', '4px dotted ' + 'skyblue');
-        console.log(colorChoice);
-    } else {
-      $('#textarea').text('You are painting with ' + colorChoice).css('color', colorChoice).css('border', '4px dotted ' + colorChoice);
+    $('#textarea').text('You are painting with ' + colorChoice).css('color', colorChoice).css('border', '4px dotted ' + colorChoice);
     }
   });
 
