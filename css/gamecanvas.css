@@ -76,8 +76,18 @@
   }
 
   .media .green-pencil {
-    background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 235, 0, 0.8)),to(rgba(172, 117, 0, 0.8)));
-    border-bottom: solid 0.2em rgba(136, 98, 18, 0.8);
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 255, 20, 0.8)),to(rgba(55, 172, 0, 0.8)));
+    border-bottom: solid 0.2em rgba(75, 136, 18, 0.8);
+  }
+
+  .media .blue-pencil {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 133, 255, 0.8)),to(rgba(0, 55, 172, 0.8)));
+    border-bottom: solid 0.2em rgba(18, 60, 136, 0.8);
+  }
+
+  .media .purple-pencil {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(102, 0, 255, 0.8)),to(rgba(28, 0, 172, 0.8)));
+    border-bottom: solid 0.2em rgba(32, 18, 136, 0.8);
   }
 
   .media .brown-pencil {
@@ -175,7 +185,6 @@
     margin-bottom: -3em;
     border-top: 0.5em;
     position: relative;
-    top: 3.95em;
     left: 1.83em;
     box-shadow: -1px 0px 8px;
   }
@@ -245,6 +254,7 @@
     padding: 1em;
     background: whitesmoke;
     margin: 4em;
+    margin-top:0em;
     box-shadow: -1px 3px 15px;
   }
 
@@ -287,7 +297,7 @@
   }
 
   .media .top-margin p {
-    margin-top: 2.1em !important;
+    margin-top: 1.1em !important;
   }
 
   .media .move-left p {
