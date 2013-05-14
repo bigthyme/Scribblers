@@ -26,8 +26,8 @@ Developers
 
 Current Version
 -
-0.2.5: Added default paint color to black and improved paint to not score each pixel
-
+0.3.1 - Code freeze for functionality and begin refactor/UI
+ 
 Inspiration
 -
 getUserMedia API demos:

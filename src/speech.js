@@ -53,14 +53,6 @@ if (!('webkitSpeechRecognition' in window)) {
     }
   }
 
-  //Output helpers
-  // var checkTextArea = function(){
-  //   textarea
-  //   colorChoice = textArray[textArray.length - 1];
-  //   console.log('your color: ', colorChoice);
-  //   $('#textarea').css('color', colorChoice).css('border', '4px dotted ' + colorChoice);
-  // }
-
   var checkOutput = function(output){
     // var output = document.getElementById('textarea').innerHTML;
     if(output.length > 0){
