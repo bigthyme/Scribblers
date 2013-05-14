@@ -180,8 +180,7 @@ if(hasGetUserMedia()){
     elementAttr = $('#textarea').attr('class').split(' ');
     pencilClass = elementAttr[elementAttr.length-1];
     colorChooser();
-    $('#textarea').text('You are painting with ' + colorChoice).css('color', colorChoice).css('border', '4px dotted ' + colorChoice);
-    }
+    $('#textarea').text('You are painting with ' + colorChoice).removeClass(pencilClass).addClass(colorChoice + '-pencil');
   });
 
   $('#save-button').on('click', function(){
