@@ -181,6 +181,7 @@ if(hasGetUserMedia()){
     pencilClass = elementAttr[elementAttr.length-1];
     colorChooser();
     $('#textarea').text('You are painting with ' + colorChoice).removeClass(pencilClass).addClass(colorChoice + '-pencil');
+    $('.pencil-tip').css('border-bottom', '12px solid ' + colorChoice);
   });
 
   $('#save-button').on('click', function(){
