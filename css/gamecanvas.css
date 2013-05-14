@@ -56,6 +56,24 @@
     border: 1px solid #6c615c;
   }
 
+  .media .pencil-container {
+    border: 1px solid black;
+  }
+
+  .media .pencil-start {
+    border: 1px solid red;
+    height: 4em;
+    position: relative;
+    left: 5em;
+  }
+
+  .media .pencil-end {
+    border: 1px solid blue;
+    height: 4em;
+    position: relative;
+    right: 5em;
+  }
+
   .media .color-palette {
     display: none;
     margin-left: 0px;
