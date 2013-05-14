@@ -58,20 +58,70 @@
 
   .media .pencil-container {
     border: 1px solid black;
+    height: 4.1em;
+  }
+
+  .media .pencil-tip {
+    position: relative;
+    width: 0;
+    height: 0;
+    border-left: 9px solid transparent;
+    border-right: 9px solid transparent;
+    border-bottom: 12px solid black;
+    -webkit-transform: rotate(270deg);
+    left: 5.8em;
+    top: 1.6em;
+    z-index: 5;
   }
 
   .media .pencil-start {
-    border: 1px solid red;
-    height: 4em;
     position: relative;
-    left: 5em;
+    left: 2.6em;
+    width: 0;
+    height: 0;
+    border-top: 28px solid transparent;
+    border-bottom: 28px solid transparent;
+    border-left: 40px solid rgba(202,176,147,1);
+    -webkit-transform: rotate(180deg);
   }
 
   .media .pencil-end {
-    border: 1px solid blue;
-    height: 4em;
+    height: 3em;
     position: relative;
-    right: 5em;
+    top: 0.1em;
+    right: 6.1em;
+    border-radius: 2px;
+    border-bottom: solid thin rgba(0,0,0,.25);
+    background: rgb(134,113,99);
+    background: -moz-linear-gradient(left, rgba(134,113,99,1) 0%, rgba(248,224,203,1) 40%, rgba(238,211,190,1) 50%, rgba(76,59,48,1) 100%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(134,113,99,1)), color-stop(40%,rgba(248,224,203,1)), color-stop(50%,rgba(238,211,190,1)), color-stop(100%,rgba(76,59,48,1)));
+    background: -webkit-linear-gradient(left, rgba(134,113,99,1) 0%,rgba(248,224,203,1) 40%,rgba(238,211,190,1) 50%,rgba(76,59,48,1) 100%);
+    background: linear-gradient(to right, rgba(134,113,99,1) 0%,rgba(248,224,203,1) 40%,rgba(238,211,190,1) 50%,rgba(76,59,48,1) 100%);
+    z-index: 2;
+    -webkit-transform: rotate(270deg);
+  }
+
+  .media .pencil-end:before {
+    position: absolute;
+    content: '';
+    top: 13px;
+    left: 8px;
+    width: 40px;
+    height: 10px;
+    background: rgba(0,0,0,0);
+    border-top: solid 4px rgba(0,0,0,.2);
+    border-bottom: solid 4px rgba(0,0,0,.2);
+    border-radius: 2px;
+  }
+
+  .media .pencil-eraser {
+    height: inherit;
+    border: 1px solid gray;
+    position: relative;
+    bottom: 3.1em;
+    right: 6em;
+    border-bottom-right-radius: 6px;
+    z-index: -1;
   }
 
   .media .color-palette {
