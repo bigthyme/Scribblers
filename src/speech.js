@@ -2,7 +2,9 @@
 if (!('webkitSpeechRecognition' in window)) {
   alert('Oh no your browser is too old for this!');
 } else {
-  var recognizing;
+  var recognizing,
+      output = '',
+      textarea = document.getElementById('textarea');
 
   var recognition = new webkitSpeechRecognition();
   recognition.continuous = true;
@@ -23,10 +25,11 @@ if (!('webkitSpeechRecognition' in window)) {
     console.log('testing event ', event.results);
      for (var i = event.resultIndex; i < event.results.length; ++i) {
       if (event.results[i].isFinal) {
-        textarea.innerHTML = 'You are painting with ' + event.results[i][0].transcript;
-        checkOutput();
+        output = event.results[i][0].transcript;
+        // textarea.innerHTML = 'You are painting with ' + event.results[i][0].transcript;
+        checkOutput(output);
       } else {
-        alert('what happened?');
+        alert('what happened..?');
       }
     }
   }
@@ -50,9 +53,17 @@ if (!('webkitSpeechRecognition' in window)) {
   }
 
   //Output helpers
-  var checkOutput = function(){
-    var output = document.getElementById('textarea').innerHTML;
+  // var checkTextArea = function(){
+  //   textarea
+  //   colorChoice = textArray[textArray.length - 1];
+  //   console.log('your color: ', colorChoice);
+  //   $('#textarea').css('color', colorChoice).css('border', '4px dotted ' + colorChoice);
+  // }
+
+  var checkOutput = function(output){
+    // var output = document.getElementById('textarea').innerHTML;
     if(output.length > 0){
+      console.log('checking output...');
       lastWord(output);
     } else {
       alert('Oops, please speak into the microphone.');
@@ -63,7 +74,8 @@ if (!('webkitSpeechRecognition' in window)) {
     words = string.split(' ');
     var latestWord = words.pop();
     if(latestWord === 'red' || latestWord === 'blue' || latestWord === 'green' || latestWord === 'orange' || latestWord === 'yellow' || latestWord === 'purple'){
-      return latestWord;
+      console.log('the string...', string);
+      textarea.innerHTML = 'You are painting with ' + string;
     } else {
       alert('Oops, you said ' + latestWord + ' please say a color instead.');
     }
