@@ -85,12 +85,14 @@ if(hasGetUserMedia()){
     //look at record.js for funcitonality
     recordVideo();
     //change text for directions
-    $('#textarea').text('Press the allow button up top to get started!').css('color', 'orange').css('border', '4px dotted orange');
+   $('#start-button p').text('Restart');
+
+    $('#textarea').text('Press the allow button up top to get started!');
   });
 
   $('#eraser-button').on('click', function(){
     if(paintArray === undefined) {
-      $('#textarea').text('Please click start to begin painting').css('color', 'red').css('border', '4px dotted red');
+      $('#textarea').text('Please click start to begin painting');
     } else {
       painting = false;
       erasing = true;
@@ -115,10 +117,10 @@ if(hasGetUserMedia()){
     if($('video').attr('src')){
       if(!colorChoice){
         colorChoice = 'black';
-        colorValue = [0,0,0,255];
-        $('#textarea').text('You are painting with ' + colorChoice).css('color', colorChoice).css('border', '4px dotted ' + colorChoice);
+        // colorValue = [0,0,0,255];
+        $('#textarea').text('You are painting with ' + colorChoice).removeClass('brown-pencil').addClass(colorChoice + '-pencil');
       } else if(colorChoice === 'black') {
-        $('#textarea').text('Would you like to try more colors').css('color', 'pink').css('border', '4px dotted pink');
+        $('#textarea').text('Would you like to try more colors');
       }
       $('.color-palette').fadeIn(400);
       $('#main-video').css('display', 'none');
@@ -134,7 +136,7 @@ if(hasGetUserMedia()){
         paint();
       }
     } else {
-      $('#textarea').text('Please click start to begin painting').css('color', 'red').css('border', '4px dotted red');
+      $('#textarea').text('Please click start to begin painting');
     }
   });
 
@@ -175,8 +177,18 @@ if(hasGetUserMedia()){
   $('li').on('click', function(){
     colorChoice = $(this).attr('class');
     colorChooser();
-    $('#textarea').text('You are painting with ' + colorChoice).css('color', colorChoice).css('border', '4px dotted ' + colorChoice);
-    console.log(colorChoice);
+    if(colorChoice === 'green'){
+      $('#textarea').text('You are painting with ' + colorChoice).css('color', 'limegreen').css('border', '4px dotted ' + 'limegreen');
+        console.log(colorChoice);
+    } else if(colorChoice === 'purple'){
+      $('#textarea').text('You are painting with ' + colorChoice).css('color', 'blueviolet').css('border', '4px dotted ' + 'blueviolet');
+        console.log(colorChoice);
+    } else if(colorChoice === 'blue'){
+      $('#textarea').text('You are painting with ' + colorChoice).css('color', 'skyblue').css('border', '4px dotted ' + 'skyblue');
+        console.log(colorChoice);
+    } else {
+      $('#textarea').text('You are painting with ' + colorChoice).css('color', colorChoice).css('border', '4px dotted ' + colorChoice);
+    }
   });
 
   $('#save-button').on('click', function(){
