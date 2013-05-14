@@ -10,7 +10,7 @@ var createPaintArray = function() {
 var paint = function() {
 
   x.drawImage(v, 0, 0, w, h);
-  x.restore();
+  // x.restore();
 
   var pixels = x.getImageData(0, 0, w, h),
       pixCount = pixels.data.length / 4;
