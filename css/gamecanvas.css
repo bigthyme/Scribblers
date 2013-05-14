@@ -70,9 +70,14 @@
     border-bottom: solid 0.2em rgba(136, 70, 18, 0.8);
   }
 
-  .media .orange-pencil {
-    background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 112, 0, 0.8)),to(rgba(172, 48, 0, 0.8)));
-    border-bottom: solid 0.2em rgba(136, 70, 18, 0.8);
+  .media .yellow-pencil {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 235, 0, 0.8)),to(rgba(172, 117, 0, 0.8)));
+    border-bottom: solid 0.2em rgba(136, 98, 18, 0.8);
+  }
+
+  .media .green-pencil {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 235, 0, 0.8)),to(rgba(172, 117, 0, 0.8)));
+    border-bottom: solid 0.2em rgba(136, 98, 18, 0.8);
   }
 
   .media .brown-pencil {
