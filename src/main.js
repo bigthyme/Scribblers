@@ -99,7 +99,7 @@ if(hasGetUserMedia()){
     //change text for directions
    $('#start-button p').text('Restart');
 
-    $('#textarea').text('Press the allow button up top to get started!').addClass('orange-pencil');
+    $('#textarea').text('Press the allow button up top to get started!');
   });
 
   $('#eraser-button').on('click', function(){
@@ -131,9 +131,9 @@ if(hasGetUserMedia()){
     if($('video').attr('src')){
       if(!colorChoice){
         colorChoice = 'black';
-        $('#textarea').text('You are painting with ' + colorChoice).css('color', 'white').css('border', '4px dotted rgb(179, 179, 179)');
+        $('#textarea').text('You are painting with ' + colorChoice).removeClass('brown-pencil').addClass(colorChoice + '-pencil');
       } else if(colorChoice === 'black') {
-        $('#textarea').text('Would you like to try more colors').css('color', 'pink').css('border', '4px dotted pink');
+        $('#textarea').text('Would you like to try more colors');
       }
       $('.color-palette').fadeIn(400);
       $('#main-video').css('display', 'none');
@@ -145,7 +145,7 @@ if(hasGetUserMedia()){
       erasing = false;
       paint();
     } else {
-      $('#textarea').text('Please click start to begin painting').css('color', 'red').css('border', '4px dotted red');
+      $('#textarea').text('Please click start to begin painting');
     }
   });
 
@@ -155,11 +155,9 @@ if(hasGetUserMedia()){
       console.log('recording...');
       toggleStartStop();
 
-      //TODO: Add helper function
       setTimeout(function(){
         textArray = $('#textarea').text().split(' ');
         colorChoice = textArray[textArray.length - 1];
-        console.log('your color: ', colorChoice);
         $('#textarea').css('color', colorChoice).css('border', '4px dotted ' + colorChoice);
       }, 1000);
 
