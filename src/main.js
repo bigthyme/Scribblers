@@ -152,17 +152,17 @@ if(hasGetUserMedia()){
         $('#textarea').text('You are painting with ' + colorChoice).css('color', colorChoice).css('border', '4px dotted ' + colorChoice);
       });
 
-      $('#main-video').css('display', 'none');
-        if(paintArray === undefined) {
-          paintArray = createPaintArray();
-        };
-        painting = true;
-        erasing = false;
-        paint();
-        } else {
-          $('#textarea').text('Please click start to begin painting').css('color', 'red').css('border', '4px dotted red');
-       }
-    });
+  $('#main-video').css('display', 'none');
+    if(paintArray === undefined) {
+      paintArray = createPaintArray();
+    };
+    painting = true;
+    erasing = false;
+    paint();
+    } else {
+      $('#textarea').text('Please click start to begin painting').css('color', 'red').css('border', '4px dotted red');
+    }
+  });
 
   $('li').on('click', function(){
     colorChoice = $(this).attr('class');
