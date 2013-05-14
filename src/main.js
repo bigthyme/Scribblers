@@ -179,20 +179,11 @@ if(hasGetUserMedia()){
     $('#textarea').text('You are painting with ' + colorChoice).css('color', colorChoice).css('border', '4px dotted ' + colorChoice);
     console.log(colorChoice);
   });
-
-  //Stop recording (for dev purposes)
-
-  $('#savebutton').on('click', function(){
-    console.log('stopping..');
-    //localStream.stop();
-    $('.color-palette').fadeOut(400);
-    $('#main-video').css('display', 'none');
-    $('#main-canvas').show();
+  //save button saves the current video or canvas and automatically downloads it to disk
+  $('#savebutton').on('click', function(e){
     saveImage();
-    // $('#main-canvas').css("transform", "scaleX(-1)");
-    // $('#main-canvas').css("-webkit-transform", "scaleX(-1)");
-    // $('#main-canvas').css("-moz-transform", "scaleX(-1)");
   });
+
 } else {
   //no modern browser detected...fallback?
   alert('please use a better browser');
