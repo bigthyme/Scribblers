@@ -44,7 +44,7 @@
 
   .media .game-info {
     font-size: 2.2em;
-    height: 1.5em;
+    height: 1.4em;
     line-height: 1.2em;
     padding-top: 0.3em;
     text-shadow: 2px 1px 1px rgb(0, 0, 0);
@@ -52,8 +52,8 @@
     font-family: 'Didact Gothic', sans-serif;
     color: white;
     text-align: center;
-    background: -webkit-gradient(linear, left top, left bottom, from(rgba(214, 157, 130, 0.8)),to(rgba(139, 98, 79, 0.8)));
-    border: 1px solid #6c615c;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 112, 0, 0.8)),to(rgba(172, 48, 0, 0.8)));
+    border-bottom: solid 0.2em rgba(136, 70, 18, 0.8);
   }
 
   .media .pencil-container {
@@ -117,9 +117,10 @@
   .media .pencil-eraser {
     height: inherit;
     border: 1px solid gray;
+    width: 3.9em;
     position: relative;
     bottom: 3.1em;
-    right: 6em;
+    right: 5em;
     border-bottom-right-radius: 0.4em;
     border-top-right-radius: 0.4em;
     z-index: -1;
