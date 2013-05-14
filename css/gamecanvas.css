@@ -302,4 +302,28 @@
   .navbar .btn-navbar {
     margin-top: 10px;
   }
+  
+  #myCarousel {
+    height: 300px;
+  }
 
+  .modal {
+    height:400px;
+  }
+
+  .modal-body {
+    height: 300px;
+  }
+
+  .carousel-inner .item {
+    height:300px;
+    position: static;
+  }
+
+  .item {
+    height: 100px;
+  }
+
+  .carousel-caption {
+    height: 200px;
+  }

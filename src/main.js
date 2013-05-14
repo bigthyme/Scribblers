@@ -23,6 +23,11 @@ var v = document.querySelector('#main-video'),
     bgPaintArray,
     mode;
 
+$(document).ready(function(){
+  $('.modal').modal({show:true});
+});
+
+
 //Set dimensions for elmements
 $('#main-video').attr('width', w +'px').attr('height', h + 'px');
 
@@ -48,6 +53,12 @@ if(hasGetUserMedia()){
     //change text for directions
     $('#textarea').text('Press the allow button up top to get started!').css('color', 'orange').css('border', '4px dotted orange');
   });
+  
+  $('.skip').on('click', function (){
+    $('.modal').modal('hide');
+    recordVideo();
+  });
+
 
   //Erase paint
   $('#eraser-button').on('click', function(){
