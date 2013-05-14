@@ -37,21 +37,21 @@ var pixelDataArray = function(elem) {
 var colorChooser = function() {
   switch(colorChoice) {
     case 'red':
-    colorValue=[255,0,0,255]; break;        
+    colorValue=[255,0,0,255]; break;
     case 'orange':
-    colorValue=[255,165,0,255]; break;        
+    colorValue=[255,165,0,255]; break;
     case 'yellow':
-    colorValue=[255,255,0,255]; break;   
+    colorValue=[255,255,0,255]; break;
     case 'green':
-    colorValue=[0,255,0,255]; break; 
+    colorValue=[0,255,0,255]; break;
     case 'blue':
-    colorValue=[98,138,215,255]; break; 
+    colorValue=[30,144,255,255]; break;
     case 'purple':
-    colorValue=[128,0,128,255]; break;   
+    colorValue=[128,0,128,255]; break;
     case 'black':
-    colorValue=[0,0,0,255]; break;  
+    colorValue=[0,0,0,255]; break;
     case 'white':
-    colorValue=[255,255,255,255]; break;      
+    colorValue=[255,255,255,255]; break;
   };
 };
 
@@ -112,6 +112,9 @@ if(hasGetUserMedia()){
   });
 
   $('#paint-button').on('click', function(){
+    //clear alwaysRecord interval
+    clearInterval();
+
     if($('video').attr('src')){
       if(!colorChoice){
         colorChoice = 'black';
@@ -140,27 +143,26 @@ if(hasGetUserMedia()){
       console.log('recording...');
       toggleStartStop();
 
-      //TODO: Add helper function
-      setTimeout(function(){
-        textArray = $('#textarea').text().split(' ');
-        colorChoice = textArray[textArray.length - 1];
-        colorChooser();
-        console.log('your color: ', colorChoice);
-        $('#textarea').css('color', colorChoice).css('border', '4px dotted ' + colorChoice);
-      }, 1000);
+      //Custom bind function
+      $('#textarea').bind('newWord', function(e){
+        console.log(e);
+        var string = $(this).text();
+        var wordArray = string.split(' ');
+        colorChoice = wordArray[wordArray.length-1];
+        $('#textarea').text('You are painting with ' + colorChoice).css('color', colorChoice).css('border', '4px dotted ' + colorChoice);
+      });
 
       $('#main-video').css('display', 'none');
-      // $('#main-canvas').css('visibility', 'visible');
-      if(paintArray === undefined) {
-        paintArray = createPaintArray();
-      };
-      painting = true;
-      erasing = false;
-      paint();
-    } else {
-      $('#textarea').text('Please click start to begin painting').css('color', 'red').css('border', '4px dotted red');
-    }
-  });
+        if(paintArray === undefined) {
+          paintArray = createPaintArray();
+        };
+        painting = true;
+        erasing = false;
+        paint();
+        } else {
+          $('#textarea').text('Please click start to begin painting').css('color', 'red').css('border', '4px dotted red');
+       }
+    });
 
   $('li').on('click', function(){
     colorChoice = $(this).attr('class');
