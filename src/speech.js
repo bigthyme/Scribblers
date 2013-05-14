@@ -33,7 +33,7 @@ if (!('webkitSpeechRecognition' in window)) {
 
   var reset = function() {
     recognizing = false;
-    $('#speechbutton p').text('Speak').parent().removeClass('orange').addClass('blue-purple');
+    $('#speech-button p').text('Speak').parent().removeClass('orange').addClass('blue-purple');
   }
 
   var toggleStartStop = function() {
@@ -45,7 +45,7 @@ if (!('webkitSpeechRecognition' in window)) {
       recognition.start();
       recognizing = true;
       console.log('in the else', recognition);
-      $('#speechbutton p').text('Done').parent().removeClass('blue-purple').addClass('orange');
+      $('#speech-button p').text('Done').parent().removeClass('blue-purple').addClass('orange');
     }
   }
 

@@ -12,6 +12,7 @@ $(function(){
       'Eraser' : 'Erase erases stuff',
       'Speak': 'say a color!',
       'Save': 'Do you want to save this beautiful picture?',
+      'Pic': 'paint on a picture!',
       'SnapShot': 'Do you want to snapshot?',
       'Track': 'Do you want to track?',
       'Start': 'do you want to start playing?',

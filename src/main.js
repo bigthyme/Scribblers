@@ -80,14 +80,14 @@ if(hasGetUserMedia()){
   navigator.getUserMedia  = navigator.getUserMedia ||navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
 
   //List of all button functionalities
-  $('#startbutton').on('click', function(){
+  $('#start-button').on('click', function(){
     //look at record.js for funcitonality
     recordVideo();
     //change text for directions
     $('#textarea').text('Press the allow button up top to get started!').css('color', 'orange').css('border', '4px dotted orange');
   });
 
-  $('#eraserbutton').on('click', function(){
+  $('#eraser-button').on('click', function(){
     if(paintArray === undefined) {
       $('#textarea').text('Please click start to begin painting').css('color', 'red').css('border', '4px dotted red');
     } else {
@@ -97,7 +97,7 @@ if(hasGetUserMedia()){
     }
   });
 
-  $('#background-button').on('click', function(){
+  $('#picture-button').on('click', function(){
     $('#main-canvas').css('visibility', 'visible');
     $('#main-canvas').css('display', 'inline-block');
     $('#main-video').css('display', 'none');
@@ -111,7 +111,7 @@ if(hasGetUserMedia()){
     background();
   });
 
-  $('#paintbutton').on('click', function(){
+  $('#paint-button').on('click', function(){
     if($('video').attr('src')){
       if(!colorChoice){
         colorChoice = 'black';
@@ -134,7 +134,7 @@ if(hasGetUserMedia()){
     }
   });
 
-  $('#speechbutton').on('click',function(){
+  $('#speech-button').on('click',function(){
     if($('video').attr('src')){
       $('canvas').show();
       console.log('recording...');
@@ -169,7 +169,7 @@ if(hasGetUserMedia()){
     console.log(colorChoice);
   });
 
-  $('#savebutton').on('click', function(){
+  $('#save-button').on('click', function(){
     console.log('stopping..');
     localStream.stop();
     $('.color-palette').fadeOut(400);
