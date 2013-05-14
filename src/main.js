@@ -19,7 +19,8 @@ var v = document.querySelector('#main-video'),
     painting,
     colorChoice,
     paintArray,
-    bgPaintArray;
+    bgPaintArray,
+    mode;
 
 var pixelDataArray = function(elem) {
   var rowArr, arr = [];
@@ -111,11 +112,13 @@ if(hasGetUserMedia()){
   });
 
   $('#background-button').on('click', function(){
+    mode = 'background';
     console.log('bg')
-    $('#main-canvas').css('visibility', 'visible');
-    $('#main-canvas').css('display', 'inline-block');
-    $('#main-video').css('display', 'none');
-    $('#main-canvas').css('background-image', 'url("../img/hedgehog.png")');
+    // $('#main-canvas').css('visibility', 'visible');
+    // $('#main-canvas').css('display', 'inline-block');
+    // $('#main-video').css('display', 'none');
+    snapShot();
+    $('#main-canvas').css('background-image', 'url(' + dataURL + ')');
     $('#main-canvas').css('background-size', 'cover');
     if(bgPaintArray === undefined) {
       bgPaintArray = createBgPaintArray();
@@ -124,6 +127,11 @@ if(hasGetUserMedia()){
     erasing = false;
     background();
   });
+
+  // $('#background-button').on('click', function(){
+  //   snapShot();
+
+  // });
 
   $('#paintbutton').on('click', function(){
     if($('video').attr('src')){
@@ -141,7 +149,11 @@ if(hasGetUserMedia()){
       };
       painting = true;
       erasing = false;
-      paint();
+      if(mode === 'background'){
+        background();
+      } else {
+        paint();
+      }
     } else {
       $('#textarea').text('Please click start to begin painting').css('color', 'red').css('border', '4px dotted red');
     }
@@ -168,7 +180,12 @@ if(hasGetUserMedia()){
       };
       painting = true;
       erasing = false;
-      paint();
+      if(mode === 'background'){
+        background();
+      } else {
+        paint();
+      }
+
     } else {
       $('#textarea').text('Please click start to begin painting').css('color', 'red').css('border', '4px dotted red');
     }

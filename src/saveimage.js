@@ -14,8 +14,8 @@ var saveImage = function(){
   //otherwise it will already be a canvas 
   dataURL = c.toDataURL();
   image.src = dataURL;
-  console.log("dataURL: " + dataURL);
   $('.main-canvas').hide();
   $('.main-image').show();
   $('#savebutton a').attr("href",dataURL);
 };
+
