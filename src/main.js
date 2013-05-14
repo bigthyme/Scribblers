@@ -155,13 +155,17 @@ if(hasGetUserMedia()){
       $('canvas').show();
       console.log('recording...');
       toggleStartStop();
-      $('#textarea').on('change', function(){
-        console.log('textarea changed');
+
+      //Custom bind function
+      $('#textarea').bind('newWord', function(e){
+        console.log(e);
+        var string = $(this).text();
+        var wordArray = string.split(' ');
+        colorChoice = wordArray[wordArray.length-1];
       });
-      //TODO: Add helper function
 
       $('#main-video').css('display', 'none');
-      // $('#main-canvas').css('visibility', 'visible');s
+
       if(paintArray === undefined) {
         paintArray = createPaintArray();
       };
@@ -194,6 +198,8 @@ if(hasGetUserMedia()){
   //no modern browser detected...fallback?
   alert('please use a better browser');
 }
+
+
 
 // OLD BUTTONS
 

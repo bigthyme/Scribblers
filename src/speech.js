@@ -26,8 +26,9 @@ if (!('webkitSpeechRecognition' in window)) {
      for (var i = event.resultIndex; i < event.results.length; ++i) {
       if (event.results[i].isFinal) {
         output = event.results[i][0].transcript;
-        // textarea.innerHTML = 'You are painting with ' + event.results[i][0].transcript;
         checkOutput(output);
+        // textarea.innerHTML = 'You are painting with ' + event.results[i][0].transcript;
+        // checkOutput(output);
       } else {
         alert('what happened..?');
       }
@@ -48,7 +49,7 @@ if (!('webkitSpeechRecognition' in window)) {
       recognition.start();
       recognizing = true;
       console.log('in the else', recognition);
-      $('#speech-button p').text('Done').parent().removeClass('blue-purple').addClass('orange');
+      $('#speech-button p').text('Stop..').parent().removeClass('blue-purple').addClass('orange');
     }
   }
 
@@ -76,8 +77,9 @@ if (!('webkitSpeechRecognition' in window)) {
     if(latestWord === 'red' || latestWord === 'blue' || latestWord === 'green' || latestWord === 'orange' || latestWord === 'yellow' || latestWord === 'purple'){
       console.log('the string...', string);
       textarea.innerHTML = 'You are painting with ' + string;
+      $('#textarea').trigger('newWord');
     } else {
-      alert('Oops, you said ' + latestWord + ' please say a color instead.');
+      console.log('Oops, you said ' + latestWord + ' please say a color instead.');
     }
   };
 }
