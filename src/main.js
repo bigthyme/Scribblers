@@ -18,6 +18,7 @@ var v = document.querySelector('#main-video'),
     erasing,
     painting,
     colorChoice,
+    colorValue,
     paintArray,
     bgPaintArray,
     mode;
@@ -34,46 +35,32 @@ var pixelDataArray = function(elem) {
   return arr;
 };
 
-    // Sum the score for each pixel
-var scoreSum = function(scores, map) {
-  var neighborsCount = 10;
-  for(var ri = neighborsCount; ri < (h - neighborsCount); ri++){
-    for(var ci = neighborsCount; ci < (w - neighborsCount); ci++){
-      scores[ri][ci] = map[ri][ci];
-      // scores[ci][ri] = map[ci][ri];
-      for(var pi = neighborsCount - 1; pi > 0; pi--) {
-        scores[ri][ci] += map[ri - pi][ci] + map[ri + pi][ci];
-        scores[ri][ci] += map[ri][ci - pi] + map[ri][ci + pi];
-        // scores[ci][ri] += map[ci - pi][ri] + map[ci + pi][ri];
-        // scores[ci][ri] += map[ci][ri - pi] + map[ci][ri + pi];
-      }
-    }
-  }
+var colorChooser = function() {
+  switch(colorChoice) {
+    case 'red':
+    colorValue=[255,0,0,255]; break;
+    case 'orange':
+    colorValue=[255,165,0,255]; break;
+    case 'yellow':
+    colorValue=[255,255,0,255]; break;
+    case 'green':
+    colorValue=[0,255,0,255]; break;
+    case 'blue':
+    colorValue=[30,144,255,255]; break;
+    case 'purple':
+    colorValue=[128,0,128,255]; break;
+    case 'black':
+    colorValue=[0,0,0,255]; break;
+    case 'white':
+    colorValue=[255,255,255,255]; break;
+  };
 };
 
-var findClosestHighScore = function(scores) {
-  //Find the pixel closest to the top left that has the highest score. The
-  //  pixel with the highest score is where the highlight box will appear.
-  var neighborsCount = 10;
-  targetx = 0, targety = 0, targetscore = 0;
-  // Are these global intentionally?
-
-  for(var ri = 10; ri < (h - 10); ri++){
-    for(var ci = 10; ci < (w - 10); ci++){
-      if(scores[ri][ci] > targetscore){
-        targetx = ri;
-        targety = ci;
-        targetscore = scores[ri][ci];
-      }
-    }
-  }
-}
-
-var highlightPlacer = function(x, pixels) {
-  hl.style.left = '' + targetx + 'px';
-  hl.style.top = '' + (($('.button-toolbar').height() * 2) + targety) + 'px';
-  x.putImageData(pixels, 0, 0);
-}
+var isGreen = function(ha,s,l) {
+  return (ha >= 75 && ha <= 165 &&
+           s >= 25 && s <= 90 &&
+           l >= 20 && l <= 95)
+};
 
 //Set dimensions for elmements
 $('#main-video').attr('width', w +'px').attr('height', h + 'px');
@@ -94,14 +81,14 @@ if(hasGetUserMedia()){
   navigator.getUserMedia  = navigator.getUserMedia ||navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
 
   //List of all button functionalities
-  $('#startbutton').on('click', function(){
+  $('#start-button').on('click', function(){
     //look at record.js for funcitonality
     recordVideo();
     //change text for directions
     $('#textarea').text('Press the allow button up top to get started!').css('color', 'orange').css('border', '4px dotted orange');
   });
 
-  $('#eraserbutton').on('click', function(){
+  $('#eraser-button').on('click', function(){
     if(paintArray === undefined) {
       $('#textarea').text('Please click start to begin painting').css('color', 'red').css('border', '4px dotted red');
     } else {
@@ -111,12 +98,8 @@ if(hasGetUserMedia()){
     }
   });
 
-  $('#background-button').on('click', function(){
+  $('#picture-button').on('click', function(){
     mode = 'background';
-    console.log('bg')
-    // $('#main-canvas').css('visibility', 'visible');
-    // $('#main-canvas').css('display', 'inline-block');
-    // $('#main-video').css('display', 'none');
     snapShot();
     $('#main-canvas').css('background-image', 'url(' + dataURL + ')');
     $('#main-canvas').css('background-size', 'cover');
@@ -128,15 +111,11 @@ if(hasGetUserMedia()){
     background();
   });
 
-  // $('#background-button').on('click', function(){
-  //   snapShot();
-
-  // });
-
-  $('#paintbutton').on('click', function(){
+  $('#paint-button').on('click', function(){
     if($('video').attr('src')){
       if(!colorChoice){
         colorChoice = 'black';
+        colorValue = [0,0,0,255];
         $('#textarea').text('You are painting with ' + colorChoice).css('color', colorChoice).css('border', '4px dotted ' + colorChoice);
       } else if(colorChoice === 'black') {
         $('#textarea').text('Would you like to try more colors').css('color', 'pink').css('border', '4px dotted pink');
@@ -159,22 +138,22 @@ if(hasGetUserMedia()){
     }
   });
 
-  $('#speechbutton').on('click',function(){
+  $('#speech-button').on('click',function(){
     if($('video').attr('src')){
       $('canvas').show();
       console.log('recording...');
       toggleStartStop();
 
-      //TODO: Add helper function
-      setTimeout(function(){
-        textArray = $('#textarea').text().split(' ');
-        colorChoice = textArray[textArray.length - 1];
-        console.log('your color: ', colorChoice);
-        $('#textarea').css('color', colorChoice).css('border', '4px dotted ' + colorChoice);
-      }, 1000);
+      //Custom bind function
+      $('#textarea').bind('newWord', function(e){
+        console.log(e);
+        var string = $(this).text();
+        var wordArray = string.split(' ');
+        colorChoice = wordArray[wordArray.length-1];
+        $('#textarea').text('You are painting with ' + colorChoice).css('color', colorChoice).css('border', '4px dotted ' + colorChoice);
+      });
 
       $('#main-video').css('display', 'none');
-      // $('#main-canvas').css('visibility', 'visible');
       if(paintArray === undefined) {
         paintArray = createPaintArray();
       };
@@ -191,13 +170,20 @@ if(hasGetUserMedia()){
     }
   });
 
+
   $('li').on('click', function(){
     colorChoice = $(this).attr('class');
+    colorChooser();
     $('#textarea').text('You are painting with ' + colorChoice).css('color', colorChoice).css('border', '4px dotted ' + colorChoice);
     console.log(colorChoice);
   });
-  //save button saves the current video or canvas and automatically downloads it to disk
-  $('#savebutton').on('click', function(e){
+
+  $('#save-button').on('click', function(){
+    console.log('stopping..');
+    localStream.stop();
+    $('.color-palette').fadeOut(400);
+    $('#main-video').css('display', 'none');
+    $('#main-canvas').css('visibility', 'visible');
     saveImage();
   });
 
@@ -205,28 +191,3 @@ if(hasGetUserMedia()){
   //no modern browser detected...fallback?
   alert('please use a better browser');
 }
-
-// OLD BUTTONS
-
-// $('#snapshot').on('click', function(){
-//   //look at snapshot.js for functionality
-//   localStream.stop();
-//   $('#main-video').css('display', 'none');
-//   $('#main-canvas').show();
-//   snapShot();
-// });
-
-// $('#trackbutton').on('click', function(){
-//   //look at track.js for functionality
-//   $('#main-video').css('display', 'none');
-//   $('#main-canvas').css('display', 'inline-block');
-//   draw();
-// });
-
-// // REVEAL
-// $('#erasebutton').on('click', function(){
-//   $('#main-video').css('display', 'none');
-//   $('#main-canvas').css('visibility', 'visible');
-//   maskArray = createMaskArray();
-//   erase();
-// });

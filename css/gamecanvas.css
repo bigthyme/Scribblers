@@ -3,7 +3,7 @@
     color: #404040;
   }
 
-  #savebutton a {
+  #save-button a {
     text-decoration: none;
     color: inherit;
   }
@@ -19,11 +19,12 @@
   }
 
   .media .span8 .game-info {
-    font-size: 1.4em;
+    font-size: 1.6em;
     height: 2em;
+    line-height: 1.2em;
     padding-top: 1em;
     font-weight: 300;
-    background-color: rgba(202, 202, 202, 0.6);
+    background-color: rgba(168, 168, 168, 0.6);
     text-shadow: 2px 1px 1px rgb(145, 145, 145);
     border-radius: 0.4em;
     padding-left: 1.5em;
@@ -40,7 +41,7 @@
     margin-bottom: -3em;
     border-top: 0.5em;
     position: relative;
-    top: 3.9em;
+    top: 3.95em;
     left: 1.83em;
     box-shadow: -1px 0px 8px;
   }

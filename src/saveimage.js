@@ -16,6 +16,6 @@ var saveImage = function(){
   image.src = dataURL;
   $('.main-canvas').hide();
   $('.main-image').show();
-  $('#savebutton a').attr("href",dataURL);
+  $('#save-button a').attr("href",dataURL);
 };
 
