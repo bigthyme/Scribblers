@@ -1,5 +1,5 @@
 {
-  "name": "finger-canvas",
+  "name": "Scribbler",
   "version": "0.1.2",
   "devDependencies": {
     "grunt": "~0.4.1",

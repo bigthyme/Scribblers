@@ -26,7 +26,7 @@ Developers
 
 Current Version
 -
-0.4.1 - Code freeze for functionality and refactor/UI almost complete
+0.4.5 - Code freeze for functionality and refactor/UI almost complete
  
 Inspiration
 -

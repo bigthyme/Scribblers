@@ -24,8 +24,13 @@ var v = document.querySelector('#main-video'),
     pencilClass,
     currentText,
     wordArray,
-    mode,
-    allowed;
+    allowed,
+    displayElement,
+    lastBgArray,
+    lastMode = 'video',
+    videoRunning = false,
+    mode;
+
 
 $(document).ready(function(){
   $('.modal').modal({show:true});
@@ -59,14 +64,23 @@ if(hasGetUserMedia()){
 
   //List of all button functionalities
   $('#start-button').on('click', function(){
-    //look at record.js for funcitonality
-    recordVideo();
-    //change text for directions
-    $('#start-button p').text('Restart');
+    if(!videoRunning) {
+      recordVideo();
+      $('#textarea').text('Press the allow button up top to start!');
+      //Change text to clear
+      $('#start-button p').html('<i class="icon-refresh"></i>Clear');
+    }
 
-    $('#textarea').text('Press the allow button up top to start!');
+    switch(lastMode) {
+      case 'video':
+        paintArray = pixelDataArray(undefined); break;
+      case 'bgimg':
+        bgPaintArray = lastBgArray; break;
+      default:
+        console.log('ignored!');
+    }
   });
-  
+
   $('.skip').on('click', function (){
     $('.modal').modal('hide');
       recordVideo();
@@ -90,16 +104,8 @@ if(hasGetUserMedia()){
 
   //Takes snapshot
   $('#picture-button').on('click', function(){
-    mode = 'background';
+    mode = "background";
     snapShot();
-    $('#main-canvas').css('background-image', 'url(' + dataURL + ')');
-    $('#main-canvas').css('background-size', 'cover');
-    if(bgPaintArray === undefined) {
-      bgPaintArray = createBgPaintArray();
-    }
-    painting = true;
-    erasing = false;
-    background();
   });
 
   //Allows paint on canvas
@@ -120,7 +126,8 @@ if(hasGetUserMedia()){
       };
       painting = true;
       erasing = false;
-      if(mode === 'background'){
+      if(displayElement === 'canvas'){
+        console.log("calling background...");
         background();
       } else {
         paint();
@@ -137,7 +144,9 @@ if(hasGetUserMedia()){
       .fadeIn('slow', toggleArrow);
     }
     if($('video').attr('src')){
+      $('video').hide();
       $('canvas').show();
+      $('.color-palette').fadeIn(400);
       console.log('recording...');
       toggleStartStop();
 
@@ -160,10 +169,8 @@ if(hasGetUserMedia()){
         console.log(mode);
         colorChooser();
         if(mode === 'background'){
-          console.log('in background..', colorChoice);
           background();
         } else {
-          console.log('in picture..', colorChoice);
           paint();
         }
       });
@@ -185,11 +192,18 @@ if(hasGetUserMedia()){
   //Saves Image
   $('#save-button').on('click', function(){
     console.log('stopping..');
-    localStream.stop();
+    //localStream.stop();
     $('.color-palette').fadeOut(400);
-    $('#main-video').css('display', 'none');
-    $('#main-canvas').css('visibility', 'visible');
+    if(mode !== 'background'){
+      $('#main-video').css('display', 'none');
+      $('#main-canvas').css('visibility', 'visible');
+    }
     saveImage();
+  });
+
+  //Info button pops the modal
+  $('#info-button').on('click', function(){
+    $('.modal').modal();
   });
 
 } else {
