@@ -63,10 +63,9 @@ MIT
   [chadreed-intl]: https://github.com/chadreed-intl/
   [gigmania]: https://github.com/gigmania/
   [philipjrosen]: https://github.com/philipjrosen/
-  []
   [node.js]: http://nodejs.org
   [Twitter Bootstrap]: http://twitter.github.com/bootstrap/
   [jQuery]: http://jquery.com
   [Express]: http://expressjs.com/
-  [Google Speech To Text]: https://dvcs.w3.org/hg/speech-api/raw-file/tip/speechapi.html
+  [Google Web Speech]: https://dvcs.w3.org/hg/speech-api/raw-file/tip/speechapi.html
   [getUserMedia API]: http://www.html5rocks.com/en/tutorials/getusermedia/intro/
