@@ -333,7 +333,7 @@
   }
 
   .media .green p {
-    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 255, 20, 0.8)),to(rgba(55, 172, 0, 0.8)));
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(1, 197, 9, 0.8)),to(rgba(26, 82, 0, 0.8)));
   }
 
   .media .yellow p {
