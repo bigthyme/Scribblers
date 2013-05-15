@@ -3,57 +3,51 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1" />
   <title>Finger Canvas</title>
 
   <!--Fonts-->
   <link href='http://fonts.googleapis.com/css?family=Reenie+Beanie' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Electrolize' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Cherry+Cream+Soda' rel='stylesheet' type='text/css'>
 
   <!-- Add stylesheets here -->
   <link href="css/bootstrap.css" rel="stylesheet">
   <link href="css/bootstrap-responsive.css" rel="stylesheet">
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
   <link href="css/gamecanvas.css" rel="stylesheet">
 
   <!-- Add libs here -->
-  <script src="lib/jquery.v2.min.js"></script>
+  <script src="lib/js/jquery.v2.min.js"></script>
   <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
 </head>
   <body>
-    <div class="navbar-wrapper">
-      <div class="container">
-        <div class="navbar navbar-inverse">
-          <div class="navbar-inner">
-            <a class="brand" href="#" style="font-f">Platform Brand</a>
-            <div class="nav-collapse collapse">
-              <ul class="nav">
-              </ul>
-            </div><!--/.nav-collapse -->
-          </div><!-- /.navbar-inner -->
-        </div><!-- /.navbar -->
-      </div> <!-- /.container -->
-    </div><!-- /.navbar-wrapper -->
-
+    <div class="title span10"><h1>SCRIBBLER</h1></div>
     <div class="container media">
-      <div class="row">
-        <div class="span4">
-          <p class="game-brand"> Game Name </p> <!-- THIS FONT WILL CHANGE FOR EACH GAME -->
-        </div>
-        <div class="span8">
-          <div class="game-info" id="textarea"> Welcome to Paint, we hope you enjoy it!</div>
+      <div class="row pencil-container">
+        <div class="pencil-tip span1 offset1"></div>
+        <div class="pencil-start span1"></div>
+        <div class="span6">
+          <div class="game-info brown-pencil" id="textarea"> Welcome to Scribbler!</div>
           <!-- <div id="textarea"></div> -->
         </div>
-      </div> <!-- ROW -->
+        <div class="pencil-end span1"></div>
+        <div class="pencil-eraser span1"></div>
+      </div>
       <div class="row">
         <div class="span2">
-           <span id="paint-button" class="button move-right purple top-margin"> <p> Paint </p> </span>
-           <span id="eraser-button" class="button move-right yellow"> <p> Eraser </p> </span>
-           <span id="speech-button" class="button move-right blue-purple"> <p>Speak</p> </span>
-           <span id="picture-button" class="button move-right yellow-brown"> <p>Pic</p> </span>
+           <span id="paint-button" class="button move-right purple top-margin"> <p><i class="icon-pencil icon-large"></i></p> </span>
+           <span id="eraser-button" class="button move-right yellow"> <p><i class="icon-eraser icon-large"></i></p> </span>
+           <span id="speech-button" class="button move-right blue-purple"> <p><i class="icon-microphone icon-large"></i></p> </span>
+           <span id="picture-button" class="button move-right yellow-brown"> <p><i class="icon-camera icon-large"></i></p> </span>
         </div>
-        <div class="span8">
-          <div class="span7">
-            <ul class="color-palette">
+        <div class="span8 stage">
+          <video id="main-video" class="main-video"   autoplay=""> </video>
+          <canvas id="main-canvas" class="main-canvas"></canvas>
+          <!--imaage tag with no src for saving canvas as image-->
+          <img id='main-image' class="main-image"/>
+          <div id="highlight"></div>
+          <!-- <div class="span7 attach-bottom"> -->
+            <ul class="color-palette span8">
               <li class="red">Red</li>
               <li class="orange">Orange</li>
               <li class="yellow">Yellow</li>
@@ -61,27 +55,58 @@
               <li class="blue">Blue</li>
               <li class="purple">Purple</li>
             </ul>
-          </div>
-          <video id="main-video" class="main-video"   autoplay=""> </video>
-          <canvas id="main-canvas" class="main-canvas"></canvas>
-          <!--imaage tag with no src for saving canvas as image-->
-          <img id='main-image' class="main-image"/>
-          <div id="highlight"></div>
+          <!-- </div> -->
         </div>
         <div class="span2">
           <span id="start-button" class="example button green top-margin move-left"><p> Start </p> </span>
           <span id="save-button" class="button red move-left"> <p><a href="#" download="photo.png"> Save </a></p> </span>
         </div>
       </div> <!-- ROW -->
+      <!-- MODAL -->
+      <div class="modal hide fade">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+          <h3>Welcome to Scribbler</h3>
+        </div>
+        <div class="modal-body">
+          <!-- Carousel -->
+          <div id="myCarousel" class="carousel slide">
+            <div class="carousel-inner">
+              <div class="item active">
+                <div>
+                  <h2>Step 1:</h2>
+                  <h3>Grab something green. Anything will do, but brighter greens work the best.</h3>
+                </div>
+              </div>
+              <div class="item">
+                <h2>Step 2:</h2>
+                <h3>In order to begin painting, your browser will ask for access to your webcam. Click allow and your ready to go.</h3>
+              </div>
+              <div class="item">
+                <h2>Step 3:</h2>
+                <h3>You can choose colors manually or with your voice. Click 'Speak', allow use of your microphone, then say the name of the color you want to paint with</h3>
+              </div>
+            </div>
+          </div>
+          <!-- /.carousel -->
+        </div>
+        <div class="modal-footer">
+          <a href="#myCarousel" class="btn back" data-slide="prev">Back</a>
+          <a href="#" class="btn btn-primary skip">Skip</a>
+          <a href="#myCarousel" class="btn next" data-slide="next">Next</a>
+        </div>
+      </div>
+      <!-- MODAL END -->
 
       <!-- HTML canvas elements -->
-      <footer class="footer">
+   <!--    <footer class="footer">
         <p class="pull-right"> <span class="corp"> &copy; 2013 Curiously Fun Things, Inc. </span> <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-      </footer>
+      </footer> -->
     </div><!-- /.body_container -->
   </body>
   <!-- new scripts -->
   <script src="init.js"></script>
+  <script src="src/helpers.js"></script>
   <script src="src/main.js"></script>
   <script src="src/record.js"></script>
   <script src="src/eraser.js"></script>
@@ -91,6 +116,5 @@
   <script src="src/background.js"></script>
   <script src="src/saveimage.js"></script>
   <script src="src/snapshot.js"></script>
-
 </html>
 
