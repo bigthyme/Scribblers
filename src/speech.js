@@ -50,7 +50,7 @@ if (!('webkitSpeechRecognition' in window)) {
       recognition.start();
       recognizing = true;
       console.log('in the else', recognition);
-      $('#speech-button p').text('Stop..').parent().removeClass('blue-purple').addClass('orange');
+      $('#speech-button p').html('<i class="icon-microphone-off"></i>Stop');
     }
   }
 
