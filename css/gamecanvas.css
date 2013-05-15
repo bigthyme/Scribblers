@@ -447,17 +447,22 @@
   }
   
   .modal {
-    height: 500px;
+    height: 400px;
   }
 
   .modal-body {
-    height: 500px;
+    height: 300px;
   }
 
   .arrow {
     position: absolute;
     top: 2%;
     right: 40px;
+  }
+
+  .greenImg {
+    text-align: center;
+    margin-top: 10px;
   }
 
   .greenApple {
@@ -470,14 +475,21 @@
     margin-left: 25px;
   }
 
-  .step2 {
-    display: inline;
+  
+
+  .slide2Img {
+    float: right;
   }
 
-  .allow {
-    float: right;
+  .step2-paint {
+    height: 70px;
+    width: 151px;
+    background-color: rgba(128, 0, 128, 0.4);
+    border-radius: 15px;
   }
 
   .allowImg {
     margin-top: 12px;
+    border-radius: 15px;
+    border: solid black 2px;
   }

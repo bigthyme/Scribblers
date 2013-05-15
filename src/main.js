@@ -33,8 +33,7 @@ $(document).ready(function(){
   $('.carousel').on('slid', '', function() {
     if($('.carousel-inner .item:last').hasClass('active')) {
       $('.next').hide();
-      $('.back').hide();
-      $('.skip').text('START');
+      $('.skip').text('START').addClass('btn-large').addClass('btn-success');
     }
   });
   allowed = 'no'
