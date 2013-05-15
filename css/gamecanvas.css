@@ -316,6 +316,9 @@
     margin-top: 1em;
   }
 
+  .media .super-top-margin p {
+    margin-top: 2.4em;
+  }
 /*  .media .move-left p {
     margin: 0px 35px 30px 5px;
   }
