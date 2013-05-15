@@ -4,8 +4,11 @@
 
 var recordVideo = function(){
   navigator.getUserMedia({video: true},  function(stream){
-      localStream = stream;
-      //v is the video element set in main.js
-      v.src = window.URL.createObjectURL(localStream);
+    localStream = stream;
+    //v is the video element set in main.js
+    v.src = window.URL.createObjectURL(localStream);
+  	if($('video').attr('src')){
+  	  $('.arrow').remove();
+  	};
   });
 };
