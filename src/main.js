@@ -177,7 +177,7 @@ if(hasGetUserMedia()){
         }
       });
     } else {
-      $('#textarea').text('Please click start to begin painting').css('color', 'red').css('border', '4px dotted red');
+      $('#textarea').text('Please click start to begin painting');
     }
   });
 
