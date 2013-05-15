@@ -64,9 +64,6 @@ if(hasGetUserMedia()){
   $('.skip').on('click', function (){
     $('.modal').modal('hide');
       recordVideo();
-    var toggleArrow = function(){ 
-      $('.arrow').fadeToggle('slow', toggleArrow);
-    };
     $('<img class="svg arrow" src="./img/arrow.svg" />').appendTo('body')
       .fadeIn('slow', toggleArrow);
   });
@@ -127,6 +124,8 @@ if(hasGetUserMedia()){
 
   //Color choice from speech
   $('#speech-button').on('click',function(){
+    $('<img class="svg arrow" src="./img/arrow.svg" />').appendTo('body')
+      .fadeIn('slow', toggleArrow);
     if($('video').attr('src')){
       $('canvas').show();
       console.log('recording...');
