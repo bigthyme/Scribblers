@@ -305,47 +305,32 @@
     margin-top: 2.5em;
   }
 
-  .pink p {
+  .media .pink p {
     background: -webkit-gradient(linear, left top, left bottom, from(rgba(231, 61, 190, 0.8)),to(rgba(153, 31, 153, 0.8)));
   }
 
-  .gray p {
+  .media .gray p {
     background: -webkit-gradient(linear, left top, left bottom, from(rgba(126, 126, 126, 1)),to(rgba(53, 53, 53, 1)));
   }
 
-  .orange p {
+  .media .orange p {
     background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 112, 0, 0.8)),to(rgba(172, 48, 0, 0.8)));
   }
 
-  .green p {
+  .media .green p {
     background: -webkit-gradient(linear, left top, left bottom, from(rgba(1, 197, 9, 0.8)),to(rgba(26, 82, 0, 0.8)));
   }
 
-  .yellow p {
+  .media .yellow p {
     background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 235, 0, 0.8)),to(rgba(172, 117, 0, 0.8)));
   }
 
-  .blue p {
+  .media .blue p {
     background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 133, 255, 0.8)),to(rgba(0, 55, 172, 0.8)));
   }
 
-  .purple p {
+  .media .purple p {
     background: -webkit-gradient(linear, left top, left bottom, from(rgba(102, 0, 255, 0.8)),to(rgba(28, 0, 172, 0.8)));
-  }
-
-  .footer {
-    border: 2px solid rgba(0, 0, 0, 0.4);
-    margin-top: -0.5em;
-    margin-right: 1em;
-    margin-left: 1em;
-  }
-
-  .footer p {
-    margin-top: 1em;
-  }
-
-  .footer .corp {
-    font-family: 'Cherry Cream Soda', cursive;
   }
 
   /* Overwrite Bootstrap */
