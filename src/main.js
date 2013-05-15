@@ -138,6 +138,7 @@ if(hasGetUserMedia()){
     $('<img class="svg arrow" src="./img/arrow.svg" />').appendTo('body')
       .fadeIn('slow', toggleArrow);
     if($('video').attr('src')){
+      $('video').hide();
       $('canvas').show();
       $('.color-palette').fadeIn(400);
       console.log('recording...');
@@ -162,10 +163,8 @@ if(hasGetUserMedia()){
         console.log(mode);
         colorChooser();
         if(mode === 'background'){
-          console.log('in background..', colorChoice);
           background();
         } else {
-          console.log('in picture..', colorChoice);
           paint();
         }
       });
