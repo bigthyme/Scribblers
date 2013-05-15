@@ -99,16 +99,8 @@ if(hasGetUserMedia()){
   });
 
   $('#picture-button').on('click', function(){
-    mode = 'background';
+    mode = "background";
     snapShot();
-    $('#main-canvas').css('background-image', 'url(' + dataURL + ')');
-    $('#main-canvas').css('background-size', 'cover');
-    if(bgPaintArray === undefined) {
-      bgPaintArray = createBgPaintArray();
-    }
-    painting = true;
-    erasing = false;
-    background();
   });
 
   $('#paint-button').on('click', function(){
@@ -129,6 +121,7 @@ if(hasGetUserMedia()){
       painting = true;
       erasing = false;
       if(mode === 'background'){
+        console.log("calling background...");
         background();
       } else {
         paint();
@@ -141,6 +134,7 @@ if(hasGetUserMedia()){
   $('#speech-button').on('click',function(){
     if($('video').attr('src')){
       $('canvas').show();
+      $('.color-palette').fadeIn(400);
       console.log('recording...');
       toggleStartStop();
 
@@ -183,8 +177,10 @@ if(hasGetUserMedia()){
     console.log('stopping..');
     localStream.stop();
     $('.color-palette').fadeOut(400);
-    $('#main-video').css('display', 'none');
-    $('#main-canvas').css('visibility', 'visible');
+    if(mode !== 'background'){
+      $('#main-video').css('display', 'none');
+      $('#main-canvas').css('visibility', 'visible');
+    }
     saveImage();
   });
 

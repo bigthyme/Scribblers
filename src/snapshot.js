@@ -10,5 +10,9 @@ var snapShot = function(){
   x.restore();
   $('.main-canvas').show();
   dataURL = c.toDataURL();
-  image.src = dataURL;
+  $('#main-canvas').css('background-image', 'url(' + dataURL + ')');
+  $('#main-canvas').css('background-size', 'cover');
+  if(bgPaintArray === undefined) {
+    bgPaintArray = createBgPaintArray();
+  }
 };
