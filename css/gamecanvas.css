@@ -186,9 +186,9 @@
     display: none;
     height: 3em;
     border-top: 0.5em;
-    left: -1.7em;
+    left: -1.9em;
     position: relative;
-    top: -3.8em;
+    top: -3.7em;
   }
 
   .media .color-palette li{
@@ -240,7 +240,7 @@
   .media .main-video {
     padding: 1em;
     border: 1px solid white;
-    margin: -0.6em;
+    margin: -0.7em;
     margin-top:0em;
     /*margin-top: 1.5em;*/
     box-shadow: -1px 3px 15px;
@@ -252,7 +252,7 @@
   .media .span8 .main-canvas {
     display: none;
     padding: 1em;
-    margin: -0.6em;
+    margin: -0.7em;
     background: whitesmoke;
     margin-top:0em;
     box-shadow: -1px 3px 15px;
@@ -262,7 +262,7 @@
     display: none;
     padding: 1em;
     background: whitesmoke;
-    margin: -0.6em;
+    margin: -0.7em;
     margin-top:0em;
     box-shadow: -1px 3px 15px;
   }
