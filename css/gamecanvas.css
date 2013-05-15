@@ -122,10 +122,10 @@
 
   .media .pencil-start {
     position: relative;
-    left: 2.6em;
+    left: 2.5em;
     width: 0;
     height: 0;
-    border-top: 29px solid transparent;
+    border-top: 28px solid transparent;
     border-bottom: 28px solid transparent;
     border-left: 40px solid rgba(202,176,147,1);
     -webkit-transform: rotate(180deg);
@@ -186,9 +186,9 @@
     display: none;
     height: 3em;
     border-top: 0.5em;
-    left: -1.6em;
+    left: -1.7em;
     position: relative;
-    top: -4em;
+    top: -3.8em;
   }
 
   .media .color-palette li{
@@ -240,7 +240,7 @@
   .media .main-video {
     padding: 1em;
     border: 1px solid white;
-    margin: -0.4em;
+    margin: -0.6em;
     margin-top:0em;
     /*margin-top: 1.5em;*/
     box-shadow: -1px 3px 15px;
@@ -252,7 +252,7 @@
   .media .span8 .main-canvas {
     display: none;
     padding: 1em;
-    margin: -0.38em;
+    margin: -0.6em;
     background: whitesmoke;
     margin-top:0em;
     box-shadow: -1px 3px 15px;
@@ -262,7 +262,7 @@
     display: none;
     padding: 1em;
     background: whitesmoke;
-    margin: -0.38em;
+    margin: -0.6em;
     margin-top:0em;
     box-shadow: -1px 3px 15px;
   }
@@ -272,7 +272,7 @@
   }
 
   .media .button p {
-    color: rgba(0, 0, 0, 0.6);
+/*    color: rgba(0, 0, 0, 0.6);
     font-weight: bold;
     border-radius: 0.4em;
     height: 1.5em;
@@ -282,23 +282,38 @@
     box-shadow: -3px 3px 35px;
     font-family: 'Cherry Cream Soda', cursive;
     padding-top: 0.9em;
+    cursor: pointer;*/
+    font-weight: bold;
+    text-shadow: 3px -2px rgba(0, 0, 0, 0.37);
+    border-radius: 0.4em;
+    text-align: center;
+    border: 0.1em solid rgba(0, 0, 0, 0.3);
+    font-family: 'Cherry Cream Soda', cursive;
     cursor: pointer;
+    color: white;
+    padding: 0.7em;
+    font-size: 1.94em;
+    margin-bottom: 0.6em;
+  }
+
+  .media .button p i {
+    padding-right: 6px;
+    margin-right: 4px;
   }
 
   .media .button p:hover {
-    /*border: 3px solid rgba(0, 0, 0, 0.4);*/
-    color: white;
-    letter-spacing: 1px;
-    text-shadow: 1px 1px 1px black;
+/*    text-shadow: 3px -2px rgba(0, 0, 0, 0.37);
+    border: 3px solid rgba(0, 0, 0, 0.4);*/
+/*    background: -webkit-gradient(linear, left top, left bottom, from(rgba(126, 126, 126, 1)),to(rgba(53, 53, 53, 1)));*/
   }
 
   .media .button p:active {
-    border: 3px solid rgba(0, 0, 0, 0.4);
-    color: white;
+    position: relative;
+    top: 0.1em;
   }
 
   .media .top-margin p {
-    margin-top: -0.45em !important;
+    margin-top: 0.64em;
   }
 
   .media .move-left p {
@@ -309,33 +324,28 @@
     margin: 0px 5px 30px 35px;
   }
 
-  .media .red p {
-    background-color: rgba(255, 0, 0, 0.4);
+  .media .pink p {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(231, 61, 190, 0.8)),to(rgba(153, 31, 153, 0.8)));
   }
 
   .media .orange p {
-    background-color: rgba(255, 71, 0, 0.4);
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 112, 0, 0.8)),to(rgba(172, 48, 0, 0.8)));
   }
 
   .media .green p {
-    background-color: rgba(0, 128, 0, 0.4);
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 255, 20, 0.8)),to(rgba(55, 172, 0, 0.8)));
   }
 
   .media .yellow p {
-    background-color: rgba(255, 255, 0, 0.4);
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 235, 0, 0.8)),to(rgba(172, 117, 0, 0.8)));
   }
 
   .media .span2 .blue-purple p {
-    background-color: rgba(0, 0, 255, 0.4);
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 133, 255, 0.8)),to(rgba(0, 55, 172, 0.8)));
   }
-
-  .media .span2 .yellow-brown p {
-    background-color: rgba(255, 165, 0, 0.4);
-  }
-
 
   .media .span2 .purple p {
-    background-color: rgba(128, 0, 128, 0.4);
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(102, 0, 255, 0.8)),to(rgba(28, 0, 172, 0.8)));
   }
 
   .footer {
@@ -445,7 +455,7 @@
   .navbar .btn-navbar {
     margin-top: 10px;
   }
-  
+
   .modal {
     height: 500px;
   }
