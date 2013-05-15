@@ -3,12 +3,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0" />
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1" />
   <title>Finger Canvas</title>
 
   <!--Fonts-->
   <link href='http://fonts.googleapis.com/css?family=Reenie+Beanie' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Didact+Gothic' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Cherry+Cream+Soda' rel='stylesheet' type='text/css'>
 
   <!-- Add stylesheets here -->
@@ -21,12 +20,12 @@
   <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
 </head>
   <body>
-    <div class="title"><h1>SCRIBBLER</h1></div>
+    <div class="title span10"><h1>SCRIBBLER</h1></div>
     <div class="container media">
       <div class="row pencil-container">
         <div class="pencil-tip span1 offset1"></div>
         <div class="pencil-start span1"></div>
-        <div class="span8">
+        <div class="span6">
           <div class="game-info brown-pencil" id="textarea"> Welcome to Scribbler!</div>
           <!-- <div id="textarea"></div> -->
         </div>
@@ -41,8 +40,13 @@
            <span id="picture-button" class="button move-right yellow-brown"> <p>Pic</p> </span>
         </div>
         <div class="span8">
-          <div class="span7">
-            <ul class="color-palette">
+          <video id="main-video" class="main-video"   autoplay=""> </video>
+          <canvas id="main-canvas" class="main-canvas"></canvas>
+          <!--imaage tag with no src for saving canvas as image-->
+          <img id='main-image' class="main-image"/>
+          <div id="highlight"></div>
+          <!-- <div class="span7 attach-bottom"> -->
+            <ul class="color-palette span8">
               <li class="red">Red</li>
               <li class="orange">Orange</li>
               <li class="yellow">Yellow</li>
@@ -50,12 +54,7 @@
               <li class="blue">Blue</li>
               <li class="purple">Purple</li>
             </ul>
-          </div>
-          <video id="main-video" class="main-video"   autoplay=""> </video>
-          <canvas id="main-canvas" class="main-canvas"></canvas>
-          <!--imaage tag with no src for saving canvas as image-->
-          <img id='main-image' class="main-image"/>
-          <div id="highlight"></div>
+          <!-- </div> -->
         </div>
         <div class="span2">
           <span id="start-button" class="example button green top-margin move-left"><p> Start </p> </span>
@@ -64,9 +63,9 @@
       </div> <!-- ROW -->
 
       <!-- HTML canvas elements -->
-      <footer class="footer">
+   <!--    <footer class="footer">
         <p class="pull-right"> <span class="corp"> &copy; 2013 Curiously Fun Things, Inc. </span> <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-      </footer>
+      </footer> -->
     </div><!-- /.body_container -->
   </body>
   <!-- new scripts -->

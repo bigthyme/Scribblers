@@ -12,8 +12,8 @@ var v = document.querySelector('#main-video'),
     localStream,
 
     //dimensions
-    h = 480,
-    w = 640,
+    h = 570,
+    w = 760,
 
     erasing,
     painting,

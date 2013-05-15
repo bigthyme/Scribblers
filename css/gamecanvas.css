@@ -9,6 +9,13 @@
     color: inherit;
   }
 
+  .title {
+    margin-left: -22em;
+    -webkit-transform: rotate(-10deg);
+    margin-top: 1.5em;
+    padding-left: 5px;
+  }
+
   .title h1{
     font-family: 'Reenie Beanie', cursive;
     font-size: 5em;
@@ -17,7 +24,7 @@
     color: rgba(255, 255, 255, 0.3);
     text-shadow: -3px -2px rgba(0, 0, 0, 0.37);
     margin-bottom: -0.9em;
-    margin-top: 0.6em;
+    margin-top: 0.3em;
   }
 
   #main-video {
@@ -36,28 +43,21 @@
     display: none;
   }
 
-  .media .game-brand {
-    text-align: center;
-    font-size: 3em;
-    height: 1em;
-    padding-top: 0.5em;
-    font-family: 'Electrolize', sans-serif;
-    border-radius: 0.2em;
-    color: #727F82;
-    text-shadow: 3px 3px #ffffff;
+  .pencil-container .span6 {
+    width: 49.8em;
   }
 
   .media .game-info {
-    font-size: 1.9em;
-    letter-spacing: 1px;
+    font-size: 1.7em;
     font-family: 'Cherry Cream Soda', cursive;
-    height: 1.69em;
-    line-height: 1.5em;
+    height: 1.9em;
+    line-height: 1.9em;
     padding-top: 0.3em;
     text-shadow: -2px 0px 1px rgb(0, 0, 0);
     border-radius: 0.3em;
     color: white;
     text-align: center;
+    text-indent: -1.2em;
   }
 
   .media .red-pencil {
@@ -102,6 +102,8 @@
 
   .media .pencil-container {
     height: 4.1em;
+    margin-left: 2em;
+    margin-right: auto;
   }
 
   .media .pencil-tip {
@@ -126,6 +128,12 @@
     border-bottom: 28px solid transparent;
     border-left: 40px solid rgba(202,176,147,1);
     -webkit-transform: rotate(180deg);
+  }
+  .media .attach-bottom {
+    position: relative;
+    bottom: 4.1em;
+    width: inherit;
+    right: 3.4em;
   }
 
   .media .pencil-end {
@@ -158,11 +166,12 @@
 
   .media .pencil-eraser {
     height: 3.97em;
+    margin-top: 3em;
     border: 1px solid gray;
     width: 3.9em;
     position: relative;
     bottom: 3.1em;
-    right: 5em;
+    right: 12em;
     border-bottom-right-radius: 0.4em;
     border-top-right-radius: 0.6em;
     z-index: -1;
@@ -176,22 +185,18 @@
 
   .media .color-palette {
     display: none;
-    margin-left: 0px;
-    border: 1px solid #6c615c;
     height: 3em;
-    margin-top: -1em;
     border-top: 0.5em;
+    left: -1.6em;
     position: relative;
-    left: 1.83em;
-    box-shadow: -1px 0px 8px;
-    margin-bottom: 0em;
+    top: -4em;
   }
 
   .media .color-palette li{
     float: left;
     font-family: 'Cherry Cream Soda', cursive;
     list-style-type: none;
-    width: 5.805em;
+    width: 6.84em;
     border-right: 1px solid rgba(0,0,0,0.6);
     padding: 0.777em;
     color: white;
@@ -209,34 +214,34 @@
   }
 
   .media .color-palette .red {
-    background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 0, 0, 0.8)),to(rgba(172, 0, 0, 0.8)));
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 0, 0, 1)),to(rgba(172, 0, 0, 1)));
   }
 
   .media .color-palette .orange {
-    background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 112, 0, 0.8)),to(rgba(172, 48, 0, 0.8)));
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 112, 0, 1)),to(rgba(172, 48, 0, 1)));
   }
 
   .media .color-palette .yellow {
-    background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 235, 0, 0.8)),to(rgba(172, 117, 0, 0.8)));
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 235, 0, 1)),to(rgba(172, 117, 0, 1)));
   }
 
   .media .color-palette .green {
-    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 255, 20, 0.8)),to(rgba(55, 172, 0, 0.8)));
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 255, 20, 1)),to(rgba(55, 172, 0, 1)));
   }
 
   .media .color-palette .blue {
-    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 133, 255, 0.8)),to(rgba(0, 55, 172, 0.8)));
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 133, 255, 1)),to(rgba(0, 55, 172, 1)));
   }
 
   .media .color-palette .purple {
-    background: -webkit-gradient(linear, left top, left bottom, from(rgba(102, 0, 255, 0.8)),to(rgba(28, 0, 172, 0.8)));
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(102, 0, 255, 1)),to(rgba(28, 0, 172, 1)));
     border-right: 0px !important;
   }
 
   .media .main-video {
     padding: 1em;
     border: 1px solid white;
-    margin: 4em;
+    margin: -0.38em;
     margin-top:0em;
     /*margin-top: 1.5em;*/
     box-shadow: -1px 3px 15px;
@@ -251,8 +256,8 @@
   .media .span8 .main-canvas {
     display: none;
     padding: 1em;
+    margin: -0.38em;
     background: whitesmoke;
-    margin: 4em;
     margin-top:0em;
     box-shadow: -1px 3px 15px;
   }
@@ -261,7 +266,7 @@
     display: none;
     padding: 1em;
     background: whitesmoke;
-    margin: 4em;
+    margin: -0.38em;
     margin-top:0em;
     box-shadow: -1px 3px 15px;
   }
