@@ -48,10 +48,11 @@
   }
 
   .media .game-info {
-    font-size: 1.7em;
+    letter-spacing: 1px;
+    font-size: 1.9em;
     font-family: 'Cherry Cream Soda', cursive;
-    height: 1.9em;
-    line-height: 1.9em;
+    height: 1.69em;
+    line-height: 1.6em;
     padding-top: 0.3em;
     text-shadow: -2px 0px 1px rgb(0, 0, 0);
     border-radius: 0.3em;
