@@ -313,19 +313,23 @@
   }
 
   .media .top-margin p {
-    margin-top: 0.64em;
+    margin-top: 1em;
   }
 
-  .media .move-left p {
+/*  .media .move-left p {
     margin: 0px 35px 30px 5px;
   }
 
   .media .move-right p {
     margin: 0px 5px 30px 35px;
-  }
+  }*/
 
   .media .pink p {
     background: -webkit-gradient(linear, left top, left bottom, from(rgba(231, 61, 190, 0.8)),to(rgba(153, 31, 153, 0.8)));
+  }
+
+  .media .gray p {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(126, 126, 126, 1)),to(rgba(53, 53, 53, 1)));
   }
 
   .media .orange p {
