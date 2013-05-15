@@ -102,7 +102,7 @@
 
   .media .pencil-container {
     height: 4.1em;
-    margin-left: 2em;
+    margin-left: 1.4em;
     margin-right: auto;
   }
 
@@ -244,9 +244,6 @@
     /*margin-top: 1.5em;*/
     box-shadow: -1px 3px 15px;
     background: whitesmoke;
-    transform: scaleX(-1);
-    -webkit-transform: scaleX(-1);
-    -moz-transform:scaleX(-1);
   }
 
  /* CANVAS */
@@ -300,7 +297,7 @@
   }
 
   .media .top-margin p {
-    margin-top: 0em !important;
+    margin-top: -0.45em !important;
   }
 
   .media .move-left p {

@@ -121,6 +121,7 @@ if(hasGetUserMedia()){
     if($('video').attr('src')){
       if(!colorChoice){
         colorChoice = 'black';
+        colorValue = [0,0,0,255];
         $('#textarea').text('You are painting with ' + colorChoice).removeClass('brown-pencil').addClass(colorChoice + '-pencil');
       } else if(colorChoice === 'black') {
         $('#textarea').text('Would you like to try more colors');
