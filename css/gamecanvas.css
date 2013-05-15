@@ -305,31 +305,31 @@
     margin-top: 2.5em;
   }
 
-  .media .pink p {
+  .pink p {
     background: -webkit-gradient(linear, left top, left bottom, from(rgba(231, 61, 190, 0.8)),to(rgba(153, 31, 153, 0.8)));
   }
 
-  .media .gray p {
+  .gray p {
     background: -webkit-gradient(linear, left top, left bottom, from(rgba(126, 126, 126, 1)),to(rgba(53, 53, 53, 1)));
   }
 
-  .media .orange p {
+  .orange p {
     background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 112, 0, 0.8)),to(rgba(172, 48, 0, 0.8)));
   }
 
-  .media .green p {
+  .green p {
     background: -webkit-gradient(linear, left top, left bottom, from(rgba(1, 197, 9, 0.8)),to(rgba(26, 82, 0, 0.8)));
   }
 
-  .media .yellow p {
+  .yellow p {
     background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 235, 0, 0.8)),to(rgba(172, 117, 0, 0.8)));
   }
 
-  .media .span2 .blue p {
+  .blue p {
     background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 133, 255, 0.8)),to(rgba(0, 55, 172, 0.8)));
   }
 
-  .media .span2 .purple p {
+  .purple p {
     background: -webkit-gradient(linear, left top, left bottom, from(rgba(102, 0, 255, 0.8)),to(rgba(28, 0, 172, 0.8)));
   }
 
