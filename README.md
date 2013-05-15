@@ -25,7 +25,8 @@ Current Version
  
 Inspiration
 -
-getUserMedia API demos:
+######getUserMedia API demos:
+
 1. https://github.com/tjerkw/js-cam-motion
 
 2. https://github.com/ReallyGood/js-motion-detection
@@ -35,7 +36,8 @@ getUserMedia API demos:
 
 4. http://40win.com/blog/2012/11/14/web-gestures-with-getusermedia-part1/
 
-algorithm demos:
+######Algorithm demos:
+
 1. http://mkweb.bcgsc.ca/color_summarizer/?
 
 2. https://github.com/Huddle/Resemble.js
