@@ -14,7 +14,6 @@ var v = document.querySelector('#main-video'),
     //dimensions
     h = 570,
     w = 760,
-
     erasing,
     painting,
     colorChoice,
@@ -26,45 +25,6 @@ var v = document.querySelector('#main-video'),
     currentText,
     wordArray,
     mode;
-
-var pixelDataArray = function(elem) {
-  var rowArr, arr = [];
-  for(var ri = 0; ri < h; ri++) {
-    rowArr = [];
-    for(var ci = 0; ci < w; ci++) {
-      rowArr.push(elem);
-    }
-    arr.push(rowArr);
-  }
-  return arr;
-};
-
-var colorChooser = function() {
-  switch(colorChoice) {
-    case 'red':
-    colorValue=[255,0,0,255]; break;
-    case 'orange':
-    colorValue=[255,165,0,255]; break;
-    case 'yellow':
-    colorValue=[255,255,0,255]; break;
-    case 'green':
-    colorValue=[0,255,0,255]; break;
-    case 'blue':
-    colorValue=[30,144,255,255]; break;
-    case 'purple':
-    colorValue=[128,0,128,255]; break;
-    case 'black':
-    colorValue=[0,0,0,255]; break;
-    case 'white':
-    colorValue=[255,255,255,255]; break;
-  };
-};
-
-var isGreen = function(ha,s,l) {
-  return (ha >= 75 && ha <= 165 &&
-           s >= 25 && s <= 90 &&
-           l >= 20 && l <= 95)
-};
 
 //Set dimensions for elmements
 $('#main-video').attr('width', w +'px').attr('height', h + 'px');
@@ -94,6 +54,7 @@ if(hasGetUserMedia()){
     $('#textarea').text('Press the allow button up top to start!');
   });
 
+  //Erase paint
   $('#eraser-button').on('click', function(){
     if(paintArray === undefined) {
       $('#textarea').text('Please click start to begin painting');
@@ -104,6 +65,7 @@ if(hasGetUserMedia()){
     }
   });
 
+  //Takes snapshot
   $('#picture-button').on('click', function(){
     mode = 'background';
     snapShot();
@@ -117,6 +79,7 @@ if(hasGetUserMedia()){
     background();
   });
 
+  //Allows paint on canvas
   $('#paint-button').on('click', function(){
     if($('video').attr('src')){
       if(!colorChoice){
@@ -144,6 +107,7 @@ if(hasGetUserMedia()){
     }
   });
 
+  //Color choice from speech
   $('#speech-button').on('click',function(){
     if($('video').attr('src')){
       $('canvas').show();
@@ -181,6 +145,7 @@ if(hasGetUserMedia()){
     }
   });
 
+  //Color choice from color buttons
   $('li').on('click', function(){
     colorChoice = $(this).attr('class');
     elementAttr = $('#textarea').attr('class').split(' ');
@@ -190,6 +155,7 @@ if(hasGetUserMedia()){
     $('.pencil-tip').css('border-bottom', '12px solid ' + colorChoice);
   });
 
+  //Saves Image
   $('#save-button').on('click', function(){
     console.log('stopping..');
     localStream.stop();
