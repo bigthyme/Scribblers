@@ -1,6 +1,6 @@
 HTML5 Kids Game...?
 =========
-Currently Deployed at: http://finger-canvas.herokuapp.com/
+Currently Deployed at: http://scribbles.herokuapp.com/
 
 This project utilizes the HTML5 [getUserMedia API] to manipulate the Canvas.
 
@@ -13,16 +13,11 @@ This project utilizes the HTML5 [getUserMedia API] to manipulate the Canvas.
 
 Developers
 -
-####Seung Lim
-[seung]
-####Chad Reed
-[chadreed-intl]
-####Tyson Daughtery
-[gigmania]
-####Anthony Singhavong
-[bigthyme]
-####Philip Rosen
-[philipjrosen]
+####Seung Lim - [seung]
+####Chad Reed - [chadreed-intl]
+####Tyson Daughtery - [gigmania]
+####Anthony Singhavong - [bigthyme]
+####Philip Rosen - [philipjrosen]
 
 Current Version
 -
@@ -64,6 +59,11 @@ MIT
 
   [1]: http://daringfireball.net/projects/markdown/
   [bigthyme]: https://github.com/bigthyme/
+  [seung]: https://github.com/seung/
+  [chadreed-intl]: https://github.com/chadreed-intl/
+  [gigmania]: https://github.com/gigmania/
+  [philipjrosen]: https://github.com/philipjrosen/
+  []
   [node.js]: http://nodejs.org
   [Twitter Bootstrap]: http://twitter.github.com/bootstrap/
   [jQuery]: http://jquery.com
