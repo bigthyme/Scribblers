@@ -24,7 +24,8 @@ var v = document.querySelector('#main-video'),
     pencilClass,
     currentText,
     wordArray,
-    mode;
+    mode,
+    allowed;
 
 $(document).ready(function(){
   $('.modal').modal({show:true});
@@ -36,6 +37,7 @@ $(document).ready(function(){
       $('.skip').text('START');
     }
   });
+  allowed = 'no'
 });
 
 //Set dimensions for elmements
@@ -61,7 +63,7 @@ if(hasGetUserMedia()){
     //look at record.js for funcitonality
     recordVideo();
     //change text for directions
-   $('#start-button p').text('Restart');
+    $('#start-button p').text('Restart');
 
     $('#textarea').text('Press the allow button up top to start!');
   });
@@ -69,8 +71,10 @@ if(hasGetUserMedia()){
   $('.skip').on('click', function (){
     $('.modal').modal('hide');
       recordVideo();
-    $('<img class="svg arrow" src="./img/arrow.svg" />').appendTo('body')
+    // if(allowed === 'no'){
+      $('<img class="svg arrow" src="./img/arrow.svg" />').appendTo('body')
       .fadeIn('slow', toggleArrow);
+    // }
   });
 
 
@@ -129,8 +133,10 @@ if(hasGetUserMedia()){
 
   //Color choice from speech
   $('#speech-button').on('click',function(){
-    $('<img class="svg arrow" src="./img/arrow.svg" />').appendTo('body')
+    if(allowed === 'no'){
+      $('<img class="svg arrow" src="./img/arrow.svg" />').appendTo('body')
       .fadeIn('slow', toggleArrow);
+    }
     if($('video').attr('src')){
       $('canvas').show();
       console.log('recording...');
