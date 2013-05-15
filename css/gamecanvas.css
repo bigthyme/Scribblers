@@ -459,3 +459,25 @@
     top: 2%;
     right: 40px;
   }
+
+  .greenApple {
+    margin-top: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  .greenLeaf {
+    margin-left: 25px;
+  }
+
+  .step2 {
+    display: inline;
+  }
+
+  .allow {
+    float: right;
+  }
+
+  .allowImg {
+    margin-top: 12px;
+  }
