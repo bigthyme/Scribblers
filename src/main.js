@@ -65,7 +65,7 @@ if(hasGetUserMedia()){
 
     $('#textarea').text('Press the allow button up top to start!');
   });
-  
+
   $('.skip').on('click', function (){
     $('.modal').modal('hide');
       recordVideo();
@@ -185,6 +185,11 @@ if(hasGetUserMedia()){
     $('#main-video').css('display', 'none');
     $('#main-canvas').css('visibility', 'visible');
     saveImage();
+  });
+
+  //Info button pops the modal
+  $('#info-button').on('click', function(){
+    $('.modal').modal();
   });
 
 } else {

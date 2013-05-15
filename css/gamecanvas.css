@@ -272,17 +272,6 @@
   }
 
   .media .button p {
-/*    color: rgba(0, 0, 0, 0.6);
-    font-weight: bold;
-    border-radius: 0.4em;
-    height: 1.5em;
-    text-align: center;
-    border: 0.1em solid rgba(255, 255, 255, 0.8);
-    font-size: 2em;
-    box-shadow: -3px 3px 35px;
-    font-family: 'Cherry Cream Soda', cursive;
-    padding-top: 0.9em;
-    cursor: pointer;*/
     font-weight: bold;
     text-shadow: 3px -2px rgba(0, 0, 0, 0.37);
     border-radius: 0.4em;
@@ -302,9 +291,9 @@
   }
 
   .media .button p:hover {
-/*    text-shadow: 3px -2px rgba(0, 0, 0, 0.37);
-    border: 3px solid rgba(0, 0, 0, 0.4);*/
-/*    background: -webkit-gradient(linear, left top, left bottom, from(rgba(126, 126, 126, 1)),to(rgba(53, 53, 53, 1)));*/
+    /*text-shadow: 3px -2px rgba(0, 0, 0, 0.37);
+        border: 3px solid rgba(0, 0, 0, 0.4);*/
+    /*    background: -webkit-gradient(linear, left top, left bottom, from(rgba(126, 126, 126, 1)),to(rgba(53, 53, 53, 1)));*/
   }
 
   .media .button p:active {
@@ -317,15 +306,8 @@
   }
 
   .media .super-top-margin p {
-    margin-top: 2.4em;
+    margin-top: 2.5em;
   }
-/*  .media .move-left p {
-    margin: 0px 35px 30px 5px;
-  }
-
-  .media .move-right p {
-    margin: 0px 5px 30px 35px;
-  }*/
 
   .media .pink p {
     background: -webkit-gradient(linear, left top, left bottom, from(rgba(231, 61, 190, 0.8)),to(rgba(153, 31, 153, 0.8)));
