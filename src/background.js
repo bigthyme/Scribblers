@@ -5,12 +5,7 @@ var createBgPaintArray = function() {
 };
 
 var background = function() {
-
-  x.save();
-  x.translate(w, 0);
-  x.scale(-1,1);
-  x.drawImage(v, 0, 0, w, h);
-  x.restore();
+  flipCanvas();
 
   var pixels = x.getImageData(0, 0, w, h),
       pixCount = pixels.data.length / 4;

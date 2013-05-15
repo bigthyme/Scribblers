@@ -24,7 +24,8 @@ var v = document.querySelector('#main-video'),
     pencilClass,
     currentText,
     wordArray,
-    mode;
+    mode,
+    displayElement;
 
 $(document).ready(function(){
   $('.modal').modal({show:true});
@@ -109,7 +110,7 @@ if(hasGetUserMedia()){
       };
       painting = true;
       erasing = false;
-      if(mode === 'background'){
+      if(displayElement === 'canvas'){
         console.log("calling background...");
         background();
       } else {
@@ -174,7 +175,7 @@ if(hasGetUserMedia()){
   //Saves Image
   $('#save-button').on('click', function(){
     console.log('stopping..');
-    localStream.stop();
+    //localStream.stop();
     $('.color-palette').fadeOut(400);
     if(mode !== 'background'){
       $('#main-video').css('display', 'none');
