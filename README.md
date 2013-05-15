@@ -27,16 +27,23 @@ Inspiration
 -
 getUserMedia API demos:
 1. https://github.com/tjerkw/js-cam-motion
+
 2. https://github.com/ReallyGood/js-motion-detection
+
 3. https://github.com/auduno/headtrackr/
     - http://dev.opera.com/articles/view/head-tracking-with-webrtc/
+
 4. http://40win.com/blog/2012/11/14/web-gestures-with-getusermedia-part1/
 
 algorithm demos:
 1. http://mkweb.bcgsc.ca/color_summarizer/?
+
 2. https://github.com/Huddle/Resemble.js
+
 3. http://en.wikipedia.org/wiki/Feature_detection_(computer_vision)#Feature_detectors
+
 4. https://github.com/mtschirs/js-objectdetect?source=cr
+
 5. https://code.google.com/p/js-aruco/
  
 
