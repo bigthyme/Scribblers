@@ -9,6 +9,7 @@ var createPaintArray = function() {
 
 var paint = function() {
   flipCanvas();
+  lastMode = 'video';
   
   var pixels = x.getImageData(0, 0, w, h),
       pixCount = pixels.data.length / 4;

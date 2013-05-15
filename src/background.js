@@ -6,7 +6,12 @@ var createBgPaintArray = function() {
 
 var background = function() {
   flipCanvas();
-
+  lastMode = 'bgimg';
+  lastBgArray = bgPaintArray;
+  
+  // x.drawImage(v, 0, 0, w, h);
+  // x.restore();
+  
   var pixels = x.getImageData(0, 0, w, h),
       pixCount = pixels.data.length / 4;
 
