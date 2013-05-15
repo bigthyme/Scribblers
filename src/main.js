@@ -25,8 +25,15 @@ var v = document.querySelector('#main-video'),
 
 $(document).ready(function(){
   $('.modal').modal({show:true});
+  $('.carousel').carousel('pause');
+  $('.carousel').on('slid', '', function() {
+    if($('.carousel-inner .item:last').hasClass('active')) {
+      $('.next').hide();
+      $('.back').hide();
+      $('.skip').text('START');
+    }
+  });
 });
-
 
 //Set dimensions for elmements
 $('#main-video').attr('width', w +'px').attr('height', h + 'px');
@@ -56,7 +63,12 @@ if(hasGetUserMedia()){
   
   $('.skip').on('click', function (){
     $('.modal').modal('hide');
-    recordVideo();
+      recordVideo();
+    var toggleArrow = function(){ 
+      $('.arrow').fadeToggle('slow', toggleArrow);
+    };
+    $('<img class="svg arrow" src="./img/arrow.svg" />').appendTo('body')
+      .fadeIn('slow', toggleArrow);
   });
 
 

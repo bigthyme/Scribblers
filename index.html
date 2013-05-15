@@ -73,37 +73,41 @@
           <span id="save-button" class="button red move-left"> <p><a href="#" download="photo.png"> Save </a></p> </span>
         </div>
       </div> <!-- ROW -->
+      <!-- MODAL -->
       <div class="modal hide fade">
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
           <h3>Welcome to Scribbler</h3>
         </div>
         <div class="modal-body">
-
-         <!-- Carousel
-    ================================================== -->
-    <div id="myCarousel" class="carousel slide">
-      <div class="carousel-inner">
-        <div class="item active">
-          <div>
-            <h3>Scribbler works by tracking motion on your webcam and speech from your microphone. Make sure you allow access to both for full functionality. </h3>
+          <!-- Carousel -->
+          <div id="myCarousel" class="carousel slide">
+            <div class="carousel-inner">
+              <div class="item active">
+                <div>
+                  <h2>Step 1:</h2>
+                  <h3>Grab something green. Anything will do, but brighter greens work the best.</h3>
+                </div>
+              </div>
+              <div class="item">
+                <h2>Step 2:</h2>
+                <h3>In order to begin painting, your browser will ask for access to your webcam. Click allow and your ready to go.</h3>
+              </div>
+              <div class="item">
+                <h2>Step 3:</h2>
+                <h3>You can choose colors manually or with your voice. Click 'Speak', allow use of your microphone, then say the name of the color you want to paint with</h3>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="item">
-          <h3>Grab something green and hold it in front of your webcam. Anything will do, but brighter greens work the best. Begin painting by pressing 'Paint', choose the color you would like to paint with and move your green controller around.</h3>
-        </div>
-        <div class="item">
-          <h3>You can also choose colors with your voice. Click on 'Speak', allow the microphone, and say the name of the color you would like to paint with. You can change colors as you paint by saying a new color name. </h3>
-        </div>
-      </div>
-    </div><!-- /.carousel -->
+          <!-- /.carousel -->
         </div>
         <div class="modal-footer">
-          <a href="#myCarousel" class="btn" data-slide="prev">Back</a>
+          <a href="#myCarousel" class="btn back" data-slide="prev">Back</a>
           <a href="#" class="btn btn-primary skip">Skip</a>
-          <a href="#myCarousel" class="btn" data-slide="next">Next</a>
+          <a href="#myCarousel" class="btn next" data-slide="next">Next</a>
         </div>
       </div>
+      <!-- MODAL END -->
 
       <!-- HTML canvas elements -->
       <footer class="footer">
