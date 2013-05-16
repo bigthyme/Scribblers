@@ -325,27 +325,12 @@
     background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 235, 0, 0.8)),to(rgba(172, 117, 0, 0.8)));
   }
 
-  .media .span2 .blue p {
+  .media .blue p {
     background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 133, 255, 0.8)),to(rgba(0, 55, 172, 0.8)));
   }
 
-  .media .span2 .purple p {
+  .media .purple p {
     background: -webkit-gradient(linear, left top, left bottom, from(rgba(102, 0, 255, 0.8)),to(rgba(28, 0, 172, 0.8)));
-  }
-
-  .footer {
-    border: 2px solid rgba(0, 0, 0, 0.4);
-    margin-top: -0.5em;
-    margin-right: 1em;
-    margin-left: 1em;
-  }
-
-  .footer p {
-    margin-top: 1em;
-  }
-
-  .footer .corp {
-    font-family: 'Cherry Cream Soda', cursive;
   }
 
   /* Overwrite Bootstrap */
