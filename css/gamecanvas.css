@@ -334,6 +334,16 @@
   }
 
   /* Overwrite Bootstrap */
+  .modal .modal-header {
+    background: rgba(90, 32, 9, 0.8);
+    font-family: 'Cherry Cream Soda', cursive;
+    color: white;
+    text-shadow: -3px -2px rgba(0, 0, 0, 0.37);
+    font-size: 15px;
+  }
+  .modal .modal-footer {
+    background: rgb(87, 44, 10);
+  }
 
   .modal {
     height: 500px;
@@ -341,6 +351,7 @@
 
   .modal-body {
     height: 500px;
+    background: rgb(248, 242, 198);
   }
 
   .arrow {
