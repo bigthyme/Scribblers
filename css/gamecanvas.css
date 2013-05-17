@@ -342,12 +342,14 @@
     font-size: 15px;
   }
 
-/*  .modal {
-    height: 300px;
-  }*/
-
   .modal-body {
-    height: 450px;
+    height: 400px;
+  }
+
+  .modal-body h3{
+    font-size: 23px;
+    line-height: 1.5em;
+    padding: 0.2em;
   }
 
   .arrow {
