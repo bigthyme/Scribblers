@@ -67,6 +67,8 @@ License
 
 MIT
 
+  [Grunt]: http://gruntjs.com/
+  [Jasmine]: http://pivotal.github.io/jasmine/
   [bigthyme]: https://github.com/bigthyme/
   [seung]: https://github.com/seung/
   [chadreed-intl]: https://github.com/chadreed-intl/
