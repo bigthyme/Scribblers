@@ -1,8 +1,8 @@
-HTML5 Kids Game...?
+Scribblers
 =========
 Currently Deployed at: http://scribblers.herokuapp.com/
 
-This project utilizes the HTML5 [getUserMedia API] to manipulate the Canvas. Our team has implemented an algorithm that detects green hsl values whether in video streams or image files and allows the user to alter the given data in real-time. 
+This project utilizes the HTML5 [getUserMedia API] and a few other open source tech to manipulate the Canvas in real-time. Our team has implemented an algorithm that detects green hsl values whether in video streams or image files and allows the users to paint over those objects with primary colors.
 
   - Currently the project is scoped to a single player game that will draw the controller's motion on any given html element.
     - Version 0.6
