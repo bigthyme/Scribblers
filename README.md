@@ -2,9 +2,9 @@ HTML5 Kids Game...?
 =========
 Currently Deployed at: http://scribblers.herokuapp.com/
 
-This project utilizes the HTML5 [getUserMedia API] to manipulate the Canvas.
+This project utilizes the HTML5 [getUserMedia API] to manipulate the Canvas. Our team has implemented an algorithm that detects green hsl values whether in video streams or image files and allows the user to alter the given data in real-time. 
 
-  - Currently the project is scoped to a single player game that will draw finger motion on a white board.
+  - Currently the project is scoped to a single player game that will draw the controller's motion on any given html element.
     - Version 0.6
   - There will potentially be a lobbying system that will delegate multi-player games in the next version.
     - Version 0.8
@@ -21,7 +21,7 @@ Developers
 
 Current Version
 -
-0.5.1 - Updating master README.md and prepping for soft release
+0.5.9 - Updating master README.md and prepping for soft release
  
 Inspiration
 -
@@ -57,16 +57,16 @@ This game uses a number of open source projects to work properly:
 
 * [Twitter Bootstrap] - Great UI boilerplate for modern web apps
 * [node.js] - Evented I/O for the backend
-* [Express] - Fast node.js network app framework [@tjholowaychuk]
 * [jQuery] - Dom manipulation
 * [Google Web Speech] - Unreleased Speech to text api that is native to modern browsers
+* [Grunt] - A javascript automation tool 
+* [Jasmine] - Unit testing for javascript
 
 License
 -
 
 MIT
 
-  [1]: http://daringfireball.net/projects/markdown/
   [bigthyme]: https://github.com/bigthyme/
   [seung]: https://github.com/seung/
   [chadreed-intl]: https://github.com/chadreed-intl/
