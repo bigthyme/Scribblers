@@ -1,6 +1,6 @@
 Scribblers
 =========
-Currently Deployed at: http://scribblers.herokuapp.com/
+Currently Deployed [here](https://polar-eyrie-2330.herokuapp.com/)
 
 This project utilizes the HTML5 [getUserMedia API] and a few other open source tech to manipulate the Canvas in real-time. Our team has implemented an algorithm that detects green hsl values whether in video streams or image files and allows the users to paint over those objects with primary colors.
 
@@ -22,7 +22,7 @@ Developers
 Current Version
 -
 0.5.9 - Updating master README.md and prepping for soft release
- 
+
 Inspiration
 -
 ######getUserMedia API demos:
@@ -47,7 +47,7 @@ Inspiration
 4. https://github.com/mtschirs/js-objectdetect?source=cr
 
 5. https://code.google.com/p/js-aruco/
- 
+
 
 Tech
 -----------
@@ -59,7 +59,7 @@ This game uses a number of open source projects to work properly:
 * [node.js] - Evented I/O for the backend
 * [jQuery] - Dom manipulation
 * [Google Web Speech] - Unreleased Speech to text api that is native to modern browsers
-* [Grunt] - A javascript automation tool 
+* [Grunt] - A javascript automation tool
 * [Jasmine] - Unit testing for javascript
 
 License
